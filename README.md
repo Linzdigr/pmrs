@@ -11,7 +11,7 @@ Le site sert à trois choses :
 ## Structure
 
 ```
-index.html            Accueil : les trois moyens radio à égalité, démarche, Ciaran, crise, ressources, contact
+/            Accueil : les trois moyens radio à égalité, démarche, Ciaran, crise, ressources, contact
 pmr446.html           Phonie PMR446 (veille canal 7)
 cb.html               Phonie CB 27 MHz (veille canal 9)
 maillage.html         Maillage LoRa MeshCore : principe, matériel, état du réseau, accueil d'un répéteur
@@ -54,7 +54,7 @@ Tout le texte est directement dans le HTML, section par section. Chaque section 
 
 | Page | Ancre | Contenu | Source |
 |---|---|---|---|
-| `index.html` | `#top` | Héros, fiche « en un coup d'œil » | — |
+| `/` | `#top` | Héros, fiche « en un coup d'œil » | — |
 | | `#moyens` | Les trois moyens radio, exemple d'enchaînement, cadre réglementaire | — |
 | | `#philosophie` | Lettre du collectif et 5 principes | — |
 | | `#pourquoi` | Tempête Ciaran, chaîne des coupures, comparatif des moyens | Présentation, diapos 3 à 7 |
@@ -76,7 +76,7 @@ Tout le texte est directement dans le HTML, section par section. Chaque section 
 - **Ajouter une ressource** : copier un `<li>` existant dans le bon groupe de `#ressources` (nom, domaine, description d'une ligne).
 - **Navigation et pied de page** : ils sont recopiés dans chaque page ; une modification se reporte dans les cinq fichiers HTML.
 - **Procédure de crise** : mettre à jour la date de version dans `procedure.html` (en-tête et pied de page) à chaque révision.
-- **Données du graphique Ciaran** : tableau `DATA` dans `site.js` **et** tableau « Voir les données » dans `index.html` (section `#pourquoi`), à garder identiques.
+- **Données du graphique Ciaran** : tableau `DATA` dans `site.js` **et** tableau « Voir les données » dans `/` (section `#pourquoi`), à garder identiques.
 
 ## Design
 
