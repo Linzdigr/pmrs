@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CB 27 MHz — phonie longue portée — PMRS</title>
+  <meta name="description" content="CB 27 MHz dans le PMRS : veille sur le canal 9 (27,065 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 40 canaux.">
+  <link rel="canonical" href="https://pmrs.fr/cb.html">
+  <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PMRS">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://pmrs.fr/cb.html">
+  <meta property="og:title" content="CB 27 MHz — phonie longue portée — PMRS">
+  <meta property="og:description" content="CB 27 MHz dans le PMRS : veille sur le canal 9 (27,065 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 40 canaux.">
+  <meta property="og:image" content="https://pmrs.fr/og-cb.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CB canal 9, 27,065 MHz — veille phonie du PMRS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CB 27 MHz — phonie longue portée — PMRS">
+  <meta name="twitter:description" content="CB 27 MHz dans le PMRS : veille sur le canal 9 (27,065 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 40 canaux.">
+  <meta name="twitter:image" content="https://pmrs.fr/og-cb.png">
+  <meta name="twitter:image:alt" content="CB canal 9, 27,065 MHz — veille phonie du PMRS">
+
+  <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Saira+Condensed:wght@600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PMRS, accueil">
+      <img src="logo.png" width="30" height="30" alt="">
+      <b>PMRS</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html#moyens">Moyens radio</a>
+      <a href="pmr446.html">PMR446</a>
+      <a href="cb.html" aria-current="page">CB</a>
+      <a href="maillage.html">Maillage LoRa</a>
+      <a href="procedure.html">Procédure de crise</a>
+      <a href="index.html#ressources">Ressources</a>
+      <a class="cta" href="index.html#contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="theme" type="button">Auto</button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap stack-lg" style="padding-block:clamp(2rem,6vw,3.5rem) 4rem">
+
+  <header class="doc-head">
+    <p class="eyebrow"><span class="dot"></span>Phonie longue portée</p>
+    <h1>CB 27 MHz</h1>
+    <p class="lede">Radio de voix sans licence dans la bande des 27 MHz, en poste fixe, mobile ou portatif. Le PMRS assure la veille sur le canal 9.</p>
+  </header>
+
+  <section class="panel" aria-label="Fréquence de veille CB">
+    <p class="panel-label">Veille PMRS</p>
+    <div class="readout">
+      <span class="ch">Canal 9</span>
+      <span class="freq">27,065<small>MHz</small></span>
+    </div>
+    <p class="note">Canal d'appel d'urgence par convention.</p>
+    <div class="scale">
+      <div class="track" id="track-cb" role="img" aria-label="Bande CB de 26,965 à 27,405 MHz, 40 canaux, canal 9 en veille"></div>
+      <div class="ends"><span>26,965</span><span>27,185</span><span>27,405</span></div>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Caractéristiques</h2>
+    <dl class="idcard">
+      <div><dt>Bande</dt><dd class="mono">26,965 – 27,405 MHz</dd></div>
+      <div><dt>Canaux</dt><dd>40<small>Pas de 10 kHz</small></dd></div>
+      <div><dt>Modulations</dt><dd>AM, FM, BLU</dd></div>
+      <div><dt>Puissance</dt><dd>4 W en AM et FM<small>12 W crête en BLU</small></dd></div>
+      <div><dt>Antenne</dt><dd>Extérieure possible<small>Mât, véhicule, portatif</small></dd></div>
+      <div><dt>Portée</dt><dd>5 à 30 km<small>Selon antenne, relief et propagation</small></dd></div>
+      <div><dt>Alimentation</dt><dd>12 V<small>Batterie, véhicule, panneau solaire</small></dd></div>
+      <div><dt>Licence</dt><dd>Aucune<small>Autorisation générale</small></dd></div>
+    </dl>
+  </section>
+
+  <section class="grid g2">
+    <div class="panel">
+      <p class="panel-label">Usage dans le PMRS</p>
+      <ul>
+        <li>Veille sur le canal 9.</li>
+        <li>Liaisons de voix entre communes, véhicules et postes fixes.</li>
+        <li>Station fixe en mairie ou au PC, avec antenne extérieure et batterie 12 V.</li>
+        <li>Faire remonter une information jusqu'à un poste équipé d'un terminal MeshCore, qui la retransmet par écrit sur le <a href="maillage.html">maillage LoRa</a>.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <p class="panel-label">Régler son poste</p>
+      <ul>
+        <li>Canal 9, en vérifiant la fréquence : <strong>27,065 MHz</strong>.</li>
+        <li>Même modulation que ses correspondants : un poste en FM ne reçoit pas correctement une émission en AM.</li>
+        <li>Squelch réglé juste au-dessus du bruit de fond.</li>
+        <li>Batterie 12 V chargée ; recharge solaire possible pour un poste fixe.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="panel">
+      <p class="panel-label">Bonnes pratiques d'émission</p>
+      <ul>
+        <li>Écouter avant d'émettre.</li>
+        <li>Appel bref sur le canal 9, puis dégagement sur un autre canal pour un échange long : le canal 9 reste libre pour les appels.</li>
+        <li>Se nommer et nommer sa commune ; messages courts.</li>
+        <li>Canal ouvert à tous : rien de confidentiel, pas de données nominatives ni d'état de santé.</li>
+      </ul>
+    </div>
+    <div class="callout warn">
+      <b>Limites</b>
+      <p>Un opérateur doit être à l'écoute, aucune trace écrite, portée variable selon l'antenne et la propagation. Pour une transmission écrite avec accusé de réception, l'information passe sur le <a href="maillage.html">maillage LoRa</a>.</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Plan des 40 canaux</h2>
+    <ul class="chgrid" aria-label="Canaux CB et fréquences en MHz"><li><b>01</b><span>26,965</span></li><li><b>02</b><span>26,975</span></li><li><b>03</b><span>26,985</span></li><li><b>04</b><span>27,005</span></li><li><b>05</b><span>27,015</span></li><li><b>06</b><span>27,025</span></li><li><b>07</b><span>27,035</span></li><li><b>08</b><span>27,055</span></li><li class="on"><b>09</b><span>27,065</span></li><li><b>10</b><span>27,075</span></li><li><b>11</b><span>27,085</span></li><li><b>12</b><span>27,105</span></li><li><b>13</b><span>27,115</span></li><li><b>14</b><span>27,125</span></li><li><b>15</b><span>27,135</span></li><li><b>16</b><span>27,155</span></li><li><b>17</b><span>27,165</span></li><li><b>18</b><span>27,175</span></li><li class="alt"><b>19</b><span>27,185</span></li><li><b>20</b><span>27,205</span></li><li><b>21</b><span>27,215</span></li><li><b>22</b><span>27,225</span></li><li><b>23</b><span>27,255</span></li><li><b>24</b><span>27,235</span></li><li><b>25</b><span>27,245</span></li><li><b>26</b><span>27,265</span></li><li><b>27</b><span>27,275</span></li><li><b>28</b><span>27,285</span></li><li><b>29</b><span>27,295</span></li><li><b>30</b><span>27,305</span></li><li><b>31</b><span>27,315</span></li><li><b>32</b><span>27,325</span></li><li><b>33</b><span>27,335</span></li><li><b>34</b><span>27,345</span></li><li><b>35</b><span>27,355</span></li><li><b>36</b><span>27,365</span></li><li><b>37</b><span>27,375</span></li><li><b>38</b><span>27,385</span></li><li><b>39</b><span>27,395</span></li><li><b>40</b><span>27,405</span></li></ul>
+    <p class="source">Canal 9 : appel d'urgence par convention. Canal 19 : canal routier. Les canaux 23 à 25 ne suivent pas l'ordre des fréquences.</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="row">
+      <a class="mono" href="index.html">← PMRS · accueil</a>
+      <a href="pmr446.html">PMR446</a>
+      <a href="cb.html">CB</a>
+      <a href="maillage.html">Maillage LoRa</a>
+      <a href="procedure.html">Procédure de crise</a>
+      <a href="mailto:contact@pmrs.fr">contact@pmrs.fr</a>
+    </div>
+    <p>CB — 40 canaux de 26,965 à 27,405 MHz, 4 W en AM et FM, 12 W crête en BLU, sans licence. Cadre : ECC/DEC/(11)03.</p>
+    <p>Initiative citoyenne sans but lucratif, non intégrée à la chaîne ORSEC. Les appels d'urgence passent par le 18, le 15 et le 112.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>PMRS — Projet Maillage Radio Secours</title>
-  <meta name="description" content="Réseau citoyen de messages texte par radio LoRa MeshCore (869,618 MHz) : des répéteurs solaires sur les points hauts de Bretagne, sans opérateur, sans Internet, sans licence. Un complément pour la gestion de crise.">
+  <meta name="description" content="Dispositif radio citoyen de secours en Bretagne, sur trois moyens complémentaires : phonie PMR446 (canal 7), phonie CB (canal 9) et maillage de messages texte LoRa MeshCore (869,618 MHz). Sans opérateur, sans Internet, sans licence.">
   <link rel="canonical" href="https://pmrs.fr/">
   <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
@@ -25,12 +25,12 @@
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; fréquences MeshCore 869,618 MHz et PMR446 canal 7 446,081 25 MHz">
+  <meta property="og:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; PMR446 canal 7, CB canal 9 et MeshCore 869,618 MHz">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PMRS — Projet Maillage Radio Secours">
   <meta name="twitter:description" content="Réseau citoyen de messages texte par radio LoRa MeshCore (869,618 MHz), relayés par des répéteurs solaires en Bretagne. Sans opérateur, sans Internet, sans licence.">
   <meta name="twitter:image" content="https://pmrs.fr/og-image.png">
-  <meta name="twitter:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; fréquences MeshCore 869,618 MHz et PMR446 canal 7 446,081 25 MHz">
+  <meta name="twitter:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; PMR446 canal 7, CB canal 9 et MeshCore 869,618 MHz">
 
   <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,13 +48,13 @@
       <b>PMRS</b>
     </a>
     <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="#pourquoi">Pourquoi</a>
-      <a href="#principe">Principe</a>
-      <a href="#materiel">Matériel</a>
-      <a href="#avancement">Avancement</a>
+      <a href="#moyens">Moyens radio</a>
+      <a href="pmr446.html">PMR446</a>
+      <a href="cb.html">CB</a>
+      <a href="maillage.html">Maillage LoRa</a>
       <a href="procedure.html">Procédure de crise</a>
       <a href="#ressources">Ressources</a>
-      <a class="cta" href="#accueil">Accueillir un répéteur</a>
+      <a class="cta" href="#contact">Contact</a>
     </nav>
     <div class="tools">
       <button class="icon-btn" id="theme" type="button">Auto</button>
@@ -75,11 +75,11 @@
     <div class="hero-text">
       <p class="eyebrow"><span class="dot"></span>Initiative citoyenne · Bretagne</p>
       <h1><span class="caps">P</span>rojet <span class="caps">M</span>aillage <span class="caps">R</span>adio <span class="caps">S</span>ecours</h1>
-      <p class="lede">Réseau de messages texte par radio LoRa, relayés par des répéteurs solaires installés sur des points hauts. <span>Il fonctionne sans opérateur, sans Internet et sans licence, et il est installé avant les crises.</span></p>
+      <p class="lede">Dispositif radio citoyen de secours en Bretagne, sur trois moyens complémentaires : phonie PMR446, phonie CB et maillage de messages texte LoRa. <span>Sans opérateur, sans Internet, sans licence, et en place avant les crises.</span></p>
       <div class="btns">
-        <a class="btn" href="#accueil">Accueillir un répéteur</a>
-        <a class="btn ghost" href="#principe">Le principe</a>
+        <a class="btn" href="#moyens">Les trois moyens radio</a>
         <a class="btn ghost" href="procedure.html">Procédure de crise</a>
+        <a class="btn ghost" href="#contact">Contact</a>
       </div>
     </div>
   </div>
@@ -88,41 +88,112 @@
 <!-- ================= COUP D'ŒIL ================= -->
 <section class="wrap stack-lg" aria-label="PMRS en un coup d'œil" style="padding-bottom:clamp(3rem,8vw,5rem)">
   <dl class="idcard">
-    <div><dt>Quoi</dt><dd>Messagerie texte par radio<small>Messages courts, directs ou en canal</small></dd></div>
-    <div><dt>Comment</dt><dd>Répéteurs solaires maillés<small>Relais automatique, de proche en proche</small></dd></div>
+    <div><dt>Quoi</dt><dd>Phonie et messages texte par radio<small>PMR446, CB et maillage LoRa</small></dd></div>
+    <div><dt>Comment</dt><dd>Postes du commerce et répéteurs solaires<small>Voix en direct, texte relayé automatiquement</small></dd></div>
     <div><dt>Dépend de</dt><dd>Rien<small>Ni secteur, ni opérateur, ni Internet</small></dd></div>
-    <div><dt>Fréquence</dt><dd class="mono">869,618 MHz<small>LoRa MeshCore · sans licence</small></dd></div>
+    <div><dt>Fréquences</dt><dd class="mono">PMR446 · CB · LoRa<small>Canal 7 · canal 9 · 869,618 MHz</small></dd></div>
     <div><dt>Qui</dt><dd>Un collectif bénévole<small>Sans but lucratif</small></dd></div>
     <div><dt>Où</dt><dd>Bretagne<small>29 · 22 · 44 · 56 · 35, puis national</small></dd></div>
     <div><dt>Pour qui</dt><dd>Porteurs équipés et préparés<small>Communes, partenaires, citoyens</small></dd></div>
     <div><dt>Statut</dt><dd>Un complément<small>Ne remplace ni le 18, ni le 15, ni le 112</small></dd></div>
   </dl>
+</section>
 
-  <div class="grid g4">
-    <a class="qcard" href="#principe">
-      <span class="num">01</span>
-      <h3>Comprendre</h3>
-      <p>Pourquoi le mobile tombe en tempête, et comment un maillage de répéteurs prend le relais.</p>
-      <span class="go">Le principe →</span>
-    </a>
-    <a class="qcard" href="#accueil">
-      <span class="num">02</span>
-      <h3>Accueillir un répéteur</h3>
-      <p>Conditions d'accueil : module autonome, sans coût pour l'hôte, démontable sur simple demande.</p>
-      <span class="go">Les conditions →</span>
-    </a>
-    <a class="qcard" href="procedure.html">
-      <span class="num">03</span>
-      <h3>Procédure de crise</h3>
-      <p>Plan de canaux, préparation à froid, conduite en crise et gabarits de messages.</p>
-      <span class="go">La procédure →</span>
-    </a>
-    <a class="qcard" href="#ressources">
-      <span class="num">04</span>
-      <h3>Ressources</h3>
-      <p>Cartes en temps réel, outils d'analyse, wiki breton et règles communes de la communauté.</p>
-      <span class="go">Les liens →</span>
-    </a>
+<!-- ================= MOYENS RADIO ================= -->
+<section class="section" id="moyens">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Les moyens radio</p>
+      <h2>Trois moyens radio complémentaires</h2>
+      <p class="lede">Le PMRS utilise trois moyens radio sans licence. Chacun répond à un besoin différent : la voix de proximité, la voix à plus longue portée, l'écrit relayé sur toute la région. Aucun ne remplace les autres.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g3 moyens">
+        <section class="panel" aria-label="Phonie PMR446">
+          <p class="panel-label">Phonie de proximité — PMR446</p>
+          <div class="readout">
+            <span class="ch">Canal 7</span>
+            <span class="freq">446,081&thinsp;25<small>MHz</small></span>
+          </div>
+          <p class="note">Analogique, tout poste PMR446 du commerce.</p>
+          <div class="scale">
+            <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
+            <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
+          </div>
+          <dl class="specs">
+            <div><dt>Portée</dt><dd>1–3 km</dd></div>
+            <div><dt>Puissance</dt><dd>500 mW</dd></div>
+            <div><dt>Licence</dt><dd>Aucune</dd></div>
+          </dl>
+          <ul>
+            <li>Veille et échanges de voix entre voisins, équipes et bâtiments proches.</li>
+            <li>Limites : portée courte, pas de relais automatique, quelqu'un doit être à l'écoute.</li>
+          </ul>
+          <a class="more" href="pmr446.html">Page PMR446 →</a>
+        </section>
+
+        <section class="panel" aria-label="Phonie CB">
+          <p class="panel-label">Phonie longue portée — CB 27 MHz</p>
+          <div class="readout">
+            <span class="ch">Canal 9</span>
+            <span class="freq">27,065<small>MHz</small></span>
+          </div>
+          <p class="note">Canal d'appel d'urgence par convention, postes fixes et mobiles.</p>
+          <div class="scale">
+            <div class="track" id="track-cb" role="img" aria-label="Bande CB de 26,965 à 27,405 MHz, 40 canaux, canal 9 en veille"></div>
+            <div class="ends"><span>26,965</span><span>27,185</span><span>27,405</span></div>
+          </div>
+          <dl class="specs">
+            <div><dt>Portée</dt><dd>5–30 km</dd></div>
+            <div><dt>Canaux</dt><dd>40</dd></div>
+            <div><dt>Licence</dt><dd>Aucune</dd></div>
+          </dl>
+          <ul>
+            <li>Liaisons de voix entre communes, véhicules et postes fixes.</li>
+            <li>Limites : un opérateur doit être à l'écoute, pas de trace écrite.</li>
+          </ul>
+          <a class="more" href="cb.html">Page CB →</a>
+        </section>
+
+        <section class="panel" aria-label="Maillage LoRa MeshCore">
+          <p class="panel-label">Messages texte — maillage LoRa MeshCore</p>
+          <div class="readout">
+            <span class="ch">MeshCore</span>
+            <span class="freq">869,618<small>MHz</small></span>
+          </div>
+          <p class="note">Profil France · BW 62,5 kHz · SF8 · CR8</p>
+          <div class="scale">
+            <div class="track" id="track-mc" role="img" aria-label="Sous-bande 869,400 à 869,650 MHz, canal MeshCore centré sur 869,618 MHz et occupant 62,5 kHz"></div>
+            <div class="ends"><span>869,400</span><span>869,525</span><span>869,650</span></div>
+          </div>
+          <dl class="specs">
+            <div><dt>Portée</dt><dd>Régionale</dd></div>
+            <div><dt>Cycle</dt><dd>10 % max</dd></div>
+            <div><dt>Licence</dt><dd>Aucune</dd></div>
+          </dl>
+          <ul>
+            <li>Messages écrits relayés automatiquement par les répéteurs solaires, sans opérateur à l'écoute.</li>
+            <li>Accusé de réception en message direct ; trace écrite des échanges.</li>
+            <li>Limites : texte court uniquement, terminaux préparés à l'avance.</li>
+          </ul>
+          <a class="more" href="maillage.html">Page maillage LoRa →</a>
+        </section>
+      </div>
+
+      <div class="panel">
+        <p class="panel-label">Exemple d'enchaînement</p>
+        <div class="flow">
+          <div class="node t"><b>Terrain</b><span>Habitant ou équipe, en phonie PMR446 canal 7</span></div>
+          <div class="node t"><b>Poste communal</b><span>Recueille l'information et la saisit sur un terminal MeshCore</span></div>
+          <div class="node r"><b>Maillage LoRa</b><span>Relais automatique par les répéteurs solaires</span></div>
+          <div class="node t"><b>Destinataire</b><span>PC départemental, mairie voisine, poste CB</span></div>
+        </div>
+        <p class="small muted">Chaque moyen couvre une partie des besoins : la phonie pour l'échange immédiat, le maillage pour la portée régionale sans relais humain, l'accusé de réception et la trace écrite.</p>
+      </div>
+
+      <p class="source">Cadre : PMR446 — ERC/DEC/(98)25 et ECC/DEC/(15)05 ; CB — ECC/DEC/(11)03 ; LoRa 869,4–869,65 MHz — décision Arcep n° 2014-1263 modifiée (décision européenne 2006/771/CE), TNRBF (ANFR). Autorisation générale : aucune licence ni déclaration individuelle.</p>
+    </div>
   </div>
 </section>
 
@@ -136,17 +207,17 @@
       </div>
       <div class="letter">
         <p>Au matin du 2 novembre 2023, après la tempête Ciaran, plus de la moitié des antennes mobiles du Finistère étaient muettes. Des communes entières n'avaient plus de lien, ni entre habitants, ni avec la préfecture, ni avec les secours.</p>
-        <p>Le PMRS part d'une idée simple : <strong>un moyen de communication de secours doit exister avant la crise</strong>, sans dépendre de ce qui tombe pendant la crise. Nous posons des répéteurs radio solaires sur des points hauts prêtés par des communes, des casernes, des entreprises et des particuliers. Ensemble, ils forment un maillage qui fonctionne seul, toute l'année.</p>
-        <p>Ce n'est pas un service de secours et ça ne le remplace pas. C'est une brique de plus, ouverte, documentée, interopérable avec le reste du réseau MeshCore français.</p>
+        <p>Le PMRS part d'une idée simple : <strong>un moyen de communication de secours doit exister avant la crise</strong>, sans dépendre de ce qui tombe pendant la crise. Il s'appuie sur trois moyens radio complémentaires : la phonie PMR446 et CB, utilisable avec des postes du commerce, et un maillage de messages texte relayé par des répéteurs solaires posés sur des points hauts prêtés par des communes, des casernes, des entreprises et des particuliers.</p>
+        <p>Ce n'est pas un service de secours et ça ne le remplace pas. Ce sont des moyens de plus, ouverts, documentés, et interopérables avec les autres usagers du PMR446, de la CB et du réseau MeshCore français.</p>
         <p class="sign">— Le collectif PMRS</p>
       </div>
     </div>
     <div class="stack">
       <div class="principle"><span class="k">A</span><div><h3>Complément des moyens officiels</h3><p>Les appels d'urgence passent par le 18, le 15 et le 112 tant qu'un réseau les porte. Le PMRS sert à faire remonter l'information jusqu'à un point où ces moyens existent.</p></div></div>
       <div class="principle"><span class="k">B</span><div><h3>Préparation avant la crise</h3><p>On ne rejoint pas le réseau pendant la crise. Terminaux, canaux et contacts se configurent et se testent avant.</p></div></div>
-      <div class="principle"><span class="k">C</span><div><h3>Temps d'émission limité</h3><p>La bande est partagée et limitée à 10 % de temps d'émission. Messages courts, une information par message.</p></div></div>
+      <div class="principle"><span class="k">C</span><div><h3>Fréquences partagées</h3><p>PMR446, CB et LoRa sont ouverts à tous. Messages courts, une information par message ; sur le maillage, l'émission est limitée à 10 % du temps.</p></div></div>
       <div class="principle"><span class="k">D</span><div><h3>Ouvert et interopérable</h3><p>Logiciel libre, profil radio France, règles de nommage communes : le maillage breton fait partie du réseau national.</p></div></div>
-      <div class="principle"><span class="k">E</span><div><h3>Réversible et gratuit pour l'hôte</h3><p>Un répéteur ne se raccorde à rien et se dépose sur simple demande. Matériel et pose sont à la charge du PMRS.</p></div></div>
+      <div class="principle"><span class="k">E</span><div><h3>Accessible et réversible</h3><p>Postes du commerce, sans licence. Un répéteur ne se raccorde à rien, se dépose sur simple demande et ne coûte rien à l'hôte.</p></div></div>
     </div>
   </div>
 </section>
@@ -155,7 +226,7 @@
 <section class="section" id="pourquoi">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">01 — La problématique</p>
+      <p class="eyebrow">La problématique</p>
       <h2>Impact de la tempête Ciaran sur les télécommunications</h2>
       <p class="lede">En novembre 2023, la coupure électrique a mis à l'arrêt une grande partie des sites mobiles bretons : voix, SMS, données et appels d'urgence compris.</p>
     </div>
@@ -219,293 +290,21 @@
       </div>
 
       <div class="stack">
-        <h3>Les moyens existants, et la brique que nous ajoutons</h3>
+        <h3>Comparatif des moyens de communication</h3>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Moyen</th><th>Portée</th><th>Dépendances</th><th>Alimentation</th><th>Usage en crise</th></tr></thead>
             <tbody>
               <tr><th>GSM / 4G / 5G</th><td>Nationale</td><td>Opérateur, backhaul, électricité</td><td>Secteur + batterie site</td><td>Indisponible si le site tombe</td></tr>
               <tr><th>Satellite</th><td>Mondiale</td><td>Opérateur, abonnement, vue du ciel</td><td>Groupe ou batterie</td><td>Fiable mais coûteux et ponctuel</td></tr>
-              <tr><th>PMR446</th><td>1 à 3 km</td><td>Aucune</td><td>Piles</td><td>Local, phonie, de proche en proche</td></tr>
-              <tr><th>CB 27 MHz</th><td>5 à 30 km</td><td>Aucune</td><td>Véhicule / secteur</td><td>Phonie, opérateur présent en permanence</td></tr>
+              <tr class="ours"><th>PMR446 <span class="tag-pmrs">PMRS</span></th><td>1 à 3 km</td><td>Aucune</td><td>Piles</td><td>Local, phonie, de proche en proche</td></tr>
+              <tr class="ours"><th>CB 27 MHz <span class="tag-pmrs">PMRS</span></th><td>5 à 30 km</td><td>Aucune</td><td>Véhicule / secteur</td><td>Phonie, opérateur présent en permanence</td></tr>
               <tr><th>Radioamateur</th><td>Régionale et au-delà</td><td>Licence individuelle</td><td>Autonome possible</td><td>Efficace mais réservé aux licenciés</td></tr>
-              <tr class="ours"><th>Maillage LoRa PMRS</th><td>Régionale, par sauts</td><td>Aucune</td><td>Solaire autonome</td><td>Texte, sans intervention humaine</td></tr>
+              <tr class="ours"><th>Maillage LoRa <span class="tag-pmrs">PMRS</span></th><td>Régionale, par sauts</td><td>Aucune</td><td>Solaire autonome</td><td>Texte, sans intervention humaine</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="muted small">Aucun de ces moyens ne combine autonomie énergétique, absence d'opérateur, fonctionnement sans présence humaine et couverture régionale. La dernière ligne ne remplace aucune des autres : elle les complète.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 02 PRINCIPE ================= -->
-<section class="section" id="principe">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">02 — Le principe</p>
-      <h2>Principe du réseau maillé</h2>
-      <p class="lede">Chaque message est relayé jusqu'à son destinataire par des répéteurs fixes. Les terminaux, eux, ne relaient pas : ils émettent et reçoivent.</p>
-    </div>
-
-    <div class="stack-lg">
-      <div class="panel">
-        <div class="flow" aria-label="Chaîne de transmission">
-          <div class="node t"><b>Terminal</b><span>Boîtier de poche ou smartphone</span></div>
-          <div class="node r"><b>Répéteur</b><span>Point haut solaire</span></div>
-          <div class="node r"><b>Répéteur</b><span>Point urbain solaire</span></div>
-          <div class="node t"><b>Terminal</b><span>Destinataire</span></div>
-        </div>
-      </div>
-
-      <div class="grid g3">
-        <div class="panel"><h3>Aucune infrastructure centrale</h3><p class="muted">Pas de serveur, pas d'opérateur, pas d'abonnement. Le réseau fonctionne même totalement coupé d'Internet.</p></div>
-        <div class="panel"><h3>Messages directs chiffrés</h3><p class="muted">Un message direct est chiffré entre les deux terminaux ; les répéteurs le transportent sans le déchiffrer.</p></div>
-        <div class="panel"><h3>Portée régionale par sauts</h3><p class="muted">Jusqu'à 32 sauts successifs, soit plusieurs centaines de kilomètres de proche en proche.</p></div>
-      </div>
-
-      <div class="panel stepper" id="resilience">
-        <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center">
-          <div>
-            <p class="panel-label">Résilience</p>
-            <h3 style="font-size:1.5rem">Perte d'un répéteur</h3>
-          </div>
-          <div class="steps" role="group" aria-label="Étapes">
-            <button type="button" aria-pressed="true"><b>1</b>Nominal</button>
-            <button type="button" aria-pressed="false"><b>2</b>Panne</button>
-            <button type="button" aria-pressed="false"><b>3</b>Recherche</button>
-            <button type="button" aria-pressed="false"><b>4</b>Nouvelle route</button>
-          </div>
-        </div>
-        <div class="diagram">
-          <svg viewBox="0 0 800 260" role="img" aria-label="Schéma : terminaux A et B reliés par les répéteurs R1, R2, R3 et R4">
-            <line data-edge="a-r1"  x1="60"  y1="200" x2="230" y2="120"/>
-            <line data-edge="r1-r2" x1="230" y1="120" x2="400" y2="70"/>
-            <line data-edge="r2-r3" x1="400" y1="70"  x2="570" y2="120"/>
-            <line data-edge="r3-b"  x1="570" y1="120" x2="740" y2="200"/>
-            <line data-edge="r1-r4" x1="230" y1="120" x2="400" y2="205"/>
-            <line data-edge="r4-r3" x1="400" y1="205" x2="570" y2="120"/>
-            <g data-pos="a"><circle class="dg-term" cx="60" cy="200" r="24"/><text class="dg-term-t" x="60" y="205" text-anchor="middle">A</text></g>
-            <g data-pos="b"><circle class="dg-term" cx="740" cy="200" r="24"/><text class="dg-term-t" x="740" y="205" text-anchor="middle">B</text></g>
-            <g data-pos="r1"><circle class="dg-rep" cx="230" cy="120" r="26"/><text class="dg-rep-t" x="230" y="125" text-anchor="middle">R1</text></g>
-            <g data-node="r2" data-pos="r2"><circle cx="400" cy="70" r="26"/><text x="400" y="75" text-anchor="middle">R2</text></g>
-            <g data-pos="r3"><circle class="dg-rep" cx="570" cy="120" r="26"/><text class="dg-rep-t" x="570" y="125" text-anchor="middle">R3</text></g>
-            <g data-node="r4" data-pos="r4"><circle cx="400" cy="205" r="26"/><text x="400" y="210" text-anchor="middle">R4</text></g>
-          </svg>
-        </div>
-        <div class="legend">
-          <span><i></i>Route active</span>
-          <span><i class="dash"></i>Diffusion en cours</span>
-          <span><i class="brk"></i>Liaison rompue</span>
-          <span><i class="idle"></i>Liaison disponible</span>
-        </div>
-        <div class="step-caption" aria-live="polite"><h3></h3><p></p></div>
-        <p class="small muted" style="border-top:1px solid var(--line); padding-top:.9rem">La redondance suppose un recouvrement des zones de couverture : <strong>chaque point haut accueilli crée une route de secours pour ses voisins.</strong></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 03 MATÉRIEL ================= -->
-<section class="section" id="materiel">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">03 — Le matériel</p>
-      <h2>Le répéteur et les terminaux</h2>
-      <p class="lede">Mise sous tension unique, fonctionnement 24 h/24 sur énergie solaire, supervision à distance par radio.</p>
-    </div>
-
-    <div class="stack-lg">
-      <div class="grid g3">
-        <div class="panel stat"><span class="v">19–35<small>mA</small></span><p>consommation moyenne du répéteur</p></div>
-        <div class="panel stat"><span class="v">3–5<small>jours</small></span><p>d'autonomie sans aucun soleil, batterie pleine</p></div>
-        <div class="panel stat"><span class="v">15<small>min</small></span><p>de soleil par jour suffisent en décembre, en Bretagne</p></div>
-      </div>
-
-      <div class="grid g2">
-        <div class="panel">
-          <p class="panel-label">Le module répéteur</p>
-          <dl class="kv">
-            <div><dt>Boîtier</dt><dd>IP67, fixable sur barrière, mur ou mât type TV</dd></div>
-            <div><dt>Radio</dt><dd>LoRa <strong>869,618 MHz</strong>, 100 à 500 mW max</dd></div>
-            <div><dt>Antenne</dt><dd>Verticale de 3 à 9 dBi selon la topographie</dd></div>
-            <div><dt>Énergie</dt><dd>Panneau solaire de 5 à 10 W</dd></div>
-            <div><dt>Batterie</dt><dd>18650 3,7 V, −20 à +60 °C (migration LiFePO4 à l'étude)</dd></div>
-            <div><dt>Poids</dt><dd>2kg maximum</dd></div>
-          </dl>
-        </div>
-        <div class="panel">
-          <p class="panel-label">Retour d'expérience</p>
-          <ul>
-            <li><strong>9 répéteurs</strong> de ce type en service depuis 3 ans en Ille-et-Vilaine.</li>
-            <li>Aucune coupure liée à l'énergie constatée.</li>
-            <li>Batterie jamais descendue sous <strong>70 %</strong>.</li>
-            <li>Panneau dimensionné sur le mois le plus défavorable ; durée de vie visée 10 ans.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid g2">
-        <div class="panel">
-          <p class="panel-label">Les terminaux</p>
-          <h3>Deux familles, qui doivent coexister</h3>
-          <dl class="kv">
-            <div><dt>Compagnon</dt><dd>Petit boîtier radio piloté en Bluetooth par l'application MeshCore d'un smartphone. Léger, saisie rapide, coût faible — mais dépend d'un téléphone chargé.</dd></div>
-            <div><dt>Autonome</dt><dd>Terminal à clavier (LilyGo T-Deck Plus, Elecrow ThinkNode M9…) qui fonctionne sans téléphone. C'est le matériel à placer en mairie, au PC de secours ou dans un véhicule.</dd></div>
-          </dl>
-          <p class="small muted">Un terminal a une portée de terminal, pas de répéteur : il doit être à portée d'un répéteur pour rejoindre le maillage.</p>
-        </div>
-        <div class="panel">
-          <p class="panel-label">Pourquoi MeshCore plutôt que Meshtastic</p>
-          <dl class="kv">
-            <div><dt>Relayage</dt><dd>Seuls les répéteurs dédiés relaient — <span class="muted">Meshtastic : tous les nœuds, par inondation</span></dd></div>
-            <div><dt>Charge</dt><dd>Maîtrisée, trafic dirigé — <span class="muted">croît vite avec le nombre de nœuds</span></dd></div>
-            <div><dt>Rôles</dt><dd>Terminal / Répéteur / Salon, rôles stricts</dd></div>
-            <div><dt>Cible</dt><dd>Infrastructure territoriale planifiée</dd></div>
-          </dl>
-          <p class="small muted">Un réseau territorial repose sur des répéteurs fixes dimensionnés, pas sur la densité de terminaux. Les deux logiciels tournent sur le même matériel : le choix reste réversible.</p>
-        </div>
-      </div>
-
-      <div class="stack">
-        <h3>Fréquences</h3>
-        <div class="grid g2">
-          <section class="panel" aria-label="Maillage de données LoRa MeshCore">
-            <p class="panel-label">Données — LoRa MeshCore</p>
-            <div class="readout">
-              <span class="ch">MeshCore</span>
-              <span class="freq">869,618<small>MHz</small></span>
-            </div>
-            <p class="note">Profil France (EU/UK Narrow) · BW 62,5 kHz · SF8 · CR8 · région par défaut fr</p>
-            <div class="scale">
-              <div class="track" id="track-mc" role="img" aria-label="Sous-bande 869,400 à 869,650 MHz, canal MeshCore centré sur 869,618 MHz et occupant 62,5 kHz"></div>
-              <div class="ends"><span>869,400</span><span>869,525</span><span>869,650</span></div>
-            </div>
-            <dl class="specs">
-              <div><dt>Puissance</dt><dd>500 mW PAR</dd></div>
-              <div><dt>Cycle</dt><dd>10 % max</dd></div>
-              <div><dt>Licence</dt><dd>Aucune</dd></div>
-            </dl>
-          </section>
-          <section class="panel" aria-label="Veille phonie PMR446">
-            <p class="panel-label">Phonie — veille PMR446</p>
-            <div class="readout">
-              <span class="ch">Canal 7</span>
-              <span class="freq">446,081&thinsp;25<small>MHz</small></span>
-            </div>
-            <p class="note">Analogique, antenne intégrée — tout poste PMR446 du commerce.</p>
-            <div class="scale">
-              <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
-              <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
-            </div>
-            <dl class="specs">
-              <div><dt>Pas</dt><dd>12,5 kHz</dd></div>
-              <div><dt>Puissance</dt><dd>500 mW PAR</dd></div>
-              <div><dt>Canaux</dt><dd>16</dd></div>
-            </dl>
-          </section>
-        </div>
-        <p class="source">Cadre : décision Arcep n° 2014-1263 modifiée (décision européenne 2006/771/CE), TNRBF (ANFR) ; ERC/DEC/(98)25 et ECC Decision (15)05 pour le PMR446. Autorisation générale : aucune licence ni déclaration individuelle.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 04 AVANCEMENT ================= -->
-<section class="section" id="avancement">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">04 — État du réseau</p>
-      <h2>État du réseau et calendrier</h2>
-      <p class="lede">Le maillage n'a d'intérêt que s'il est continu : chaque site accueilli conditionne la couverture des communes voisines.</p>
-    </div>
-
-    <div class="stack-lg">
-      <div class="grid g3">
-        <div class="panel stat"><span class="v">1 800+</span><p>répéteurs actifs en France <span class="source">— relevé d'octobre 2026</span></p></div>
-        <div class="panel stat"><span class="v">30 700</span><p>trames relayées par jour</p></div>
-        <div class="panel stat"><span class="v">5 000+</span><p>utilisateurs estimés en France <span class="source">— d'après les compagnons aperçus</span></p></div>
-      </div>
-
-      <ol class="timeline">
-        <li class="done">
-          <span class="tag">Phase 1</span>
-          <span class="when">Hiver 2025</span>
-          <h3>Couverture 29</h3>
-          <ul class="list"><li>Premiers répéteurs installés</li><li>Validation du profil radio</li></ul>
-        </li>
-        <li class="done">
-          <span class="tag">Phase 2</span>
-          <span class="when">Printemps → été 2026</span>
-          <h3>Couverture 22 / 44</h3>
-          <ul class="list"><li>Densification des points hauts</li><li>Contact avec les gestionnaires de sites</li><li>Premiers exercices de test</li></ul>
-        </li>
-        <li class="now">
-          <span class="tag">Phase 3 · en cours</span>
-          <span class="when">Hiver 2026 → printemps 2027</span>
-          <h3>Continuité 56 et 35</h3>
-          <ul class="list"><li>Redondance sur les axes principaux</li><li>Résorption des dernières zones blanches</li><li>Procédure d'usage en crise</li><li>Communication sur la technologie</li></ul>
-        </li>
-        <li>
-          <span class="tag">Phase 4</span>
-          <span class="when">Été 2027 → …</span>
-          <h3>Continuité nationale</h3>
-          <ul class="list"><li>Couverture nationale continue et solide</li></ul>
-        </li>
-      </ol>
-
-      <div class="grid g2">
-        <div class="panel">
-          <p class="panel-label">Ils accueillent déjà un répéteur</p>
-          <p class="muted">Gendarmeries, casernes de pompiers, mairies, gymnases, exploitants agricoles, écoles, particuliers…</p>
-        </div>
-        <div class="callout warn">
-          <b>Zone blanche identifiée : Centre Bretagne</b>
-          <p>C'est là qu'un point haut supplémentaire a le plus d'effet. <a href="#accueil">Vous avez un site ?</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 05 ACCUEIL ================= -->
-<section class="section" id="accueil">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">05 — Accueillir un répéteur</p>
-      <h2>Accueillir un répéteur</h2>
-      <p class="lede">Sites recherchés : château d'eau, toit de mairie, caserne, pylône, bâtiment en hauteur. Chaque site accueilli étend la couverture et crée une route de secours pour les sites voisins.</p>
-    </div>
-
-    <div class="stack-lg">
-      <dl class="idcard">
-        <div><dt>Emprise</dt><dd>35 × 35 × 25 cm<small>+ une antenne de 20 à 150 cm</small></dd></div>
-        <div><dt>Énergie</dt><dd>Aucune<small>Le module est autonome, il ne se raccorde à rien</small></dd></div>
-        <div><dt>Réseau</dt><dd>Aucun<small>Ni filaire, ni Wi-Fi, aucun accès à vos systèmes</small></dd></div>
-        <div><dt>Fixation</dt><dd>Avec ou sans perçage<small>Fixation sur mât standard préférée</small></dd></div>
-        <div><dt>Accès</dt><dd>Une visite d'installation<small>Puis seulement en cas de maintenance</small></dd></div>
-        <div><dt>Assurance</dt><dd>Précisée dans la convention<small>Selon le site et l'hôte</small></dd></div>
-        <div><dt>Réversibilité</dt><dd>Dépose complète<small>Sur simple demande</small></dd></div>
-        <div><dt>Coût</dt><dd>Aucun<small>Matériel et pose financés par le PMRS</small></dd></div>
-      </dl>
-
-      <div class="stack">
-        <h3>Ce que nous demandons</h3>
-        <div class="grid g3">
-          <div class="panel ask"><span class="n">1</span><h3>L'accueil d'un répéteur</h3><p>Sur un point haut ou stratégique de votre secteur.</p></div>
-          <div class="panel ask"><span class="n">2</span><h3>Une visite technique</h3><p>Pour définir ensemble l'emplacement, la fixation et les modalités d'accès.</p></div>
-          <div class="panel ask"><span class="n">3</span><h3>Une convention simple</h3><p>Précisant la réversibilité, l'assurance et les conditions d'intervention.</p></div>
-        </div>
-      </div>
-
-      <div class="panel" id="contact">
-        <p class="panel-label">Contact</p>
-        <p>PMRS</p>
-        <div class="contact">
-          <span class="mail" id="mail" tabindex="0">contact@pmrs.fr</span>
-          <button class="btn" type="button" data-copy="#mail">Copier</button>
-          <a class="btn ghost" href="mailto:contact@pmrs.fr?subject=Accueil%20d%27un%20r%C3%A9p%C3%A9teur%20PMRS">Écrire</a>
-        </div>
+        <p class="muted small">Le PMRS utilise trois de ces moyens : PMR446, CB et maillage LoRa. La phonie sert à l'échange immédiat ; le maillage apporte le relais automatique, la couverture régionale et la trace écrite. Ils sont complémentaires et ne remplacent aucun moyen officiel.</p>
       </div>
     </div>
   </div>
@@ -515,33 +314,18 @@
 <section class="section" id="crise">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">06 — En cas de crise</p>
+      <p class="eyebrow">En cas de crise</p>
       <h2>Usage en cas de crise</h2>
-      <p class="lede">La procédure d'usage fixe le plan de canaux, l'équipement des porteurs et la discipline de trafic. Résumé ci-dessous.</p>
+      <p class="lede">La procédure d'usage en crise fixe les états du dispositif, l'équipement des porteurs et la discipline de trafic.</p>
     </div>
 
     <div class="stack-lg">
-      <div class="vs">
-        <div class="panel yes">
-          <p class="panel-label">Message direct</p>
-          <h3>Acquitté : l'émetteur sait qu'il est arrivé</h3>
-          <p class="muted">Le destinataire renvoie un accusé qui fixe la route.</p>
-          <p class="rule">→ Toute demande qui engage une action passe par là.</p>
-        </div>
-        <div class="panel no">
-          <p class="panel-label">Message de canal</p>
-          <h3>Diffusé à tous, sans accusé</h3>
-          <p class="muted">Un silence ne signifie rien : ni lu, ni perdu. L'émetteur n'est pas authentifié.</p>
-          <p class="rule">→ Situation générale seulement, jamais un ordre.</p>
-        </div>
-      </div>
-
       <ol class="states">
-        <li class="s-veille"><b>Veille</b><span class="trg">Permanent</span><span class="act">Terminal chargé et joignable</span><span class="chn">Public</span></li>
-        <li class="s-pre"><b>Pré-alerte</b><span class="trg">Vigilance orange ou rouge</span><span class="act">Charger, emporter, confirmer sa disponibilité</span><span class="chn">#bretagne, hashtag départemental</span></li>
-        <li class="s-act"><b>Activation</b><span class="trg">Coupure constatée</span><span class="act">Annoncer en un message, puis écouter</span><span class="chn">canal opérations</span></li>
-        <li class="s-cond"><b>Conduite</b><span class="trg">Pendant l'événement</span><span class="act">Points de situation à cadence fixe</span><span class="chn">canal opérations</span></li>
-        <li class="s-levee"><b>Levée</b><span class="trg">Réseaux rétablis</span><span class="act">Message de fin, compte rendu sous 48 h</span><span class="chn">hashtag départemental</span></li>
+        <li class="s-veille"><b>Veille</b><span class="trg">Permanent</span><span class="act">Postes et terminaux chargés, veille possible</span></li>
+        <li class="s-pre"><b>Pré-alerte</b><span class="trg">Vigilance orange ou rouge</span><span class="act">Charger, emporter, confirmer sa disponibilité</span></li>
+        <li class="s-act"><b>Activation</b><span class="trg">Coupure constatée</span><span class="act">S'annoncer une fois, puis écouter</span></li>
+        <li class="s-cond"><b>Conduite</b><span class="trg">Pendant l'événement</span><span class="act">Points de situation à cadence fixe</span></li>
+        <li class="s-levee"><b>Levée</b><span class="trg">Réseaux rétablis</span><span class="act">Message de fin, compte rendu sous 48 h</span></li>
       </ol>
 
       <div class="callout">
@@ -561,14 +345,14 @@
 <section class="section" id="ressources">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">07 — Ressources</p>
+      <p class="eyebrow">Ressources</p>
       <h2>Outils et documentation</h2>
-      <p class="lede">Le maillage breton s'appuie sur le travail de nombreux bénévoles : cartes, observateurs, outils d'analyse et documentation. Merci à eux.</p>
+      <p class="lede">Pages du PMRS par moyen radio, outils de la communauté MeshCore bretonne et ressources sur la radio de secours. Merci aux bénévoles qui les maintiennent.</p>
     </div>
 
     <div class="grid g2" style="gap:2rem 1.5rem">
       <div class="res-group">
-        <h3>Cartes &amp; observation</h3>
+        <h3>Maillage LoRa — cartes</h3>
         <ul class="res">
           <li><a href="https://meshmapnordouest.serveurperso.in/" target="_blank" rel="noopener">
             <b>Carte MeshCore Nord-Ouest</b><span class="host">meshmapnordouest.serveurperso.in</span>
@@ -583,7 +367,7 @@
       </div>
 
       <div class="res-group">
-        <h3>Analyse du trafic</h3>
+        <h3>Maillage LoRa — analyse du trafic</h3>
         <ul class="res">
           <li><a href="https://meshqual.gamma-network.eu/" target="_blank" rel="noopener">
             <b>MeshQual</b><span class="host">meshqual.gamma-network.eu</span>
@@ -595,7 +379,7 @@
       </div>
 
       <div class="res-group">
-        <h3>Documentation &amp; règles communes</h3>
+        <h3>Maillage LoRa — documentation</h3>
         <ul class="res">
           <li><a href="https://wiki.meshcore.bzh/" target="_blank" rel="noopener">
             <b>Wiki MeshCore Bretagne</b><span class="host">wiki.meshcore.bzh</span>
@@ -610,16 +394,41 @@
       </div>
 
       <div class="res-group">
-        <h3>Pour aller plus loin</h3>
+        <h3>Pages PMRS et radio de secours</h3>
         <ul class="res">
           <li><a href="https://www.la-resilience.fr/" target="_blank" rel="noopener">
             <b>La Résilience</b><span class="host">la-resilience.fr</span>
             <span class="desc">Résilience pratique au quotidien, avec de nombreux articles radio : antennes et répéteurs MeshCore/Meshtastic, PMR446, CB.</span><span class="arrow">↗</span></a></li>
+          <li><a href="pmr446.html">
+            <b>PMR446</b><span class="host">pmrs.fr/pmr446</span>
+            <span class="desc">Veille canal 7, réglage des postes, bonnes pratiques, plan des 16 canaux.</span><span class="arrow">→</span></a></li>
+          <li><a href="cb.html">
+            <b>CB 27 MHz</b><span class="host">pmrs.fr/cb</span>
+            <span class="desc">Veille canal 9, réglage des postes, bonnes pratiques, plan des 40 canaux.</span><span class="arrow">→</span></a></li>
+          <li><a href="maillage.html">
+            <b>Maillage LoRa MeshCore</b><span class="host">pmrs.fr/maillage</span>
+            <span class="desc">Principe, répéteurs, terminaux, état du réseau, accueil d'un répéteur.</span><span class="arrow">→</span></a></li>
           <li><a href="procedure.html">
             <b>Procédure d'usage en crise</b><span class="host">pmrs.fr/procedure</span>
             <span class="desc">Plan de canaux, préparation des terminaux, conduite en crise et gabarits.</span><span class="arrow">→</span></a></li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="wrap stack">
+    <div class="section-head" style="margin:0">
+      <p class="eyebrow">Contact</p>
+      <h2>Contacter le collectif</h2>
+      <p class="lede">Rejoindre la veille PMR446 ou CB, s'équiper d'un terminal, accueillir un répéteur, organiser un exercice avec une commune.</p>
+    </div>
+    <div class="contact">
+      <span class="mail" id="mail" tabindex="0">contact@pmrs.fr</span>
+      <button class="btn" type="button" data-copy="#mail">Copier</button>
+      <a class="btn ghost" href="mailto:contact@pmrs.fr">Écrire</a>
     </div>
   </div>
 </section>
@@ -631,11 +440,14 @@
     <div class="row">
       <span class="mono">PMRS · Projet Maillage Radio Secours</span>
       <a href="procedure.html">Procédure de crise</a>
+      <a href="pmr446.html">PMR446</a>
+      <a href="cb.html">CB</a>
+      <a href="maillage.html">Maillage LoRa</a>
       <a href="#ressources">Ressources</a>
       <a href="mailto:contact@pmrs.fr">contact@pmrs.fr</a>
     </div>
     <p>Initiative citoyenne sans but lucratif. Le PMRS n'est pas intégré à la chaîne ORSEC et ne remplace aucun moyen officiel d'alerte ou de secours.</p>
-    <p>LoRa MeshCore — sous-bande 869,400 à 869,650 MHz, 500 mW PAR, rapport cyclique 10 %. PMR446 analogique — 446,0 à 446,2 MHz, 500 mW PAR. Les deux sans licence ni redevance.</p>
+    <p>PMR446 analogique — 446,0 à 446,2 MHz, 500 mW PAR. CB — 40 canaux de 26,965 à 27,405 MHz. LoRa MeshCore — sous-bande 869,400 à 869,650 MHz, 500 mW PAR, rapport cyclique 10 %. Les trois sans licence ni redevance.</p>
   </div>
 </footer>
 

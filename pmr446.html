@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PMR446 — phonie de proximité — PMRS</title>
+  <meta name="description" content="PMR446 dans le PMRS : veille sur le canal 7 (446,081 25 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 16 canaux.">
+  <link rel="canonical" href="https://pmrs.fr/pmr446.html">
+  <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PMRS">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://pmrs.fr/pmr446.html">
+  <meta property="og:title" content="PMR446 — phonie de proximité — PMRS">
+  <meta property="og:description" content="PMR446 dans le PMRS : veille sur le canal 7 (446,081 25 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 16 canaux.">
+  <meta property="og:image" content="https://pmrs.fr/og-pmr446.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PMR446 canal 7, 446,081 25 MHz — veille phonie du PMRS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PMR446 — phonie de proximité — PMRS">
+  <meta name="twitter:description" content="PMR446 dans le PMRS : veille sur le canal 7 (446,081 25 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 16 canaux.">
+  <meta name="twitter:image" content="https://pmrs.fr/og-pmr446.png">
+  <meta name="twitter:image:alt" content="PMR446 canal 7, 446,081 25 MHz — veille phonie du PMRS">
+
+  <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Saira+Condensed:wght@600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PMRS, accueil">
+      <img src="logo.png" width="30" height="30" alt="">
+      <b>PMRS</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html#moyens">Moyens radio</a>
+      <a href="pmr446.html" aria-current="page">PMR446</a>
+      <a href="cb.html">CB</a>
+      <a href="maillage.html">Maillage LoRa</a>
+      <a href="procedure.html">Procédure de crise</a>
+      <a href="index.html#ressources">Ressources</a>
+      <a class="cta" href="index.html#contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="theme" type="button">Auto</button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap stack-lg" style="padding-block:clamp(2rem,6vw,3.5rem) 4rem">
+
+  <header class="doc-head">
+    <p class="eyebrow"><span class="dot"></span>Phonie de proximité</p>
+    <h1>PMR446</h1>
+    <p class="lede">Radio de voix sans licence, utilisable avec tout poste PMR446 du commerce. Le PMRS assure la veille sur le canal 7.</p>
+  </header>
+
+  <section class="panel" aria-label="Fréquence de veille PMR446">
+    <p class="panel-label">Veille PMRS</p>
+    <div class="readout">
+      <span class="ch">Canal 7</span>
+      <span class="freq">446,081&thinsp;25<small>MHz</small></span>
+    </div>
+    <p class="note">Analogique, antenne intégrée — tout poste PMR446 du commerce.</p>
+    <div class="scale">
+      <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
+      <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Caractéristiques</h2>
+    <dl class="idcard">
+      <div><dt>Bande</dt><dd class="mono">446,0 – 446,2 MHz</dd></div>
+      <div><dt>Canaux</dt><dd>16 analogiques<small>Pas de 12,5 kHz</small></dd></div>
+      <div><dt>Puissance</dt><dd>500 mW PAR</dd></div>
+      <div><dt>Antenne</dt><dd>Intégrée au poste<small>Non amovible</small></dd></div>
+      <div><dt>Portée</dt><dd>1 à 3 km<small>Moins en zone bâtie, plus depuis un point haut</small></dd></div>
+      <div><dt>Relais</dt><dd>Interdits<small>Pas de répéteur ni de station de base</small></dd></div>
+      <div><dt>Alimentation</dt><dd>Piles ou batterie<small>Prévoir des rechanges</small></dd></div>
+      <div><dt>Licence</dt><dd>Aucune<small>Autorisation générale</small></dd></div>
+    </dl>
+  </section>
+
+  <section class="grid g2">
+    <div class="panel">
+      <p class="panel-label">Usage dans le PMRS</p>
+      <ul>
+        <li>Veille sur le canal 7.</li>
+        <li>Échanges de voix entre voisins, équipes et bâtiments proches.</li>
+        <li>Faire remonter une information jusqu'à un poste équipé d'un terminal MeshCore, qui la retransmet par écrit sur le <a href="maillage.html">maillage LoRa</a>.</li>
+        <li>Postes peu coûteux, faciles à distribuer, utilisables sans formation.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <p class="panel-label">Régler son poste</p>
+      <ul>
+        <li>Canal 7, en vérifiant la fréquence : <strong>446,081 25 MHz</strong>. La numérotation des canaux varie selon les marques.</li>
+        <li>Sous-ton (CTCSS ou DCS) <strong>désactivé</strong> : un poste réglé avec un sous-ton n'entend que les postes réglés sur le même.</li>
+        <li>Piles ou batteries de rechange chargées.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="panel">
+      <p class="panel-label">Bonnes pratiques d'émission</p>
+      <ul>
+        <li>Écouter avant d'émettre.</li>
+        <li>Appuyer, attendre une seconde, puis parler ; relâcher pour laisser répondre.</li>
+        <li>Se nommer et nommer sa commune ; messages courts.</li>
+        <li>Canal ouvert à tous : rien de confidentiel, pas de données nominatives ni d'état de santé.</li>
+      </ul>
+    </div>
+    <div class="callout warn">
+      <b>Limites</b>
+      <p>Portée de quelques kilomètres, pas de relais automatique, une personne doit être à l'écoute, aucune trace écrite. Pour aller plus loin ou garder une trace, l'information passe sur la <a href="cb.html">CB</a> ou le <a href="maillage.html">maillage LoRa</a>.</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Plan des 16 canaux</h2>
+    <ul class="chgrid" aria-label="Canaux PMR446 et fréquences en MHz"><li><b>01</b><span>446,00625</span></li><li><b>02</b><span>446,01875</span></li><li><b>03</b><span>446,03125</span></li><li><b>04</b><span>446,04375</span></li><li><b>05</b><span>446,05625</span></li><li><b>06</b><span>446,06875</span></li><li class="on"><b>07</b><span>446,08125</span></li><li><b>08</b><span>446,09375</span></li><li><b>09</b><span>446,10625</span></li><li><b>10</b><span>446,11875</span></li><li><b>11</b><span>446,13125</span></li><li><b>12</b><span>446,14375</span></li><li><b>13</b><span>446,15625</span></li><li><b>14</b><span>446,16875</span></li><li><b>15</b><span>446,18125</span></li><li><b>16</b><span>446,19375</span></li></ul>
+    <p class="source">Canaux 1 à 8 historiques ; canaux 9 à 16 ouverts par la décision ECC/DEC/(15)05.</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="row">
+      <a class="mono" href="index.html">← PMRS · accueil</a>
+      <a href="pmr446.html">PMR446</a>
+      <a href="cb.html">CB</a>
+      <a href="maillage.html">Maillage LoRa</a>
+      <a href="procedure.html">Procédure de crise</a>
+      <a href="mailto:contact@pmrs.fr">contact@pmrs.fr</a>
+    </div>
+    <p>PMR446 analogique — 446,0 à 446,2 MHz, 16 canaux, 500 mW PAR, antenne intégrée, sans licence. Cadre : ERC/DEC/(98)25 et ECC/DEC/(15)05.</p>
+    <p>Initiative citoyenne sans but lucratif, non intégrée à la chaîne ORSEC. Les appels d'urgence passent par le 18, le 15 et le 112.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

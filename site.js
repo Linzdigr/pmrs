@@ -85,6 +85,16 @@
     }
   }
 
+  // CB : 40 canaux de 26,965 à 27,405 MHz (plan CEPT, canaux 23 à 25 hors ordre)
+  var cb = document.getElementById('track-cb');
+  if (cb) {
+    var CB = [26.965, 26.975, 26.985, 27.005, 27.015, 27.025, 27.035, 27.055, 27.065, 27.075,
+              27.085, 27.105, 27.115, 27.125, 27.135, 27.155, 27.165, 27.175, 27.185, 27.205,
+              27.215, 27.225, 27.255, 27.235, 27.245];
+    for (var n = 26; n <= 40; n++) { CB.push(27.265 + (n - 26) * 0.01); }
+    CB.forEach(function(f, k){ tick(cb, pos(f, 26.96, 27.41), k === 8 ? 'CH 9' : null); });
+  }
+
   // MeshCore : canal unique dans la sous-bande 10 % / 500 mW
   var mc = document.getElementById('track-mc');
   if (mc) {

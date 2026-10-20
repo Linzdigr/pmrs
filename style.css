@@ -91,7 +91,7 @@ strong{font-weight:500; color:var(--fg)}
 }
 .icon-btn:hover{color:var(--fg); border-color:var(--muted)}
 .menu-btn{display:none}
-@media (max-width:900px){
+@media (max-width:1100px){
   .menu-btn{display:inline-block}
   .tools{margin-left:auto}
   .nav{
@@ -292,6 +292,11 @@ tbody th{font-weight:500}
 tbody td{color:var(--muted)}
 tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 tr.ours th,tr.ours td{background:var(--halo); color:var(--fg)}
+tr.used th{color:var(--fg)}
+.tag-pmrs{
+  display:inline-block; vertical-align:.1em; margin-left:.4rem; padding:.05rem .35rem; border-radius:2px;
+  font-family:var(--data); font-size:.66rem; font-weight:600; letter-spacing:.06em; color:var(--on-accent); background:var(--accent);
+}
 tr.ours th{color:var(--accent); font-weight:600}
 td.mono,th.mono{font-family:var(--data); font-size:.82rem}
 tbody th.mono{white-space:nowrap}
@@ -383,6 +388,17 @@ tbody th.mono .muted{display:block; white-space:normal; font-family:var(--body);
   background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
 }
 .specs div{background:var(--surface); padding:.85rem 1rem; min-width:0}
+.moyens .freq{font-size:clamp(1.6rem,5vw,2.1rem)}
+.moyens .readout{flex-direction:column; align-items:flex-start; gap:.15rem}
+.moyens .panel{gap:.9rem}
+.moyens .more{margin-top:auto; font-family:var(--data); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; text-decoration:none}
+.chgrid{list-style:none; margin:0; padding:0; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr))}
+.chgrid li{background:var(--surface); padding:.55rem .75rem; display:flex; justify-content:space-between; gap:.5rem; font-family:var(--data); font-size:.85rem; font-variant-numeric:tabular-nums}
+.chgrid li b{font-weight:600; color:var(--muted)}
+.chgrid li.on{background:var(--halo)}
+.chgrid li.on b,.chgrid li.on span{color:var(--accent); font-weight:600}
+.chgrid li.alt b{color:var(--fg)}
 .specs dt{font-family:var(--data); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 .25rem}
 .specs dd{margin:0; font-family:var(--data); font-weight:600; font-size:.95rem; font-variant-numeric:tabular-nums}
 @media (max-width:460px){ .specs{grid-template-columns:minmax(0,1fr)} }

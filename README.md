@@ -11,13 +11,19 @@ Le site sert à trois choses :
 ## Structure
 
 ```
-index.html            Page d'accueil (présentation, principe, matériel, avancement, accueil, crise, ressources)
+index.html            Accueil : les trois moyens radio à égalité, démarche, Ciaran, crise, ressources, contact
+pmr446.html           Phonie PMR446 (veille canal 7)
+cb.html               Phonie CB 27 MHz (veille canal 9)
+maillage.html         Maillage LoRa MeshCore : principe, matériel, état du réseau, accueil d'un répéteur
 procedure.html        Procédure d'usage en crise (Bretagne)
-style.css             Feuille de style commune aux deux pages
+style.css             Feuille de style commune à toutes les pages
 site.js               Comportements communs (thème, menu mobile, graphique, schéma de résilience, copier, check-list)
 logo.png              Écusson PMRS
-og-image.png          Image de partage de la page d'accueil (1200 × 630)
-og-procedure.png      Image de partage de la procédure (1200 × 630)
+og-image.png          Images de partage (1200 × 630) : accueil,
+og-pmr446.png           PMR446,
+og-cb.png               CB,
+og-maillage.png         maillage LoRa,
+og-procedure.png        procédure
 favicon*, icon-*      Icônes
 site.webmanifest      Manifeste web
 _archive/             Ancienne page « site en construction »
@@ -41,27 +47,35 @@ Déposer le contenu du dossier tel quel à la racine du domaine `pmrs.fr` (sauf 
 
 ## Modifier le contenu
 
-Tout le texte est directement dans le HTML, section par section. Chaque section de `index.html` est repérée par un commentaire (`<!-- ===== 04 AVANCEMENT ===== -->`) et un identifiant d'ancre :
+Tout le texte est directement dans le HTML, section par section. Chaque section est repérée par un commentaire (`<!-- ===== CONTACT ===== -->`) et un identifiant d'ancre.
 
-| Ancre | Contenu | Source |
-|---|---|---|
-| `#top` | Héros, fiche « en un coup d'œil », cartes d'accès rapide | — |
-| `#philosophie` | Lettre du collectif et 5 principes | — |
-| `#pourquoi` | Tempête Ciaran, chaîne des coupures, comparatif des moyens | Présentation, diapos 3 à 7 |
-| `#principe` | Réseau maillé, schéma de résilience en 4 étapes | Diapos 8 à 13 |
-| `#materiel` | Répéteur, autonomie, terminaux, MeshCore / Meshtastic, fréquences | Diapos 14 à 20 |
-| `#avancement` | Chiffres nationaux, frise de déploiement | Diapos 21 et 22 |
-| `#accueil` | Conditions d'accueil, demande, contact | Diapos 19 et 23 |
-| `#crise` | Résumé de la procédure, lien vers `procedure.html` | Procédure de crise |
-| `#ressources` | Liens vers les outils de la communauté | — |
+**L'accueil ne doit privilégier aucun moyen radio** : PMR446, CB et maillage LoRa y sont présentés à égalité, comme complémentaires, et chacun a sa page.
+
+| Page | Ancre | Contenu | Source |
+|---|---|---|---|
+| `index.html` | `#top` | Héros, fiche « en un coup d'œil » | — |
+| | `#moyens` | Les trois moyens radio, exemple d'enchaînement, cadre réglementaire | — |
+| | `#philosophie` | Lettre du collectif et 5 principes | — |
+| | `#pourquoi` | Tempête Ciaran, chaîne des coupures, comparatif des moyens | Présentation, diapos 3 à 7 |
+| | `#crise` | Les cinq états, lien vers `procedure.html` | Procédure de crise |
+| | `#ressources` | Pages PMRS et outils de la communauté | — |
+| | `#contact` | Adresse du collectif | — |
+| `pmr446.html` | — | Caractéristiques, usage, réglage, bonnes pratiques, 16 canaux | — |
+| `cb.html` | — | Caractéristiques, usage, réglage, bonnes pratiques, 40 canaux | — |
+| `maillage.html` | `#principe` | Réseau maillé, schéma de résilience en 4 étapes | Diapos 8 à 13 |
+| | `#materiel` | Répéteur, autonomie, terminaux, MeshCore / Meshtastic | Diapos 14 à 20 |
+| | `#avancement` | Chiffres nationaux, frise de déploiement | Diapos 21 et 22 |
+| | `#accueil` | Conditions d'accueil d'un répéteur, demande, contact | Diapos 19 et 23 |
+| | `#crise` | Message direct et message de canal | Procédure de crise |
 
 ### Mises à jour courantes
 
-- **Chiffres du réseau** (répéteurs actifs, trames par jour, utilisateurs) : section `#avancement`, penser à changer la date du relevé.
-- **Phase en cours de la frise** : déplacer la classe `now` sur le bon `<li>` de `.timeline`, et passer les phases terminées en `done`.
+- **Chiffres du réseau** (répéteurs actifs, trames par jour, utilisateurs) : section `#avancement` de `maillage.html`, penser à changer la date du relevé.
+- **Phase en cours de la frise** (`maillage.html`) : déplacer la classe `now` sur le bon `<li>` de `.timeline`, et passer les phases terminées en `done`.
 - **Ajouter une ressource** : copier un `<li>` existant dans le bon groupe de `#ressources` (nom, domaine, description d'une ligne).
+- **Navigation et pied de page** : ils sont recopiés dans chaque page ; une modification se reporte dans les cinq fichiers HTML.
 - **Procédure de crise** : mettre à jour la date de version dans `procedure.html` (en-tête et pied de page) à chaque révision.
-- **Données du graphique Ciaran** : tableau `DATA` dans `site.js` **et** tableau « Voir les données » dans `index.html`, à garder identiques.
+- **Données du graphique Ciaran** : tableau `DATA` dans `site.js` **et** tableau « Voir les données » dans `index.html` (section `#pourquoi`), à garder identiques.
 
 ## Design
 
