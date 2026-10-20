@@ -509,6 +509,28 @@ tbody th.mono .muted{display:block; white-space:normal; font-family:var(--body);
   content:attr(data-label); position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
   font-family:var(--data); font-size:.68rem; font-weight:600; letter-spacing:.08em; color:var(--accent); white-space:nowrap;
 }
+.tick.urg-x,.tick.call-x{opacity:.9; height:18px; top:8px}
+.tick.urg-x{background:var(--accent); opacity:.55}
+.tick.call-x,.tick.call{background:var(--ok)}
+.tick.call-x{opacity:.6}
+.tick.on.call{box-shadow:0 0 0 6px var(--ok-bg)}
+.tick.on.call::after{color:var(--ok)}
+.role{display:flex; flex-direction:column; gap:.35rem; border-left:3px solid var(--accent); padding-left:1rem; min-width:0}
+.role.call{border-left-color:var(--ok)}
+.role-k{font-family:var(--data); font-size:.78rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent)}
+.role.call .role-k,.role.call .freq{color:var(--ok)}
+.role-panel.urg{border-top:3px solid var(--accent)}
+.role-panel.call{border-top:3px solid var(--ok)}
+.legend i.k-urg{border-top-color:var(--accent)}
+.legend i.k-urg-x{border-top-color:var(--accent); opacity:.55}
+.legend i.k-call{border-top-color:var(--ok)}
+.legend i.k-call-x{border-top-color:var(--ok); opacity:.6}
+.legend i.k-free{border-top-color:var(--muted); opacity:.55}
+table.plan{min-width:0}
+table.plan tr.r-urg th,table.plan tr.r-urg td{background:var(--halo); color:var(--accent); font-weight:600}
+table.plan tr.r-urg-x th,table.plan tr.r-urg-x td{background:var(--halo)}
+table.plan tr.r-call th,table.plan tr.r-call td{background:var(--ok-bg); color:var(--ok); font-weight:600}
+table.plan tr.r-call-x th,table.plan tr.r-call-x td{background:var(--ok-bg)}
 .band{position:absolute; top:5px; bottom:5px; background:var(--halo); border-radius:2px; box-shadow:inset 0 0 0 1px var(--halo)}
 .ends{display:flex; justify-content:space-between; gap:1rem; font-family:var(--data); font-size:.78rem; color:var(--muted); font-variant-numeric:tabular-nums}
 
@@ -527,7 +549,8 @@ tbody th.mono .muted{display:block; white-space:normal; font-family:var(--body);
 .chgrid li b{font-weight:600; color:var(--muted)}
 .chgrid li.on{background:var(--halo)}
 .chgrid li.on b,.chgrid li.on span{color:var(--accent); font-weight:600}
-.chgrid li.alt b{color:var(--fg)}
+.chgrid li.call{background:var(--ok-bg)}
+.chgrid li.call b,.chgrid li.call span{color:var(--ok); font-weight:600}
 .specs dt{font-family:var(--data); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 .25rem}
 .specs dd{margin:0; font-family:var(--data); font-weight:600; font-size:.95rem; font-variant-numeric:tabular-nums}
 @media (max-width:460px){ .specs{grid-template-columns:minmax(0,1fr)} }

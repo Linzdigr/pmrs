@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>PMR446 — phonie de proximité — PMRS</title>
-  <meta name="description" content="PMR446 dans le PMRS : veille sur le canal 7 (446,081 25 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 16 canaux.">
+  <meta name="description" content="PMR446 dans le PMRS : canal 7 pour les urgences et secours, canal 8 pour l'appel, canaux de dégagement, réglage des postes, bonnes pratiques et plan d'attribution des 16 canaux.">
   <link rel="canonical" href="https://pmrs.fr/pmr446.html">
   <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
@@ -17,17 +17,17 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://pmrs.fr/pmr446.html">
   <meta property="og:title" content="PMR446 — phonie de proximité — PMRS">
-  <meta property="og:description" content="PMR446 dans le PMRS : veille sur le canal 7 (446,081 25 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 16 canaux.">
+  <meta property="og:description" content="PMR446 dans le PMRS : canal 7 pour les urgences et secours, canal 8 pour l'appel, canaux de dégagement, réglage des postes, bonnes pratiques et plan d'attribution des 16 canaux.">
   <meta property="og:image" content="https://pmrs.fr/og-pmr446.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PMR446 canal 7, 446,081 25 MHz — veille phonie du PMRS">
+  <meta property="og:image:alt" content="PMR446 : canal 7 urgences et secours (446,081 25 MHz), canal 8 appel (446,093 75 MHz)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PMR446 — phonie de proximité — PMRS">
-  <meta name="twitter:description" content="PMR446 dans le PMRS : veille sur le canal 7 (446,081 25 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 16 canaux.">
+  <meta name="twitter:description" content="PMR446 dans le PMRS : canal 7 pour les urgences et secours, canal 8 pour l'appel, canaux de dégagement, réglage des postes, bonnes pratiques et plan d'attribution des 16 canaux.">
   <meta name="twitter:image" content="https://pmrs.fr/og-pmr446.png">
-  <meta name="twitter:image:alt" content="PMR446 canal 7, 446,081 25 MHz — veille phonie du PMRS">
+  <meta name="twitter:image:alt" content="PMR446 : canal 7 urgences et secours (446,081 25 MHz), canal 8 appel (446,093 75 MHz)">
 
   <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
   <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -64,19 +64,54 @@
   <header class="doc-head">
     <p class="eyebrow"><span class="dot"></span>Phonie de proximité</p>
     <h1>PMR446</h1>
-    <p class="lede">Radio de voix sans licence, utilisable avec tout poste PMR446 du commerce. Le PMRS assure la veille sur le canal 7.</p>
+    <p class="lede">Radio de voix sans licence, utilisable avec tout poste PMR446 du commerce. Le PMRS utilise le canal 7 pour les urgences et secours et le canal 8 pour l'appel.</p>
   </header>
 
-  <section class="panel" aria-label="Fréquence de veille PMR446">
-    <p class="panel-label">Veille PMRS</p>
-    <div class="readout">
-      <span class="ch">Canal 7</span>
-      <span class="freq">446,081&thinsp;25<small>MHz</small></span>
+  <section class="panel" aria-label="Canaux PMRS en PMR446">
+    <p class="panel-label">Canaux PMRS</p>
+    <div class="grid g2">
+      <div class="role urg">
+        <span class="role-k">Urgences / secours</span>
+        <div class="readout"><span class="ch">Canal 7</span><span class="freq">446,081&thinsp;25<small>MHz</small></span></div>
+        <p class="note">Dégagement : canaux 5 et 6</p>
+      </div>
+      <div class="role call">
+        <span class="role-k">Appel</span>
+        <div class="readout"><span class="ch">Canal 8</span><span class="freq">446,093&thinsp;75<small>MHz</small></span></div>
+        <p class="note">Dégagement : canaux 1 à 4</p>
+      </div>
     </div>
-    <p class="note">Analogique, antenne intégrée — tout poste PMR446 du commerce.</p>
     <div class="scale">
-      <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
+      <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz : canal 7 urgences et secours, canal 8 appel, canaux 1 à 6 de dégagement"></div>
       <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
+    </div>
+    <div class="legend">
+      <span><i class="k-urg"></i>Urgences / secours (7)</span>
+      <span><i class="k-urg-x"></i>Dégagement urgences (5, 6)</span>
+      <span><i class="k-call"></i>Appel (8)</span>
+      <span><i class="k-call-x"></i>Dégagement appels (1 à 4)</span>
+      <span><i class="k-free"></i>Non attribués (9 à 16)</span>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Appel et dégagement</h2>
+    <p class="muted">Les canaux 7 et 8 servent à établir le contact. L'échange se poursuit ensuite sur un canal de dégagement, pour laisser le canal d'appel libre.</p>
+    <div class="grid g2">
+      <div class="panel role-panel call">
+        <p class="panel-label">Appel — canal 8</p>
+        <ol class="prio plain">
+          <li>Appeler son correspondant sur le canal 8.</li>
+          <li>Une fois le contact établi, convenir d'un canal de dégagement parmi les canaux 1, 2, 3 ou 4 et y poursuivre l'échange.</li>
+        </ol>
+      </div>
+      <div class="panel role-panel urg">
+        <p class="panel-label">Urgences / secours — canal 7</p>
+        <ol class="prio plain">
+          <li>Lancer l'appel d'urgence sur le canal 7.</li>
+          <li>Poursuivre l'échange sur le canal 5 ou 6, pour que le canal 7 reste disponible pour une autre urgence.</li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -98,7 +133,7 @@
     <div class="panel">
       <p class="panel-label">Usage dans le PMRS</p>
       <ul>
-        <li>Veille sur le canal 7.</li>
+        <li>Veille sur le canal 7 (urgences et secours) et le canal 8 (appel).</li>
         <li>Échanges de voix entre voisins, équipes et bâtiments proches.</li>
         <li>Faire remonter une information jusqu'à un poste équipé d'un terminal MeshCore, qui la retransmet par écrit sur le <a href="maillage.html">maillage LoRa</a>.</li>
         <li>Postes peu coûteux, faciles à distribuer, utilisables sans formation.</li>
@@ -107,7 +142,7 @@
     <div class="panel">
       <p class="panel-label">Régler son poste</p>
       <ul>
-        <li>Canal 7, en vérifiant la fréquence : <strong>446,081 25 MHz</strong>. La numérotation des canaux varie selon les marques.</li>
+        <li>Canaux 7 (<strong>446,081 25 MHz</strong>) et 8 (<strong>446,093 75 MHz</strong>) : vérifier la fréquence affichée, la numérotation des canaux varie selon les marques.</li>
         <li>Sous-ton (CTCSS ou DCS) <strong>désactivé</strong> : un poste réglé avec un sous-ton n'entend que les postes réglés sur le même.</li>
         <li>Piles ou batteries de rechange chargées.</li>
       </ul>
@@ -121,6 +156,7 @@
         <li>Écouter avant d'émettre.</li>
         <li>Appuyer, attendre une seconde, puis parler ; relâcher pour laisser répondre.</li>
         <li>Se nommer et nommer sa commune ; messages courts.</li>
+        <li>Ne pas rester sur les canaux 7 et 8 : dégager une fois le contact établi.</li>
         <li>Canal ouvert à tous : rien de confidentiel, pas de données nominatives ni d'état de santé.</li>
       </ul>
     </div>
@@ -131,8 +167,30 @@
   </section>
 
   <section class="stack">
-    <h2>Plan des 16 canaux</h2>
-    <ul class="chgrid" aria-label="Canaux PMR446 et fréquences en MHz"><li><b>01</b><span>446,00625</span></li><li><b>02</b><span>446,01875</span></li><li><b>03</b><span>446,03125</span></li><li><b>04</b><span>446,04375</span></li><li><b>05</b><span>446,05625</span></li><li><b>06</b><span>446,06875</span></li><li class="on"><b>07</b><span>446,08125</span></li><li><b>08</b><span>446,09375</span></li><li><b>09</b><span>446,10625</span></li><li><b>10</b><span>446,11875</span></li><li><b>11</b><span>446,13125</span></li><li><b>12</b><span>446,14375</span></li><li><b>13</b><span>446,15625</span></li><li><b>14</b><span>446,16875</span></li><li><b>15</b><span>446,18125</span></li><li><b>16</b><span>446,19375</span></li></ul>
+    <h2>Plan d'attribution des 16 canaux</h2>
+    <div class="table-wrap">
+      <table class="plan">
+        <thead><tr><th>Canal</th><th>Fréquence (MHz)</th><th>Attribution PMRS</th></tr></thead>
+        <tbody>
+          <tr class="r-call-x"><th class="mono">1</th><td class="mono">446,00625</td><td>Dégagement des appels</td></tr>
+          <tr class="r-call-x"><th class="mono">2</th><td class="mono">446,01875</td><td>Dégagement des appels</td></tr>
+          <tr class="r-call-x"><th class="mono">3</th><td class="mono">446,03125</td><td>Dégagement des appels</td></tr>
+          <tr class="r-call-x"><th class="mono">4</th><td class="mono">446,04375</td><td>Dégagement des appels</td></tr>
+          <tr class="r-urg-x"><th class="mono">5</th><td class="mono">446,05625</td><td>Dégagement urgences / secours</td></tr>
+          <tr class="r-urg-x"><th class="mono">6</th><td class="mono">446,06875</td><td>Dégagement urgences / secours</td></tr>
+          <tr class="r-urg"><th class="mono">7</th><td class="mono">446,08125</td><td>Urgences / secours</td></tr>
+          <tr class="r-call"><th class="mono">8</th><td class="mono">446,09375</td><td>Appel</td></tr>
+          <tr><th class="mono">9</th><td class="mono">446,10625</td><td>—</td></tr>
+          <tr><th class="mono">10</th><td class="mono">446,11875</td><td>—</td></tr>
+          <tr><th class="mono">11</th><td class="mono">446,13125</td><td>—</td></tr>
+          <tr><th class="mono">12</th><td class="mono">446,14375</td><td>—</td></tr>
+          <tr><th class="mono">13</th><td class="mono">446,15625</td><td>—</td></tr>
+          <tr><th class="mono">14</th><td class="mono">446,16875</td><td>—</td></tr>
+          <tr><th class="mono">15</th><td class="mono">446,18125</td><td>—</td></tr>
+          <tr><th class="mono">16</th><td class="mono">446,19375</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
     <p class="source">Canaux 1 à 8 historiques ; canaux 9 à 16 ouverts par la décision ECC/DEC/(15)05.</p>
   </section>
 

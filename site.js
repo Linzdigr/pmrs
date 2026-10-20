@@ -75,24 +75,35 @@
     el.style.left = left;
     if (label) { el.setAttribute('data-label', label); }
     parent.appendChild(el);
+    return el;
   }
 
   // PMR446 : 16 canaux analogiques, 446,00625 MHz + n x 12,5 kHz
+  // Plan PMRS : 7 urgences / secours (dégagement 5, 6), 8 appel (dégagement 1 à 4)
   var pmr = document.getElementById('track-pmr');
   if (pmr) {
+    var ROLE = { 1: 'call-x', 2: 'call-x', 3: 'call-x', 4: 'call-x', 5: 'urg-x', 6: 'urg-x', 7: 'urg', 8: 'call' };
     for (var i = 0; i < 16; i++) {
-      tick(pmr, pos(446.00625 + i * 0.0125, 446, 446.2), i === 6 ? 'CH 7' : null);
+      var ch = i + 1;
+      var t = tick(pmr, pos(446.00625 + i * 0.0125, 446, 446.2), ch === 7 || ch === 8 ? String(ch) : null);
+      if (ROLE[ch]) { t.classList.add(ROLE[ch]); }
     }
   }
 
   // CB : 40 canaux de 26,965 à 27,405 MHz (plan CEPT, canaux 23 à 25 hors ordre)
+  // Plan PMRS : 9 urgences / secours, 27 appel
   var cb = document.getElementById('track-cb');
   if (cb) {
     var CB = [26.965, 26.975, 26.985, 27.005, 27.015, 27.025, 27.035, 27.055, 27.065, 27.075,
               27.085, 27.105, 27.115, 27.125, 27.135, 27.155, 27.165, 27.175, 27.185, 27.205,
               27.215, 27.225, 27.255, 27.235, 27.245];
     for (var n = 26; n <= 40; n++) { CB.push(27.265 + (n - 26) * 0.01); }
-    CB.forEach(function(f, k){ tick(cb, pos(f, 26.96, 27.41), k === 8 ? 'CH 9' : null); });
+    CB.forEach(function(f, k){
+      var ch = k + 1;
+      var t = tick(cb, pos(f, 26.96, 27.41), ch === 9 || ch === 27 ? String(ch) : null);
+      if (ch === 9) { t.classList.add('urg'); }
+      if (ch === 27) { t.classList.add('call'); }
+    });
   }
 
   // MeshCore : canal unique dans la sous-bande 10 % / 500 mW

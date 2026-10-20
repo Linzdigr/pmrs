@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CB 27 MHz — phonie longue portée — PMRS</title>
-  <meta name="description" content="CB 27 MHz dans le PMRS : veille sur le canal 9 (27,065 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 40 canaux.">
+  <meta name="description" content="CB 27 MHz dans le PMRS : canal 9 pour les urgences et secours, canal 27 pour l'appel, réglage des postes, bonnes pratiques d'émission et plan des 40 canaux.">
   <link rel="canonical" href="https://pmrs.fr/cb.html">
   <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
@@ -17,17 +17,17 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://pmrs.fr/cb.html">
   <meta property="og:title" content="CB 27 MHz — phonie longue portée — PMRS">
-  <meta property="og:description" content="CB 27 MHz dans le PMRS : veille sur le canal 9 (27,065 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 40 canaux.">
+  <meta property="og:description" content="CB 27 MHz dans le PMRS : canal 9 pour les urgences et secours, canal 27 pour l'appel, réglage des postes, bonnes pratiques d'émission et plan des 40 canaux.">
   <meta property="og:image" content="https://pmrs.fr/og-cb.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="CB canal 9, 27,065 MHz — veille phonie du PMRS">
+  <meta property="og:image:alt" content="CB : canal 9 urgences et secours (27,065 MHz), canal 27 appel (27,275 MHz)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CB 27 MHz — phonie longue portée — PMRS">
-  <meta name="twitter:description" content="CB 27 MHz dans le PMRS : veille sur le canal 9 (27,065 MHz), réglage des postes, bonnes pratiques d'émission, limites et plan des 40 canaux.">
+  <meta name="twitter:description" content="CB 27 MHz dans le PMRS : canal 9 pour les urgences et secours, canal 27 pour l'appel, réglage des postes, bonnes pratiques d'émission et plan des 40 canaux.">
   <meta name="twitter:image" content="https://pmrs.fr/og-cb.png">
-  <meta name="twitter:image:alt" content="CB canal 9, 27,065 MHz — veille phonie du PMRS">
+  <meta name="twitter:image:alt" content="CB : canal 9 urgences et secours (27,065 MHz), canal 27 appel (27,275 MHz)">
 
   <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
   <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -64,19 +64,29 @@
   <header class="doc-head">
     <p class="eyebrow"><span class="dot"></span>Phonie longue portée</p>
     <h1>CB 27 MHz</h1>
-    <p class="lede">Radio de voix sans licence dans la bande des 27 MHz, en poste fixe, mobile ou portatif. Le PMRS assure la veille sur le canal 9.</p>
+    <p class="lede">Radio de voix sans licence dans la bande des 27 MHz, en poste fixe, mobile ou portatif. Le PMRS utilise le canal 9 pour les urgences et secours et le canal 27 pour l'appel.</p>
   </header>
 
-  <section class="panel" aria-label="Fréquence de veille CB">
-    <p class="panel-label">Veille PMRS</p>
-    <div class="readout">
-      <span class="ch">Canal 9</span>
-      <span class="freq">27,065<small>MHz</small></span>
+  <section class="panel" aria-label="Canaux PMRS en CB">
+    <p class="panel-label">Canaux PMRS</p>
+    <div class="grid g2">
+      <div class="role urg">
+        <span class="role-k">Urgences / secours</span>
+        <div class="readout"><span class="ch">Canal 9</span><span class="freq">27,065<small>MHz</small></span></div>
+      </div>
+      <div class="role call">
+        <span class="role-k">Appel</span>
+        <div class="readout"><span class="ch">Canal 27</span><span class="freq">27,275<small>MHz</small></span></div>
+      </div>
     </div>
-    <p class="note">Canal d'appel d'urgence par convention.</p>
     <div class="scale">
-      <div class="track" id="track-cb" role="img" aria-label="Bande CB de 26,965 à 27,405 MHz, 40 canaux, canal 9 en veille"></div>
+      <div class="track" id="track-cb" role="img" aria-label="Bande CB de 26,965 à 27,405 MHz, 40 canaux : canal 9 urgences et secours, canal 27 appel"></div>
       <div class="ends"><span>26,965</span><span>27,185</span><span>27,405</span></div>
+    </div>
+    <div class="legend">
+      <span><i class="k-urg"></i>Urgences / secours (9)</span>
+      <span><i class="k-call"></i>Appel (27)</span>
+      <span><i class="k-free"></i>Autres canaux</span>
     </div>
   </section>
 
@@ -98,7 +108,7 @@
     <div class="panel">
       <p class="panel-label">Usage dans le PMRS</p>
       <ul>
-        <li>Veille sur le canal 9.</li>
+        <li>Veille sur le canal 9 (urgences et secours) et le canal 27 (appel).</li>
         <li>Liaisons de voix entre communes, véhicules et postes fixes.</li>
         <li>Station fixe en mairie ou au PC, avec antenne extérieure et batterie 12 V.</li>
         <li>Faire remonter une information jusqu'à un poste équipé d'un terminal MeshCore, qui la retransmet par écrit sur le <a href="maillage.html">maillage LoRa</a>.</li>
@@ -107,7 +117,7 @@
     <div class="panel">
       <p class="panel-label">Régler son poste</p>
       <ul>
-        <li>Canal 9, en vérifiant la fréquence : <strong>27,065 MHz</strong>.</li>
+        <li>Canaux 9 (<strong>27,065 MHz</strong>) et 27 (<strong>27,275 MHz</strong>) : vérifier la fréquence affichée.</li>
         <li>Même modulation que ses correspondants : un poste en FM ne reçoit pas correctement une émission en AM.</li>
         <li>Squelch réglé juste au-dessus du bruit de fond.</li>
         <li>Batterie 12 V chargée ; recharge solaire possible pour un poste fixe.</li>
@@ -120,7 +130,8 @@
       <p class="panel-label">Bonnes pratiques d'émission</p>
       <ul>
         <li>Écouter avant d'émettre.</li>
-        <li>Appel bref sur le canal 9, puis dégagement sur un autre canal pour un échange long : le canal 9 reste libre pour les appels.</li>
+        <li>Appeler sur le canal 27 ; pour une urgence, appeler sur le canal 9.</li>
+        <li>Une fois le contact établi, poursuivre sur un autre canal libre, pour que les canaux 9 et 27 restent disponibles.</li>
         <li>Se nommer et nommer sa commune ; messages courts.</li>
         <li>Canal ouvert à tous : rien de confidentiel, pas de données nominatives ni d'état de santé.</li>
       </ul>
@@ -133,8 +144,12 @@
 
   <section class="stack">
     <h2>Plan des 40 canaux</h2>
-    <ul class="chgrid" aria-label="Canaux CB et fréquences en MHz"><li><b>01</b><span>26,965</span></li><li><b>02</b><span>26,975</span></li><li><b>03</b><span>26,985</span></li><li><b>04</b><span>27,005</span></li><li><b>05</b><span>27,015</span></li><li><b>06</b><span>27,025</span></li><li><b>07</b><span>27,035</span></li><li><b>08</b><span>27,055</span></li><li class="on"><b>09</b><span>27,065</span></li><li><b>10</b><span>27,075</span></li><li><b>11</b><span>27,085</span></li><li><b>12</b><span>27,105</span></li><li><b>13</b><span>27,115</span></li><li><b>14</b><span>27,125</span></li><li><b>15</b><span>27,135</span></li><li><b>16</b><span>27,155</span></li><li><b>17</b><span>27,165</span></li><li><b>18</b><span>27,175</span></li><li class="alt"><b>19</b><span>27,185</span></li><li><b>20</b><span>27,205</span></li><li><b>21</b><span>27,215</span></li><li><b>22</b><span>27,225</span></li><li><b>23</b><span>27,255</span></li><li><b>24</b><span>27,235</span></li><li><b>25</b><span>27,245</span></li><li><b>26</b><span>27,265</span></li><li><b>27</b><span>27,275</span></li><li><b>28</b><span>27,285</span></li><li><b>29</b><span>27,295</span></li><li><b>30</b><span>27,305</span></li><li><b>31</b><span>27,315</span></li><li><b>32</b><span>27,325</span></li><li><b>33</b><span>27,335</span></li><li><b>34</b><span>27,345</span></li><li><b>35</b><span>27,355</span></li><li><b>36</b><span>27,365</span></li><li><b>37</b><span>27,375</span></li><li><b>38</b><span>27,385</span></li><li><b>39</b><span>27,395</span></li><li><b>40</b><span>27,405</span></li></ul>
-    <p class="source">Canal 9 : appel d'urgence par convention. Canal 19 : canal routier. Les canaux 23 à 25 ne suivent pas l'ordre des fréquences.</p>
+    <ul class="chgrid" aria-label="Canaux CB et fréquences en MHz"><li><b>01</b><span>26,965</span></li><li><b>02</b><span>26,975</span></li><li><b>03</b><span>26,985</span></li><li><b>04</b><span>27,005</span></li><li><b>05</b><span>27,015</span></li><li><b>06</b><span>27,025</span></li><li><b>07</b><span>27,035</span></li><li><b>08</b><span>27,055</span></li><li class="on"><b>09</b><span>27,065</span></li><li><b>10</b><span>27,075</span></li><li><b>11</b><span>27,085</span></li><li><b>12</b><span>27,105</span></li><li><b>13</b><span>27,115</span></li><li><b>14</b><span>27,125</span></li><li><b>15</b><span>27,135</span></li><li><b>16</b><span>27,155</span></li><li><b>17</b><span>27,165</span></li><li><b>18</b><span>27,175</span></li><li><b>19</b><span>27,185</span></li><li><b>20</b><span>27,205</span></li><li><b>21</b><span>27,215</span></li><li><b>22</b><span>27,225</span></li><li><b>23</b><span>27,255</span></li><li><b>24</b><span>27,235</span></li><li><b>25</b><span>27,245</span></li><li><b>26</b><span>27,265</span></li><li class="call"><b>27</b><span>27,275</span></li><li><b>28</b><span>27,285</span></li><li><b>29</b><span>27,295</span></li><li><b>30</b><span>27,305</span></li><li><b>31</b><span>27,315</span></li><li><b>32</b><span>27,325</span></li><li><b>33</b><span>27,335</span></li><li><b>34</b><span>27,345</span></li><li><b>35</b><span>27,355</span></li><li><b>36</b><span>27,365</span></li><li><b>37</b><span>27,375</span></li><li><b>38</b><span>27,385</span></li><li><b>39</b><span>27,395</span></li><li><b>40</b><span>27,405</span></li></ul>
+    <div class="legend">
+      <span><i class="k-urg"></i>Canal 9 : urgences / secours</span>
+      <span><i class="k-call"></i>Canal 27 : appel</span>
+    </div>
+    <p class="source">Les canaux 23 à 25 ne suivent pas l'ordre des fréquences.</p>
   </section>
 
 </main>

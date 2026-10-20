@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>PMRS — Projet Maillage Radio Secours</title>
-  <meta name="description" content="Dispositif radio citoyen de secours en Bretagne, sur trois moyens complémentaires : phonie PMR446 (canal 7), phonie CB (canal 9) et maillage de messages texte LoRa MeshCore (869,618 MHz). Sans opérateur, sans Internet, sans licence.">
+  <meta name="description" content="Dispositif radio citoyen de secours en Bretagne, sur trois moyens complémentaires : phonie PMR446 (canaux 7 et 8), phonie CB (canaux 9 et 27) et maillage de messages texte LoRa MeshCore (869,618 MHz). Sans opérateur, sans Internet, sans licence.">
   <link rel="canonical" href="https://pmrs.fr/">
   <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
@@ -25,12 +25,12 @@
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; PMR446 canal 7, CB canal 9 et MeshCore 869,618 MHz">
+  <meta property="og:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; PMR446 canaux 7 et 8, CB canaux 9 et 27, MeshCore 869,618 MHz">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PMRS — Projet Maillage Radio Secours">
   <meta name="twitter:description" content="Réseau citoyen de messages texte par radio LoRa MeshCore (869,618 MHz), relayés par des répéteurs solaires en Bretagne. Sans opérateur, sans Internet, sans licence.">
   <meta name="twitter:image" content="https://pmrs.fr/og-image.png">
-  <meta name="twitter:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; PMR446 canal 7, CB canal 9 et MeshCore 869,618 MHz">
+  <meta name="twitter:image:alt" content="Écusson PMRS et titre Projet Maillage Radio Secours ; PMR446 canaux 7 et 8, CB canaux 9 et 27, MeshCore 869,618 MHz">
 
   <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
   <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -90,7 +90,7 @@
     <div><dt>Quoi</dt><dd>Phonie et messages texte par radio<small>PMR446, CB et maillage LoRa</small></dd></div>
     <div><dt>Comment</dt><dd>Postes du commerce et répéteurs solaires<small>Voix en direct, texte relayé automatiquement</small></dd></div>
     <div><dt>Dépend de</dt><dd>Rien<small>Ni secteur, ni opérateur, ni Internet</small></dd></div>
-    <div><dt>Fréquences</dt><dd class="mono">PMR446 · CB · LoRa<small>Canal 7 · canal 9 · 869,618 MHz</small></dd></div>
+    <div><dt>Fréquences</dt><dd class="mono">PMR446 · CB · LoRa<small>Canaux 7 et 8 · canaux 9 et 27 · 869,618 MHz</small></dd></div>
     <div><dt>Qui</dt><dd>Un collectif bénévole<small>Sans but lucratif</small></dd></div>
     <div><dt>Où</dt><dd>Bretagne<small>29 · 22 · 44 · 56 · 35, puis national</small></dd></div>
     <div><dt>Pour qui</dt><dd>Porteurs équipés et préparés<small>Communes, partenaires, citoyens</small></dd></div>
@@ -115,9 +115,9 @@
             <span class="ch">Canal 7</span>
             <span class="freq">446,081&thinsp;25<small>MHz</small></span>
           </div>
-          <p class="note">Analogique, tout poste PMR446 du commerce.</p>
+          <p class="note">Canal 7 : urgences et secours · canal 8 : appel.</p>
           <div class="scale">
-            <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
+            <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz : canal 7 urgences et secours, canal 8 appel, canaux 1 à 6 de dégagement"></div>
             <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
           </div>
           <dl class="specs">
@@ -126,7 +126,8 @@
             <div><dt>Licence</dt><dd>Aucune</dd></div>
           </dl>
           <ul>
-            <li>Veille et échanges de voix entre voisins, équipes et bâtiments proches.</li>
+            <li>Appel sur le canal 8, urgences et secours sur le canal 7, puis dégagement sur les canaux 1 à 6.</li>
+            <li>Échanges de voix entre voisins, équipes et bâtiments proches.</li>
             <li>Limites : portée courte, pas de relais automatique, quelqu'un doit être à l'écoute.</li>
           </ul>
           <a class="more" href="pmr446.html">Page PMR446 →</a>
@@ -138,9 +139,9 @@
             <span class="ch">Canal 9</span>
             <span class="freq">27,065<small>MHz</small></span>
           </div>
-          <p class="note">Canal d'appel d'urgence par convention, postes fixes et mobiles.</p>
+          <p class="note">Canal 9 : urgences et secours · canal 27 : appel.</p>
           <div class="scale">
-            <div class="track" id="track-cb" role="img" aria-label="Bande CB de 26,965 à 27,405 MHz, 40 canaux, canal 9 en veille"></div>
+            <div class="track" id="track-cb" role="img" aria-label="Bande CB de 26,965 à 27,405 MHz, 40 canaux : canal 9 urgences et secours, canal 27 appel"></div>
             <div class="ends"><span>26,965</span><span>27,185</span><span>27,405</span></div>
           </div>
           <dl class="specs">
@@ -149,6 +150,7 @@
             <div><dt>Licence</dt><dd>Aucune</dd></div>
           </dl>
           <ul>
+            <li>Appel sur le canal 27, urgences et secours sur le canal 9.</li>
             <li>Liaisons de voix entre communes, véhicules et postes fixes.</li>
             <li>Limites : un opérateur doit être à l'écoute, pas de trace écrite.</li>
           </ul>
@@ -400,10 +402,10 @@
             <span class="desc">Résilience pratique au quotidien, avec de nombreux articles radio : antennes et répéteurs MeshCore/Meshtastic, PMR446, CB.</span><span class="arrow">↗</span></a></li>
           <li><a href="pmr446.html">
             <b>PMR446</b><span class="host">pmrs.fr/pmr446</span>
-            <span class="desc">Veille canal 7, réglage des postes, bonnes pratiques, plan des 16 canaux.</span><span class="arrow">→</span></a></li>
+            <span class="desc">Canal 7 urgences, canal 8 appel, dégagement, réglage des postes, plan d'attribution des 16 canaux.</span><span class="arrow">→</span></a></li>
           <li><a href="cb.html">
             <b>CB 27 MHz</b><span class="host">pmrs.fr/cb</span>
-            <span class="desc">Veille canal 9, réglage des postes, bonnes pratiques, plan des 40 canaux.</span><span class="arrow">→</span></a></li>
+            <span class="desc">Canal 9 urgences, canal 27 appel, réglage des postes, bonnes pratiques, plan des 40 canaux.</span><span class="arrow">→</span></a></li>
           <li><a href="maillage.html">
             <b>Maillage LoRa MeshCore</b><span class="host">pmrs.fr/maillage</span>
             <span class="desc">Principe, répéteurs, terminaux, état du réseau, accueil d'un répéteur.</span><span class="arrow">→</span></a></li>
