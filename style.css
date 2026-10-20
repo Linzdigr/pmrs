@@ -294,6 +294,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 tr.ours th,tr.ours td{background:var(--halo); color:var(--fg)}
 tr.ours th{color:var(--accent); font-weight:600}
 td.mono,th.mono{font-family:var(--data); font-size:.82rem}
+tbody th.mono{white-space:nowrap}
+tbody th.mono .muted{display:block; white-space:normal; font-family:var(--body); font-weight:400}
 
 /* --- schémas ------------------------------------------------------- */
 .diagram svg{display:block; width:100%; height:auto}

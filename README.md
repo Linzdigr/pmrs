@@ -12,11 +12,12 @@ Le site sert à trois choses :
 
 ```
 index.html            Page d'accueil (présentation, principe, matériel, avancement, accueil, crise, ressources)
-procedure.html        Procédure d'usage en crise (Ille-et-Vilaine)
+procedure.html        Procédure d'usage en crise (Bretagne)
 style.css             Feuille de style commune aux deux pages
 site.js               Comportements communs (thème, menu mobile, graphique, schéma de résilience, copier, check-list)
 logo.png              Écusson PMRS
-og-image.png          Image de partage (réseaux sociaux)
+og-image.png          Image de partage de la page d'accueil (1200 × 630)
+og-procedure.png      Image de partage de la procédure (1200 × 630)
 favicon*, icon-*      Icônes
 site.webmanifest      Manifeste web
 _archive/             Ancienne page « site en construction »
@@ -85,11 +86,10 @@ L'identité reprend celle de la page d'origine : papier teinté rouge, écusson 
 - [ ] Vérifier les descriptions des ressources meshcore.serveurperso.in, meshqual, meshcore-analyzer et wiki.meshcore.bzh
 - [ ] Ajouter des photos d'installations et les simulations de couverture (Brocéliande, Glaz Arena)
 - [ ] Préciser la ligne « Assurance » une fois la convention type rédigée
-- [ ] Mettre à jour `og-image.png` si le visuel de partage doit évoluer
 - [ ] Décider si la procédure de crise reste publique tant qu'elle est en version de travail
 
 ## Contact
 
-Yvan Ferez — responsable de déploiement Ille-et-Vilaine et Morbihan · [contact@pmrs.fr](mailto:contact@pmrs.fr)
+PMRS · [contact@pmrs.fr](mailto:contact@pmrs.fr)
 
 Initiative citoyenne, sans but lucratif.

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Procédure de crise — PMRS</title>
-  <meta name="description" content="Procédure d'usage en crise du réseau MeshCore PMRS d'Ille-et-Vilaine : principes d'emploi, plan de canaux, parc de terminaux, préparation à froid, conduite en crise et gabarits de messages.">
+  <meta name="description" content="Procédure d'usage en crise du réseau MeshCore PMRS en Bretagne : principes d'emploi, plan de canaux, parc de terminaux, préparation à froid, conduite en crise et gabarits de messages.">
   <link rel="canonical" href="https://pmrs.fr/procedure.html">
   <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
@@ -15,9 +15,19 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="PMRS">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://pmrs.fr/procedure.html">
   <meta property="og:title" content="Procédure d'usage en crise — PMRS">
-  <meta property="og:description" content="Comment utiliser le réseau MeshCore PMRS quand les réseaux opérateurs sont indisponibles.">
-  <meta property="og:image" content="https://pmrs.fr/og-image.png">
+  <meta property="og:description" content="Utilisation du réseau MeshCore PMRS en Bretagne lorsque les réseaux opérateurs sont indisponibles : plan de canaux, préparation des terminaux, conduite en crise, gabarits de messages.">
+  <meta property="og:image" content="https://pmrs.fr/og-procedure.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Procédure d'usage en crise PMRS : les cinq états Veille, Pré-alerte, Activation, Conduite, Levée">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Procédure d'usage en crise — PMRS">
+  <meta name="twitter:description" content="Utilisation du réseau MeshCore PMRS en Bretagne lorsque les réseaux opérateurs sont indisponibles : plan de canaux, préparation des terminaux, conduite en crise, gabarits de messages.">
+  <meta name="twitter:image" content="https://pmrs.fr/og-procedure.png">
+  <meta name="twitter:image:alt" content="Procédure d'usage en crise PMRS : les cinq états Veille, Pré-alerte, Activation, Conduite, Levée">
 
   <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,12 +82,12 @@
     <header class="doc-head">
       <p class="eyebrow"><span class="dot"></span>Version de travail</p>
       <h1>Procédure d'usage en crise</h1>
-      <p class="lede">Comment utiliser le réseau MeshCore d'Ille-et-Vilaine lorsque les réseaux opérateurs sont indisponibles : plan de canaux, équipement des porteurs et discipline de trafic.</p>
+      <p class="lede">Comment utiliser le réseau MeshCore en Bretagne lorsque les réseaux opérateurs sont indisponibles : plan de canaux, équipement des porteurs et discipline de trafic.</p>
       <div class="meta">
         <span>LoRa 869,618 MHz</span>
-        <span>Ille-et-Vilaine (35)</span>
-        <span>18 octobre 2026</span>
-        <span>Y. Ferez, responsable de déploiement 35</span>
+        <span>Bretagne : 22, 29, 35, 56, 44</span>
+        <span>20 octobre 2026</span>
+        <span>Collectif PMRS</span>
       </div>
       <div class="btns">
         <button class="btn ghost" type="button" onclick="window.print()">Imprimer</button>
@@ -154,6 +164,7 @@
     <section class="chap" id="canaux">
       <h2><span class="no">03</span>Plan de canaux préétabli</h2>
       <p>Les canaux se créent <strong>à froid, jamais pendant la crise</strong> : un canal privé suppose la distribution préalable d'un secret de 32 octets à chaque porteur.</p>
+      <p>La conduite opérationnelle se fait <strong>par département</strong> : chaque canal opérations reste limité à sa région départementale, ce qui évite de saturer la bande sur toute la Bretagne. Les responsables départementaux se coordonnent sur un canal régional dédié.</p>
       <div class="grid g3">
         <div class="panel"><p class="panel-label">Public</p><p class="muted small">Présent sur tous les terminaux.</p></div>
         <div class="panel"><p class="panel-label">Hashtag</p><p class="muted small">Clé dérivée du nom : quiconque connaît le nom y entre. <strong>Pas confidentiel.</strong></p></div>
@@ -164,11 +175,12 @@
           <thead><tr><th>Canal</th><th>Type</th><th>Région</th><th>Usage</th><th>Porteurs</th></tr></thead>
           <tbody>
             <tr><th class="mono">Public</th><td>public</td><td class="mono">fr</td><td>Veille générale, prise de contact</td><td>Tous</td></tr>
-            <tr><th class="mono">#ille-et-vilaine</th><td>hashtag</td><td class="mono">fr-35</td><td>Situation départementale, information non sensible</td><td>Porteurs du 35</td></tr>
-            <tr><th class="mono">#rennes-metropole</th><td>hashtag</td><td class="mono">fr-35</td><td>Situation sur la métropole</td><td>Porteurs du secteur</td></tr>
-            <tr><th class="mono">pmrs-35-operations</th><td>privé</td><td class="mono">fr-35</td><td>Conduite opérationnelle</td><td>Porteurs engagés</td></tr>
-            <tr><th class="mono">pmrs-35-technique</th><td>privé</td><td class="mono">fr-35</td><td>État des répéteurs, pannes, interventions</td><td>Équipe technique</td></tr>
-            <tr><th class="mono">#test</th><td>hashtag</td><td class="mono">fr-35</td><td>Essais et exercices, hors activation</td><td>Tous</td></tr>
+            <tr><th class="mono">#bretagne</th><td>hashtag</td><td class="mono">fr-bre</td><td>Situation régionale, information non sensible</td><td>Tous les porteurs bretons</td></tr>
+            <tr><th class="mono">#finistere<br>#cotes-darmor<br>#morbihan<br>#ille-et-vilaine<br>#loire-atlantique</th><td>hashtag</td><td class="mono">fr-29<br>fr-22<br>fr-56<br>fr-35<br>fr-44</td><td>Situation départementale, information non sensible</td><td>Porteurs du département</td></tr>
+            <tr><th class="mono">pmrs-29-operations<br><span class="muted">… un par département</span></th><td>privé</td><td class="mono">fr-29…</td><td>Conduite opérationnelle dans le département</td><td>Porteurs engagés du département</td></tr>
+            <tr><th class="mono">pmrs-bzh-coordination</th><td>privé</td><td class="mono">fr-bre</td><td>Coordination quand un événement touche plusieurs départements</td><td>Responsables départementaux</td></tr>
+            <tr><th class="mono">pmrs-bzh-technique</th><td>privé</td><td class="mono">fr-bre</td><td>État des répéteurs, pannes, interventions</td><td>Équipe technique</td></tr>
+            <tr><th class="mono">#test</th><td>hashtag</td><td class="mono">fr-bre</td><td>Essais et exercices, hors activation</td><td>Tous</td></tr>
           </tbody>
         </table>
       </div>
@@ -181,12 +193,12 @@
       <p>La communauté française a fixé des règles qu'il faut suivre pour rester interopérable.</p>
       <dl class="kv">
         <div><dt>Hashtags</dt><dd>Minuscules non accentuées, chiffres et tirets uniquement. Pas d'espace, pas de caractère spécial.</dd></div>
-        <div><dt>Terminaux</dt><dd>Département, 4 à 6 lettres de commune, puis texte libre — <code class="mono">35CESS Yvan</code>. Rester sous 22 caractères : au-delà, le nom Bluetooth des compagnons pose problème.</dd></div>
-        <div><dt>Régions</dt><dd><code class="mono">eu</code>, <code class="mono">fr</code>, <code class="mono">fr-bre</code> et <code class="mono">fr-35</code> sur les répéteurs, avec <code class="mono">fr</code> par défaut. La région limite la zone de retransmission d'un canal et évite d'inonder le réseau national avec du trafic local.</dd></div>
+        <div><dt>Terminaux</dt><dd>Numéro de département, 4 à 6 lettres de commune, puis texte libre — <code class="mono">29QUIM Mairie</code>. Rester sous 22 caractères : au-delà, le nom Bluetooth des compagnons pose problème.</dd></div>
+        <div><dt>Régions</dt><dd><code class="mono">eu</code>, <code class="mono">fr</code>, <code class="mono">fr-bre</code> et la région du département (<code class="mono">fr-22</code>, <code class="mono">fr-29</code>, <code class="mono">fr-35</code>, <code class="mono">fr-56</code>, <code class="mono">fr-44</code>) sur les répéteurs, avec <code class="mono">fr</code> par défaut. La région limite la zone de retransmission d'un canal et évite d'inonder le réseau national avec du trafic local.</dd></div>
       </dl>
       <div class="callout warn">
         <b>À trancher</b>
-        <p>Les noms de canaux privés ci-dessus sont une proposition, à valider avec les partenaires — en particulier si un canal doit être partagé avec l'ADRASEC 35 ou une réserve communale, qui ont leurs propres conventions.</p>
+        <p>Les noms de canaux ci-dessus sont une proposition. À vérifier avec la communauté bretonne (canaux hashtag déjà en usage, rattachement de la Loire-Atlantique à <code class="mono">fr-bre</code>) et à valider avec les partenaires, en particulier si un canal doit être partagé avec une ADRASEC ou une réserve communale, qui ont leurs propres conventions.</p>
       </div>
     </section>
 
@@ -225,8 +237,8 @@
       <ul class="check" id="checklist">
         <li><label><input type="checkbox"><span>Firmware MeshCore à jour, rôle <strong>Companion</strong> (jamais Repeater sur un terminal mobile)</span></label></li>
         <li><label><input type="checkbox"><span>Profil radio France : 869,618 MHz, BW 62,5 kHz, SF8, CR8, région par défaut <code class="mono">fr</code></span></label></li>
-        <li><label><input type="checkbox"><span>Nom du terminal à la convention : <code class="mono">35XXXX Prénom</code>, moins de 22 caractères</span></label></li>
-        <li><label><input type="checkbox"><span>Canaux Public, #ille-et-vilaine et #test ajoutés</span></label></li>
+        <li><label><input type="checkbox"><span>Nom du terminal à la convention : <code class="mono">DDXXXX Nom</code> (DD : numéro de département), moins de 22 caractères</span></label></li>
+        <li><label><input type="checkbox"><span>Canaux Public, #bretagne, hashtag de son département et #test ajoutés</span></label></li>
         <li><label><input type="checkbox"><span>Canaux privés chargés par QR code, en main propre, selon le rôle du porteur</span></label></li>
         <li><label><input type="checkbox"><span>Contacts des correspondants habituels échangés et testés en message direct</span></label></li>
         <li><label><input type="checkbox"><span>Partage de position automatique désactivé</span></label></li>
@@ -247,7 +259,7 @@
           <tbody>
             <tr><th>Mensuelle</th><td>Appel de tous les porteurs sur #test : chacun répond, les absents sont relancés</td><td>Animateur réseau</td></tr>
             <tr><th>Mensuelle</th><td>Relève de l'état des répéteurs : batterie, dernière annonce reçue</td><td>Équipe technique</td></tr>
-            <tr><th>Trimestrielle</th><td>Exercice : un message traverse le département de bout en bout, délai mesuré</td><td>Animateur réseau</td></tr>
+            <tr><th>Trimestrielle</th><td>Exercice : un message traverse la région de bout en bout (par exemple de Brest à Rennes), délai mesuré</td><td>Animateur réseau</td></tr>
             <tr><th>Semestrielle</th><td>Vérification des terminaux dormants : charge, firmware, canaux valides</td><td>Porteur</td></tr>
             <tr><th>Annuelle</th><td>Revue du plan de canaux et du registre des porteurs</td><td>Responsable départemental</td></tr>
           </tbody>
@@ -259,21 +271,21 @@
     <!-- 6 -->
     <section class="chap" id="conduite">
       <h2><span class="no">06</span>Conduite en crise</h2>
-      <p>Le réseau passe par cinq états. Le passage d'un état au suivant est prononcé par le responsable départemental, ou à défaut par le premier porteur qui constate la situation.</p>
+      <p>Le réseau passe par cinq états. Le passage d'un état au suivant est prononcé, pour son département, par le responsable départemental, ou à défaut par le premier porteur qui constate la situation. Quand un événement touche plusieurs départements, les responsables départementaux se coordonnent sur <code class="mono">pmrs-bzh-coordination</code>.</p>
       <ol class="states">
         <li class="s-veille"><b>Veille</b><span class="trg">Permanent</span><span class="act">Terminal chargé et joignable ; aucune obligation d'écoute</span><span class="chn">Public</span></li>
-        <li class="s-pre"><b>Pré-alerte</b><span class="trg">Vigilance orange ou rouge</span><span class="act">Charger le terminal, l'emporter, confirmer sa disponibilité en direct</span><span class="chn">#ille-et-vilaine</span></li>
-        <li class="s-act"><b>Activation</b><span class="trg">Coupure constatée ou demande partenaire</span><span class="act">Allumer, annoncer position et état en un message, puis écouter</span><span class="chn">pmrs-35-operations</span></li>
-        <li class="s-cond"><b>Conduite</b><span class="trg">Pendant l'événement</span><span class="act">Point de situation à cadence fixée ; demandes en message direct</span><span class="chn">pmrs-35-operations</span></li>
-        <li class="s-levee"><b>Levée</b><span class="trg">Réseaux opérateurs rétablis</span><span class="act">Message de fin, recharge, compte rendu sous 48 h</span><span class="chn">#ille-et-vilaine</span></li>
+        <li class="s-pre"><b>Pré-alerte</b><span class="trg">Vigilance orange ou rouge</span><span class="act">Charger le terminal, l'emporter, confirmer sa disponibilité en direct</span><span class="chn">#bretagne, hashtag départemental</span></li>
+        <li class="s-act"><b>Activation</b><span class="trg">Coupure constatée ou demande partenaire</span><span class="act">Allumer, annoncer position et état en un message, puis écouter</span><span class="chn">pmrs-XX-operations</span></li>
+        <li class="s-cond"><b>Conduite</b><span class="trg">Pendant l'événement</span><span class="act">Point de situation à cadence fixée ; demandes en message direct</span><span class="chn">pmrs-XX-operations</span></li>
+        <li class="s-levee"><b>Levée</b><span class="trg">Réseaux opérateurs rétablis</span><span class="act">Message de fin, recharge, compte rendu sous 48 h</span><span class="chn">hashtag départemental</span></li>
       </ol>
 
       <div class="grid g2">
         <div class="panel">
           <p class="panel-label">À l'activation</p>
           <ol class="prio plain">
-            <li><strong>Annoncer.</strong> Un message sur le canal opérations : indicatif, commune, état du porteur, moyen disponible. Un seul message.</li>
-            <li><strong>Établir le contact nominatif.</strong> Un message direct vers le responsable départemental, pour obtenir l'accusé et fixer la route.</li>
+            <li><strong>Annoncer.</strong> Un message sur le canal opérations de son département : indicatif, commune, état du porteur, moyen disponible. Un seul message.</li>
+            <li><strong>Établir le contact nominatif.</strong> Un message direct vers le responsable départemental de son secteur, pour obtenir l'accusé et fixer la route.</li>
             <li><strong>Se taire.</strong> Pas de trafic de confirmation sur les canaux. L'écoute est la posture par défaut.</li>
           </ol>
         </div>
@@ -297,7 +309,7 @@
 
       <div class="callout">
         <b>À trancher avec les partenaires</b>
-        <p>Qui prononce l'activation, et selon quel seuil ? Tant que ce point n'est pas arrêté avec le SIDPC, le SDIS ou la commune concernée, <strong>le réseau reste un moyen interne au collectif</strong> et ne peut pas être annoncé comme un appui à la chaîne de secours.</p>
+        <p>Qui prononce l'activation, et selon quel seuil ? Tant que ce point n'est pas arrêté, département par département, avec le SIDPC, le SDIS ou la commune concernée, <strong>le réseau reste un moyen interne au collectif</strong> et ne peut pas être annoncé comme un appui à la chaîne de secours.</p>
       </div>
     </section>
 
@@ -306,13 +318,13 @@
       <h2><span class="no">07</span>Gabarits de messages</h2>
       <p>Un format fixe se lit vite sur un écran de 2,4 pouces et se saisit sans réfléchir. Champs séparés par des barres verticales, sans accent, <strong>mot-clé de tête en majuscules</strong>.</p>
       <ul class="tpl">
-        <li><span class="t">Prise de poste</span><code><span class="kw">DISPO</span>|commune|moyen</code><code class="ex">DISPO|Cesson-Sevigne|vehicule</code><button class="copy" type="button" data-copy="DISPO|commune|moyen">Copier</button></li>
-        <li><span class="t">Point de situation</span><code><span class="kw">SITU</span>|commune|fait|evolution</code><code class="ex">SITU|Acigne|routes coupees nord|stable</code><button class="copy" type="button" data-copy="SITU|commune|fait|evolution">Copier</button></li>
-        <li><span class="t">Demande</span><code><span class="kw">DEM</span>|quoi|ou|pour quand</code><code class="ex">DEM|groupe electrogene|mairie Betton|avant 18h</code><button class="copy" type="button" data-copy="DEM|quoi|ou|pour quand">Copier</button></li>
-        <li><span class="t">Information urgente</span><code><span class="kw">URG</span>|quoi|ou</code><code class="ex">URG|personne isolee|12 rue des Ecoles Thorigne</code><button class="copy" type="button" data-copy="URG|quoi|ou">Copier</button></li>
-        <li><span class="t">Accusé avec suite</span><code><span class="kw">RECU</span>|reference|suite donnee</code><code class="ex">RECU|DEM Betton|transmis mairie</code><button class="copy" type="button" data-copy="RECU|reference|suite donnee">Copier</button></li>
-        <li><span class="t">État réseau</span><code><span class="kw">RES</span>|repeteur|etat</code><code class="ex">RES|35CESS-toit|muet depuis 14h</code><button class="copy" type="button" data-copy="RES|repeteur|etat">Copier</button></li>
-        <li><span class="t">Fin</span><code><span class="kw">FIN</span>|commune|retour normal</code><code class="ex">FIN|Acigne|reseau operateur retabli</code><button class="copy" type="button" data-copy="FIN|commune|retour normal">Copier</button></li>
+        <li><span class="t">Prise de poste</span><code><span class="kw">DISPO</span>|commune|moyen</code><code class="ex">DISPO|Quimper|vehicule</code><button class="copy" type="button" data-copy="DISPO|commune|moyen">Copier</button></li>
+        <li><span class="t">Point de situation</span><code><span class="kw">SITU</span>|commune|fait|evolution</code><code class="ex">SITU|Carhaix|routes coupees nord|stable</code><button class="copy" type="button" data-copy="SITU|commune|fait|evolution">Copier</button></li>
+        <li><span class="t">Demande</span><code><span class="kw">DEM</span>|quoi|ou|pour quand</code><code class="ex">DEM|groupe electrogene|mairie Pontivy|avant 18h</code><button class="copy" type="button" data-copy="DEM|quoi|ou|pour quand">Copier</button></li>
+        <li><span class="t">Information urgente</span><code><span class="kw">URG</span>|quoi|ou</code><code class="ex">URG|personne isolee|12 rue des Ecoles Lannion</code><button class="copy" type="button" data-copy="URG|quoi|ou">Copier</button></li>
+        <li><span class="t">Accusé avec suite</span><code><span class="kw">RECU</span>|reference|suite donnee</code><code class="ex">RECU|DEM Pontivy|transmis mairie</code><button class="copy" type="button" data-copy="RECU|reference|suite donnee">Copier</button></li>
+        <li><span class="t">État réseau</span><code><span class="kw">RES</span>|repeteur|etat</code><code class="ex">RES|29QUIM-toit|muet depuis 14h</code><button class="copy" type="button" data-copy="RES|repeteur|etat">Copier</button></li>
+        <li><span class="t">Fin</span><code><span class="kw">FIN</span>|commune|retour normal</code><code class="ex">FIN|Carhaix|reseau operateur retabli</code><button class="copy" type="button" data-copy="FIN|commune|retour normal">Copier</button></li>
       </ul>
 
       <div class="grid g2">
@@ -353,7 +365,7 @@
           <p class="panel-label">À arrêter avec les partenaires</p>
           <ul>
             <li>Qui prononce l'activation, et sur quel seuil.</li>
-            <li>Articulation avec l'ADRASEC 35, qui dispose d'un agrément de sécurité civile et est activée par le préfet via le SIDPC — le PMRS n'a pas ce statut.</li>
+            <li>Articulation avec les ADRASEC départementales, qui disposent d'un agrément de sécurité civile et sont activées par le préfet via le SIDPC — le PMRS n'a pas ce statut.</li>
             <li>Qui détient un terminal côté institutionnel, et qui en assure la charge.</li>
             <li>Ce que l'institution accepte de voir transiter sur un réseau bénévole non conventionné.</li>
           </ul>
@@ -390,7 +402,7 @@
       <a href="index.html#ressources">Ressources</a>
       <a href="mailto:contact@pmrs.fr">contact@pmrs.fr</a>
     </div>
-    <p>Version de travail du 18 octobre 2026. Initiative citoyenne sans but lucratif, non intégrée à la chaîne ORSEC.</p>
+    <p>Version de travail du 20 octobre 2026. Initiative citoyenne sans but lucratif, non intégrée à la chaîne ORSEC.</p>
   </div>
 </footer>
 
