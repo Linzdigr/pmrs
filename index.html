@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PMRS — Projet Maillage Radio Secours</title>
+  <meta name="description" content="Réseau citoyen de messages texte par radio LoRa MeshCore (869,618 MHz) : des répéteurs solaires sur les points hauts de Bretagne, sans opérateur, sans Internet, sans licence. Un complément pour la gestion de crise.">
+  <link rel="canonical" href="https://pmrs.fr/">
+  <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PMRS">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://pmrs.fr/">
+  <meta property="og:title" content="PMRS — Projet Maillage Radio Secours">
+  <meta property="og:description" content="Un réseau radio de messages texte qui tient quand le mobile tombe. Répéteurs solaires, sans opérateur, sans Internet, sans licence.">
+  <meta property="og:image" content="https://pmrs.fr/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Écusson PMRS, canal de veille 446,081 25 MHz et nœud MeshCore 869,618 MHz">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PMRS — Projet Maillage Radio Secours">
+  <meta name="twitter:description" content="Un réseau radio de messages texte qui tient quand le mobile tombe. Répéteurs solaires, sans opérateur, sans Internet, sans licence.">
+  <meta name="twitter:image" content="https://pmrs.fr/og-image.png">
+
+  <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Saira+Condensed:wght@600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="PMRS, retour en haut">
+      <img src="logo.png" width="30" height="30" alt="">
+      <b>PMRS</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#pourquoi">Pourquoi</a>
+      <a href="#principe">Principe</a>
+      <a href="#materiel">Matériel</a>
+      <a href="#avancement">Avancement</a>
+      <a href="procedure.html">Procédure de crise</a>
+      <a href="#ressources">Ressources</a>
+      <a class="cta" href="#accueil">Accueillir un répéteur</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="theme" type="button">Auto</button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HÉROS ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="badge">
+      <span></span><span></span><span></span>
+      <img src="logo.png" width="320" height="320" decoding="async" alt="Écusson PMRS : pylône radio émettant, canal 7, 446.08125">
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow"><span class="dot"></span>Initiative citoyenne · Bretagne</p>
+      <h1><span class="caps">P</span>rojet <span class="caps">M</span>aillage <span class="caps">R</span>adio <span class="caps">S</span>ecours</h1>
+      <p class="lede">Un réseau radio de messages texte qui tient quand le mobile tombe. <span>Des répéteurs solaires posés sur les points hauts relaient les messages de proche en proche : sans opérateur, sans Internet, sans licence, et en place avant la crise.</span></p>
+      <div class="btns">
+        <a class="btn" href="#accueil">Accueillir un répéteur</a>
+        <a class="btn ghost" href="#principe">Comprendre en 2 minutes</a>
+        <a class="btn ghost" href="procedure.html">Procédure de crise</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COUP D'ŒIL ================= -->
+<section class="wrap stack-lg" aria-label="PMRS en un coup d'œil" style="padding-bottom:clamp(3rem,8vw,5rem)">
+  <dl class="idcard">
+    <div><dt>Quoi</dt><dd>Messagerie texte par radio<small>Messages courts, directs ou en canal</small></dd></div>
+    <div><dt>Comment</dt><dd>Répéteurs solaires maillés<small>Relais automatique, de proche en proche</small></dd></div>
+    <div><dt>Dépend de</dt><dd>Rien<small>Ni secteur, ni opérateur, ni Internet</small></dd></div>
+    <div><dt>Fréquence</dt><dd class="mono">869,618 MHz<small>LoRa MeshCore · sans licence</small></dd></div>
+    <div><dt>Qui</dt><dd>Un collectif bénévole<small>Sans but lucratif</small></dd></div>
+    <div><dt>Où</dt><dd>Bretagne<small>29 · 22 · 44 · 56 · 35, puis national</small></dd></div>
+    <div><dt>Pour qui</dt><dd>Porteurs équipés et préparés<small>Communes, partenaires, citoyens</small></dd></div>
+    <div><dt>Statut</dt><dd>Un complément<small>Ne remplace ni le 18, ni le 15, ni le 112</small></dd></div>
+  </dl>
+
+  <div class="grid g4">
+    <a class="qcard" href="#principe">
+      <span class="num">01</span>
+      <h3>Comprendre</h3>
+      <p>Pourquoi le mobile tombe en tempête, et comment un maillage de répéteurs prend le relais.</p>
+      <span class="go">Le principe →</span>
+    </a>
+    <a class="qcard" href="#accueil">
+      <span class="num">02</span>
+      <h3>Accueillir un répéteur</h3>
+      <p>Un toit, un mât, un point haut ? Le module est autonome, gratuit et démontable sur simple demande.</p>
+      <span class="go">Les conditions →</span>
+    </a>
+    <a class="qcard" href="procedure.html">
+      <span class="num">03</span>
+      <h3>Procédure de crise</h3>
+      <p>Plan de canaux, préparation à froid, conduite en crise et gabarits de messages.</p>
+      <span class="go">La procédure →</span>
+    </a>
+    <a class="qcard" href="#ressources">
+      <span class="num">04</span>
+      <h3>Ressources</h3>
+      <p>Cartes en temps réel, outils d'analyse, wiki breton et règles communes de la communauté.</p>
+      <span class="go">Les liens →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= PHILOSOPHIE ================= -->
+<section class="section" id="philosophie">
+  <div class="wrap grid split" style="gap:clamp(1.5rem,5vw,3rem)">
+    <div class="stack-lg">
+      <div class="section-head" style="margin:0">
+        <p class="eyebrow">Notre démarche</p>
+        <h2>Un filet de sécurité, tendu à froid</h2>
+      </div>
+      <div class="letter">
+        <p>Au matin du 2 novembre 2023, après la tempête Ciaran, plus de la moitié des antennes mobiles du Finistère étaient muettes. Des communes entières n'avaient plus de lien, ni entre habitants, ni avec la préfecture, ni avec les secours.</p>
+        <p>Le PMRS part d'une idée simple : <strong>un moyen de communication de secours doit exister avant la crise</strong>, sans dépendre de ce qui tombe pendant la crise. Nous posons des répéteurs radio solaires sur des points hauts prêtés par des communes, des casernes, des entreprises et des particuliers. Ensemble, ils forment un maillage qui fonctionne seul, toute l'année.</p>
+        <p>Ce n'est pas un service de secours et ça ne le remplace pas. C'est une brique de plus, ouverte, documentée, interopérable avec le reste du réseau MeshCore français.</p>
+        <p class="sign">— Le collectif PMRS</p>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="principle"><span class="k">A</span><div><h3>Complément, jamais substitut</h3><p>Les appels d'urgence passent par le 18, le 15 et le 112 tant qu'un réseau les porte. Le PMRS sert à faire remonter l'information jusqu'à un point où ces moyens existent.</p></div></div>
+      <div class="principle"><span class="k">B</span><div><h3>Tout se prépare à froid</h3><p>On ne rejoint pas le réseau pendant la crise. Terminaux, canaux et contacts se configurent et se testent avant.</p></div></div>
+      <div class="principle"><span class="k">C</span><div><h3>Sobriété sur l'air</h3><p>La bande est partagée et limitée à 10 % de temps d'émission. Messages courts, une information par message, pas de bavardage.</p></div></div>
+      <div class="principle"><span class="k">D</span><div><h3>Ouvert et interopérable</h3><p>Logiciel libre, profil radio France, règles de nommage communes : le maillage breton fait partie du réseau national.</p></div></div>
+      <div class="principle"><span class="k">E</span><div><h3>Réversible, sans coût pour l'hôte</h3><p>Un répéteur ne se raccorde à rien et se dépose sur simple demande. Matériel et pose sont à la charge du PMRS.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 POURQUOI ================= -->
+<section class="section" id="pourquoi">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">01 — La problématique</p>
+      <h2>Ciaran : quand les réseaux tombent ensemble</h2>
+      <p class="lede">Une tempête coupe l'électricité, l'électricité fait tomber les antennes, et les antennes emportent la voix, les SMS, les données… et les appels d'urgence.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g3">
+        <div class="panel stat"><span class="v">55<small>%</small></span><p>des antennes GSM du Finistère hors service au lendemain de la tempête (564 sur 1 025).</p></div>
+        <div class="panel stat"><span class="v">18<small>jours</small></span><p>pour remettre en service la totalité des sites mobiles du département.</p></div>
+        <div class="panel stat"><span class="v">415 000</span><p>clients mobiles Orange sans réseau en Bretagne au matin du 2 novembre 2023.</p></div>
+      </div>
+
+      <div class="grid split">
+        <figure class="panel" style="margin:0">
+          <p class="panel-label">Finistère — sites mobiles encore hors service, novembre 2023</p>
+          <div class="chart" id="ciaran"><div class="tip" aria-hidden="true"></div></div>
+          <details class="small muted">
+            <summary class="mono" style="cursor:pointer">Voir les données</summary>
+            <div class="table-wrap" style="margin-top:.6rem"><table style="min-width:0">
+              <thead><tr><th>Jour</th><th>Sites hors service</th></tr></thead>
+              <tbody>
+                <tr><th>J+1</th><td class="mono">564</td></tr>
+                <tr><th>J+8</th><td class="mono">180</td></tr>
+                <tr><th>J+11</th><td class="mono">54</td></tr>
+                <tr><th>J+15</th><td class="mono">23</td></tr>
+                <tr><th>J+18</th><td class="mono">15</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+          <figcaption class="source">Sources : préfecture du Finistère, points de situation Ciaran ; Enedis ; Orange Bretagne.</figcaption>
+        </figure>
+        <div class="stack">
+          <div class="panel">
+            <p class="panel-label">En Bretagne</p>
+            <ul>
+              <li><strong>780 000</strong> foyers privés d'électricité</li>
+              <li><strong>415 000</strong> clients mobiles sans réseau (Orange)</li>
+              <li><strong>175 000</strong> lignes fixes en panne, <strong>16 000</strong> poteaux endommagés</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <p class="panel-label">Constat</p>
+            <ul>
+              <li>La panne a duré plusieurs jours, pas quelques heures.</li>
+              <li>Les communes isolées perdent aussi le lien avec la préfecture et les secours.</li>
+              <li>Les <strong>appels d'urgence</strong> (15, 18, 112) sont eux aussi concernés.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ol class="chain" aria-label="Enchaînement des coupures">
+        <li><b>Vents violents</b><span>Chutes d'arbres sur les réseaux aériens</span></li>
+        <li><b>Coupure électrique</b><span>1,2 million de foyers à l'échelle nationale</span></li>
+        <li><b>Sites mobiles à l'arrêt</b><span>Autonomie batterie limitée, accès difficile</span></li>
+        <li><b>Perte des communications</b><span>Voix, SMS, données et appels d'urgence</span></li>
+      </ol>
+
+      <div class="callout">
+        <b>Ce qui manque aujourd'hui</b>
+        <p>Un moyen de communication <strong>qui ne dépende ni du réseau électrique, ni du backhaul opérateur, ni d'Internet</strong> ; utilisable <strong>sans licence, sans formation lourde et sans astreinte</strong> ; et <strong>en place en amont de la crise</strong>, pas déployé dans l'urgence.</p>
+      </div>
+
+      <div class="stack">
+        <h3>Les moyens existants, et la brique que nous ajoutons</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Moyen</th><th>Portée</th><th>Dépendances</th><th>Alimentation</th><th>Usage en crise</th></tr></thead>
+            <tbody>
+              <tr><th>GSM / 4G / 5G</th><td>Nationale</td><td>Opérateur, backhaul, électricité</td><td>Secteur + batterie site</td><td>Indisponible si le site tombe</td></tr>
+              <tr><th>Satellite</th><td>Mondiale</td><td>Opérateur, abonnement, vue du ciel</td><td>Groupe ou batterie</td><td>Fiable mais coûteux et ponctuel</td></tr>
+              <tr><th>PMR446</th><td>1 à 3 km</td><td>Aucune</td><td>Piles</td><td>Local, phonie, de proche en proche</td></tr>
+              <tr><th>CB 27 MHz</th><td>5 à 30 km</td><td>Aucune</td><td>Véhicule / secteur</td><td>Phonie, opérateur présent en permanence</td></tr>
+              <tr><th>Radioamateur</th><td>Régionale et au-delà</td><td>Licence individuelle</td><td>Autonome possible</td><td>Efficace mais réservé aux licenciés</td></tr>
+              <tr class="ours"><th>Maillage LoRa PMRS</th><td>Régionale, par sauts</td><td>Aucune</td><td>Solaire autonome</td><td>Texte, sans intervention humaine</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted small">Aucun de ces moyens ne combine autonomie énergétique, absence d'opérateur, fonctionnement sans présence humaine et couverture régionale. La dernière ligne ne remplace aucune des autres : elle les complète.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 PRINCIPE ================= -->
+<section class="section" id="principe">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">02 — Le principe</p>
+      <h2>Un message saute de répéteur en répéteur</h2>
+      <p class="lede">Chaque message est relayé jusqu'à son destinataire par des répéteurs fixes. Les terminaux, eux, ne relaient pas : ils émettent et reçoivent.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="panel">
+        <div class="flow" aria-label="Chaîne de transmission">
+          <div class="node t"><b>Terminal</b><span>Boîtier de poche ou smartphone</span></div>
+          <div class="node r"><b>Répéteur</b><span>Point haut solaire</span></div>
+          <div class="node r"><b>Répéteur</b><span>Point urbain solaire</span></div>
+          <div class="node t"><b>Terminal</b><span>Destinataire</span></div>
+        </div>
+      </div>
+
+      <div class="grid g3">
+        <div class="panel"><h3>Aucune infrastructure centrale</h3><p class="muted">Pas de serveur, pas d'opérateur, pas d'abonnement. Le réseau fonctionne même totalement coupé d'Internet.</p></div>
+        <div class="panel"><h3>Messages directs chiffrés</h3><p class="muted">Un message direct est chiffré entre les deux terminaux ; les répéteurs le transportent sans le déchiffrer.</p></div>
+        <div class="panel"><h3>Portée régionale par sauts</h3><p class="muted">Jusqu'à 32 sauts successifs, soit plusieurs centaines de kilomètres de proche en proche.</p></div>
+      </div>
+
+      <div class="panel stepper" id="resilience">
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center">
+          <div>
+            <p class="panel-label">Résilience</p>
+            <h3 style="font-size:1.5rem">Que se passe-t-il si un répéteur tombe ?</h3>
+          </div>
+          <div class="steps" role="group" aria-label="Étapes">
+            <button type="button" aria-pressed="true"><b>1</b>Nominal</button>
+            <button type="button" aria-pressed="false"><b>2</b>Panne</button>
+            <button type="button" aria-pressed="false"><b>3</b>Recherche</button>
+            <button type="button" aria-pressed="false"><b>4</b>Nouvelle route</button>
+          </div>
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 800 260" role="img" aria-label="Schéma : terminaux A et B reliés par les répéteurs R1, R2, R3 et R4">
+            <line data-edge="a-r1"  x1="60"  y1="200" x2="230" y2="120"/>
+            <line data-edge="r1-r2" x1="230" y1="120" x2="400" y2="70"/>
+            <line data-edge="r2-r3" x1="400" y1="70"  x2="570" y2="120"/>
+            <line data-edge="r3-b"  x1="570" y1="120" x2="740" y2="200"/>
+            <line data-edge="r1-r4" x1="230" y1="120" x2="400" y2="205"/>
+            <line data-edge="r4-r3" x1="400" y1="205" x2="570" y2="120"/>
+            <g><circle class="dg-term" cx="60" cy="200" r="24"/><text class="dg-term-t" x="60" y="205" text-anchor="middle">A</text></g>
+            <g><circle class="dg-term" cx="740" cy="200" r="24"/><text class="dg-term-t" x="740" y="205" text-anchor="middle">B</text></g>
+            <g><circle class="dg-rep" cx="230" cy="120" r="26"/><text class="dg-rep-t" x="230" y="125" text-anchor="middle">R1</text></g>
+            <g data-node="r2"><circle cx="400" cy="70" r="26"/><text x="400" y="75" text-anchor="middle">R2</text></g>
+            <g><circle class="dg-rep" cx="570" cy="120" r="26"/><text class="dg-rep-t" x="570" y="125" text-anchor="middle">R3</text></g>
+            <g data-node="r4"><circle cx="400" cy="205" r="26"/><text x="400" y="210" text-anchor="middle">R4</text></g>
+          </svg>
+        </div>
+        <div class="legend">
+          <span><i></i>Route active</span>
+          <span><i class="dash"></i>Diffusion en cours</span>
+          <span><i class="brk"></i>Liaison rompue</span>
+          <span><i class="idle"></i>Liaison disponible</span>
+        </div>
+        <div class="step-caption" aria-live="polite"><h3></h3><p></p></div>
+        <p class="small muted" style="border-top:1px solid var(--line); padding-top:.9rem">La redondance suppose un recouvrement des zones de couverture : <strong>chaque point haut accueilli crée une route de secours pour ses voisins.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MATÉRIEL ================= -->
+<section class="section" id="materiel">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">03 — Le matériel</p>
+      <h2>Un boîtier, un panneau, une antenne</h2>
+      <p class="lede">Une mise sous tension, puis plus rien à faire. Le répéteur tourne 24 h/24 toute l'année sur l'énergie du soleil, et se supervise à distance par radio.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">Le module répéteur</p>
+          <dl class="kv">
+            <div><dt>Boîtier</dt><dd>IP67, fixable sur barrière, mur ou mât type TV</dd></div>
+            <div><dt>Radio</dt><dd>LoRa <strong>869,618 MHz</strong>, 100 à 500 mW max</dd></div>
+            <div><dt>Antenne</dt><dd>Verticale 4,4 ou 9 dBi selon la topographie</dd></div>
+            <div><dt>Énergie</dt><dd>Panneau solaire de 5 à 10 W</dd></div>
+            <div><dt>Batterie</dt><dd>18650 3,7 V, −20 à +60 °C (migration LiFePO4 à l'étude)</dd></div>
+            <div><dt>Poids</dt><dd>730 g maximum</dd></div>
+          </dl>
+        </div>
+        <div class="stack">
+          <div class="grid g3" style="grid-template-columns:repeat(auto-fit,minmax(9rem,1fr))">
+            <div class="panel stat"><span class="v">19–35<small>mA</small></span><p>consommation moyenne</p></div>
+            <div class="panel stat"><span class="v">3–5<small>jours</small></span><p>sans aucun soleil, batterie pleine</p></div>
+            <div class="panel stat"><span class="v">15<small>min</small></span><p>de soleil par jour suffisent en décembre</p></div>
+          </div>
+          <div class="panel">
+            <p class="panel-label">Retour d'expérience</p>
+            <ul>
+              <li><strong>9 répéteurs</strong> de ce type en service depuis 3 ans en Ille-et-Vilaine.</li>
+              <li>Aucune coupure liée à l'énergie constatée.</li>
+              <li>Batterie jamais descendue sous <strong>70 %</strong>.</li>
+              <li>Panneau dimensionné sur le mois le plus défavorable ; durée de vie visée 10 ans.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">Les terminaux</p>
+          <h3>Deux familles, qui doivent coexister</h3>
+          <dl class="kv">
+            <div><dt>Compagnon</dt><dd>Petit boîtier radio piloté en Bluetooth par l'application MeshCore d'un smartphone. Léger, saisie rapide, coût faible — mais dépend d'un téléphone chargé.</dd></div>
+            <div><dt>Autonome</dt><dd>Terminal à clavier (LilyGo T-Deck Plus, Elecrow ThinkNode M9…) qui fonctionne sans téléphone. C'est le matériel à placer en mairie, au PC de secours ou dans un véhicule.</dd></div>
+          </dl>
+          <p class="small muted">Un terminal a une portée de terminal, pas de répéteur : il doit être à portée d'un répéteur pour rejoindre le maillage.</p>
+        </div>
+        <div class="panel">
+          <p class="panel-label">Pourquoi MeshCore plutôt que Meshtastic</p>
+          <dl class="kv">
+            <div><dt>Relayage</dt><dd>Seuls les répéteurs dédiés relaient — <span class="muted">Meshtastic : tous les nœuds, par inondation</span></dd></div>
+            <div><dt>Charge</dt><dd>Maîtrisée, trafic dirigé — <span class="muted">croît vite avec le nombre de nœuds</span></dd></div>
+            <div><dt>Rôles</dt><dd>Terminal / Répéteur / Salon, rôles stricts</dd></div>
+            <div><dt>Cible</dt><dd>Infrastructure territoriale planifiée</dd></div>
+          </dl>
+          <p class="small muted">Un réseau territorial repose sur des répéteurs fixes dimensionnés, pas sur la densité de terminaux. Les deux logiciels tournent sur le même matériel : le choix reste réversible.</p>
+        </div>
+      </div>
+
+      <div class="stack">
+        <h3>Sur l'air</h3>
+        <div class="grid g2">
+          <section class="panel" aria-label="Maillage de données LoRa MeshCore">
+            <p class="panel-label">Données — LoRa MeshCore</p>
+            <div class="readout">
+              <span class="ch">MeshCore</span>
+              <span class="freq">869,618<small>MHz</small></span>
+            </div>
+            <p class="note">Profil France (EU/UK Narrow) · BW 62,5 kHz · SF8 · CR8 · région par défaut fr</p>
+            <div class="scale">
+              <div class="track" id="track-mc" role="img" aria-label="Sous-bande 869,400 à 869,650 MHz, canal MeshCore centré sur 869,618 MHz et occupant 62,5 kHz"></div>
+              <div class="ends"><span>869,400</span><span>869,525</span><span>869,650</span></div>
+            </div>
+            <dl class="specs">
+              <div><dt>Puissance</dt><dd>500 mW PAR</dd></div>
+              <div><dt>Cycle</dt><dd>10 % max</dd></div>
+              <div><dt>Licence</dt><dd>Aucune</dd></div>
+            </dl>
+          </section>
+          <section class="panel" aria-label="Veille phonie PMR446">
+            <p class="panel-label">Phonie — veille PMR446</p>
+            <div class="readout">
+              <span class="ch">Canal 7</span>
+              <span class="freq">446,081&thinsp;25<small>MHz</small></span>
+            </div>
+            <p class="note">Analogique, antenne intégrée — tout poste PMR446 du commerce.</p>
+            <div class="scale">
+              <div class="track" id="track-pmr" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
+              <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
+            </div>
+            <dl class="specs">
+              <div><dt>Pas</dt><dd>12,5 kHz</dd></div>
+              <div><dt>Puissance</dt><dd>500 mW PAR</dd></div>
+              <div><dt>Canaux</dt><dd>16</dd></div>
+            </dl>
+          </section>
+        </div>
+        <p class="source">Cadre : décision Arcep n° 2014-1263 modifiée (décision européenne 2006/771/CE), TNRBF (ANFR) ; ERC/DEC/(98)25 et ECC Decision (15)05 pour le PMR446. Autorisation générale : aucune licence ni déclaration individuelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 AVANCEMENT ================= -->
+<section class="section" id="avancement">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">04 — État du réseau</p>
+      <h2>Où en est le maillage</h2>
+      <p class="lede">Le maillage n'a d'intérêt que s'il est continu : chaque site accueilli conditionne la couverture des communes voisines.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g3">
+        <div class="panel stat"><span class="v">1 800+</span><p>répéteurs actifs en France <span class="source">— relevé d'octobre 2026</span></p></div>
+        <div class="panel stat"><span class="v">30 700</span><p>trames relayées par jour</p></div>
+        <div class="panel stat"><span class="v">5 000+</span><p>utilisateurs estimés en France <span class="source">— d'après les compagnons aperçus</span></p></div>
+      </div>
+
+      <ol class="timeline">
+        <li class="done">
+          <span class="tag">Phase 1</span>
+          <span class="when">Hiver 2025</span>
+          <h3>Couverture 29</h3>
+          <ul class="list"><li>Premiers répéteurs installés</li><li>Validation du profil radio</li></ul>
+        </li>
+        <li class="done">
+          <span class="tag">Phase 2</span>
+          <span class="when">Printemps → été 2026</span>
+          <h3>Couverture 22 / 44</h3>
+          <ul class="list"><li>Densification des points hauts</li><li>Contact avec les gestionnaires de sites</li><li>Premiers exercices de test</li></ul>
+        </li>
+        <li class="now">
+          <span class="tag">Phase 3 · en cours</span>
+          <span class="when">Hiver 2026 → printemps 2027</span>
+          <h3>Continuité 56 et 35</h3>
+          <ul class="list"><li>Redondance sur les axes principaux</li><li>Résorption des dernières zones blanches</li><li>Procédure d'usage en crise</li><li>Communication sur la technologie</li></ul>
+        </li>
+        <li>
+          <span class="tag">Phase 4</span>
+          <span class="when">Été 2027 → …</span>
+          <h3>Continuité nationale</h3>
+          <ul class="list"><li>Couverture nationale continue et solide</li></ul>
+        </li>
+      </ol>
+
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">Ils accueillent déjà un répéteur</p>
+          <p class="muted">Gendarmeries, casernes de pompiers, mairies, gymnases, exploitants agricoles, écoles, particuliers…</p>
+        </div>
+        <div class="callout warn">
+          <b>Zone blanche identifiée : Centre Bretagne</b>
+          <p>C'est là qu'un point haut supplémentaire a le plus d'effet. <a href="#accueil">Vous avez un site ?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 ACCUEIL ================= -->
+<section class="section" id="accueil">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">05 — Accueillir un répéteur</p>
+      <h2>Un point haut, et c'est tout</h2>
+      <p class="lede">Château d'eau, toit de mairie, caserne, pylône, grange sur une butte : chaque site accueilli étend la couverture et crée une route de secours pour les voisins.</p>
+    </div>
+
+    <div class="stack-lg">
+      <dl class="idcard">
+        <div><dt>Emprise</dt><dd>35 × 35 × 25 cm<small>+ une antenne de 20 à 150 cm</small></dd></div>
+        <div><dt>Énergie</dt><dd>Aucune<small>Le module est autonome, il ne se raccorde à rien</small></dd></div>
+        <div><dt>Réseau</dt><dd>Aucun<small>Ni filaire, ni Wi-Fi, aucun accès à vos systèmes</small></dd></div>
+        <div><dt>Fixation</dt><dd>Avec ou sans perçage<small>Fixation sur mât standard préférée</small></dd></div>
+        <div><dt>Accès</dt><dd>Une visite d'installation<small>Puis seulement en cas de maintenance</small></dd></div>
+        <div><dt>Assurance</dt><dd>Précisée dans la convention<small>Selon le site et l'hôte</small></dd></div>
+        <div><dt>Réversibilité</dt><dd>Dépose complète<small>Sur simple demande</small></dd></div>
+        <div><dt>Coût</dt><dd>Aucun<small>Matériel et pose financés par le PMRS</small></dd></div>
+      </dl>
+
+      <div class="stack">
+        <h3>Ce que nous demandons</h3>
+        <div class="grid g3">
+          <div class="panel ask"><span class="n">1</span><h3>L'accueil d'un répéteur</h3><p>Sur un point haut ou stratégique de votre secteur.</p></div>
+          <div class="panel ask"><span class="n">2</span><h3>Une visite technique</h3><p>Pour définir ensemble l'emplacement, la fixation et les modalités d'accès.</p></div>
+          <div class="panel ask"><span class="n">3</span><h3>Une convention simple</h3><p>Précisant la réversibilité, l'assurance et les conditions d'intervention.</p></div>
+        </div>
+      </div>
+
+      <div class="panel" id="contact">
+        <p class="panel-label">Contact</p>
+        <p>Yvan Ferez — responsable de déploiement Ille-et-Vilaine et Morbihan</p>
+        <div class="contact">
+          <span class="mail" id="mail" tabindex="0">contact@pmrs.fr</span>
+          <button class="btn" type="button" data-copy="#mail">Copier</button>
+          <a class="btn ghost" href="mailto:contact@pmrs.fr?subject=Accueil%20d%27un%20r%C3%A9p%C3%A9teur%20PMRS">Écrire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 CRISE ================= -->
+<section class="section" id="crise">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">06 — En cas de crise</p>
+      <h2>Une règle d'or, cinq états</h2>
+      <p class="lede">La procédure d'usage fixe le plan de canaux, l'équipement des porteurs et la discipline de trafic. L'essentiel tient en deux idées.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="vs">
+        <div class="panel yes">
+          <p class="panel-label">Message direct</p>
+          <h3>Acquitté : l'émetteur sait qu'il est arrivé</h3>
+          <p class="muted">Le destinataire renvoie un accusé qui fixe la route.</p>
+          <p class="rule">→ Toute demande qui engage une action passe par là.</p>
+        </div>
+        <div class="panel no">
+          <p class="panel-label">Message de canal</p>
+          <h3>Diffusé à tous, sans accusé</h3>
+          <p class="muted">Un silence ne signifie rien : ni lu, ni perdu. L'émetteur n'est pas authentifié.</p>
+          <p class="rule">→ Situation générale seulement, jamais un ordre.</p>
+        </div>
+      </div>
+
+      <ol class="states">
+        <li class="s-veille"><b>Veille</b><span class="trg">Permanent</span><span class="act">Terminal chargé et joignable</span><span class="chn">Public</span></li>
+        <li class="s-pre"><b>Pré-alerte</b><span class="trg">Vigilance orange ou rouge</span><span class="act">Charger, emporter, confirmer sa disponibilité</span><span class="chn">#ille-et-vilaine</span></li>
+        <li class="s-act"><b>Activation</b><span class="trg">Coupure constatée</span><span class="act">Annoncer en un message, puis écouter</span><span class="chn">canal opérations</span></li>
+        <li class="s-cond"><b>Conduite</b><span class="trg">Pendant l'événement</span><span class="act">Points de situation à cadence fixe</span><span class="chn">canal opérations</span></li>
+        <li class="s-levee"><b>Levée</b><span class="trg">Réseaux rétablis</span><span class="act">Message de fin, compte rendu sous 48 h</span><span class="chn">#ille-et-vilaine</span></li>
+      </ol>
+
+      <div class="callout">
+        <b>Le PMRS ne remplace aucun moyen officiel</b>
+        <p>Les appels d'urgence passent par le <strong>18</strong>, le <strong>15</strong> et le <strong>112</strong> tant qu'un réseau les porte. Le PMRS est un moyen de repli entre porteurs identifiés, pas un canal d'alerte du public ni un accès aux secours. Il n'est pas intégré à la chaîne ORSEC.</p>
+      </div>
+
+      <div class="btns">
+        <a class="btn" href="procedure.html">Lire la procédure complète</a>
+        <a class="btn ghost" href="procedure.html#gabarits">Gabarits de messages</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 RESSOURCES ================= -->
+<section class="section" id="ressources">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">07 — Ressources</p>
+      <h2>Les outils de la communauté</h2>
+      <p class="lede">Le maillage breton s'appuie sur le travail de nombreux bénévoles : cartes, observateurs, outils d'analyse et documentation. Merci à eux.</p>
+    </div>
+
+    <div class="grid g2" style="gap:2rem 1.5rem">
+      <div class="res-group">
+        <h3>Cartes &amp; observation</h3>
+        <ul class="res">
+          <li><a href="https://meshmapnordouest.serveurperso.in/" target="_blank" rel="noopener">
+            <b>Carte MeshCore Nord-Ouest</b><span class="host">meshmapnordouest.serveurperso.in</span>
+            <span class="desc">Carte en temps réel des répéteurs, compagnons et salons du Grand Ouest. Ligne de vue, propagation, historique des annonces.</span><span class="arrow">↗</span></a></li>
+          <li><a href="https://meshcore.serveurperso.in/" target="_blank" rel="noopener">
+            <b>MeshCore Network France</b><span class="host">meshcore.serveurperso.in</span>
+            <span class="desc">Vue d'ensemble du réseau MeshCore français.</span><span class="arrow">↗</span></a></li>
+          <li><a href="https://relaylens.mesh.chaun14.fr/regions" target="_blank" rel="noopener">
+            <b>RelayLens</b><span class="host">relaylens.mesh.chaun14.fr</span>
+            <span class="desc">Organisation du réseau en régions : compagnons, répéteurs, canaux, observateurs, et configurateur de régions.</span><span class="arrow">↗</span></a></li>
+        </ul>
+      </div>
+
+      <div class="res-group">
+        <h3>Analyse du trafic</h3>
+        <ul class="res">
+          <li><a href="https://meshqual.gamma-network.eu/" target="_blank" rel="noopener">
+            <b>MeshQual</b><span class="host">meshqual.gamma-network.eu</span>
+            <span class="desc">Qualité des liaisons entre nœuds MeshCore.</span><span class="arrow">↗</span></a></li>
+          <li><a href="https://meshcore-analyzer.eu/" target="_blank" rel="noopener">
+            <b>MeshCore Analyzer</b><span class="host">meshcore-analyzer.eu</span>
+            <span class="desc">Analyse des trames remontées par les observateurs.</span><span class="arrow">↗</span></a></li>
+        </ul>
+      </div>
+
+      <div class="res-group">
+        <h3>Documentation &amp; règles communes</h3>
+        <ul class="res">
+          <li><a href="https://wiki.meshcore.bzh/" target="_blank" rel="noopener">
+            <b>Wiki MeshCore Bretagne</b><span class="host">wiki.meshcore.bzh</span>
+            <span class="desc">La documentation de la communauté bretonne.</span><span class="arrow">↗</span></a></li>
+          <li><a href="https://meshcore.fr/" target="_blank" rel="noopener">
+            <b>MeshCore France</b><span class="host">meshcore.fr</span>
+            <span class="desc">Profil radio national : 869,618 MHz, 62,5 kHz, SF8, CR8.</span><span class="arrow">↗</span></a></li>
+          <li><a href="https://gaulix.fr/docs-parametrage/regles-de-nommage-regions-canaux-meshcore/" target="_blank" rel="noopener">
+            <b>Gaulix — règles de base MeshCore</b><span class="host">gaulix.fr</span>
+            <span class="desc">Nommage des terminaux, régions et canaux pour rester interopérable.</span><span class="arrow">↗</span></a></li>
+        </ul>
+      </div>
+
+      <div class="res-group">
+        <h3>Pour aller plus loin</h3>
+        <ul class="res">
+          <li><a href="https://www.la-resilience.fr/" target="_blank" rel="noopener">
+            <b>La Résilience</b><span class="host">la-resilience.fr</span>
+            <span class="desc">Résilience pratique au quotidien, avec de nombreux articles radio : antennes et répéteurs MeshCore/Meshtastic, PMR446, CB.</span><span class="arrow">↗</span></a></li>
+          <li><a href="procedure.html">
+            <b>Procédure d'usage en crise</b><span class="host">pmrs.fr/procedure</span>
+            <span class="desc">Plan de canaux, préparation des terminaux, conduite en crise et gabarits.</span><span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="row">
+      <span class="mono">PMRS · Projet Maillage Radio Secours</span>
+      <a href="procedure.html">Procédure de crise</a>
+      <a href="#ressources">Ressources</a>
+      <a href="mailto:contact@pmrs.fr">contact@pmrs.fr</a>
+    </div>
+    <p>Initiative citoyenne sans but lucratif. Le PMRS n'est pas intégré à la chaîne ORSEC et ne remplace aucun moyen officiel d'alerte ou de secours.</p>
+    <p>LoRa MeshCore — sous-bande 869,400 à 869,650 MHz, 500 mW PAR, rapport cyclique 10 %. PMR446 analogique — 446,0 à 446,2 MHz, 500 mW PAR. Les deux sans licence ni redevance.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

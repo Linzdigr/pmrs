@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PMRS.fr — Site en construction</title>
+  <meta name="description" content="Site en construction. Veille PMR446 canal 7 (446,081 25 MHz) et nœud LoRa MeshCore (869,618 MHz).">
+  <link rel="canonical" href="https://pmrs.fr/">
+  <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PMRS">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://pmrs.fr/">
+  <meta property="og:title" content="PMRS.fr — Site en construction">
+  <meta property="og:description" content="Site en construction. Veille PMR446 canal 7 (446,081 25 MHz) et nœud LoRa MeshCore (869,618 MHz).">
+  <meta property="og:image" content="https://pmrs.fr/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Écusson PMRS, canal de veille 446,081 25 MHz et nœud MeshCore 869,618 MHz">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PMRS.fr — Site en construction">
+  <meta name="twitter:description" content="Site en construction. Veille PMR446 canal 7 (446,081 25 MHz) et nœud LoRa MeshCore (869,618 MHz).">
+  <meta name="twitter:image" content="https://pmrs.fr/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Saira+Condensed:wght@600;800&display=swap">
+  <style>
+  /* Layout: one-screen station panel — emitting badge, frequency readout, 446 MHz band scale. */
+  :root{
+    --bg:#EFEBEA;         /* paper, red-biased neutral */
+    --surface:#FFFFFF;
+    --sunk:#E3DDDB;
+    --fg:#1A1413;
+    --muted:#6F615E;
+    --accent:#AC3231;     /* red sampled from the badge */
+    --line:#D6CECC;
+    --halo:rgba(172,50,49,.16);
+  
+    --display:"Saira Condensed","Arial Narrow",Helvetica,sans-serif;
+    --body:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+    --data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#15100F; --surface:#1E1716; --sunk:#120D0C; --fg:#F1EBE9;
+      --muted:#9B8C89; --accent:#D8574F; --line:#342A28;
+      --halo:rgba(216,87,79,.20); color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15100F; --surface:#1E1716; --sunk:#120D0C; --fg:#F1EBE9;
+    --muted:#9B8C89; --accent:#D8574F; --line:#342A28;
+    --halo:rgba(216,87,79,.20); color-scheme:dark;
+  }
+  
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:var(--body); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .stack{display:flex; flex-direction:column; gap:1rem}
+  .wrap{
+    max-width:60rem; margin:0 auto;
+    padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px));
+    padding-block:clamp(2.5rem,7vw,4.5rem);
+    display:flex; flex-direction:column; gap:clamp(2rem,5vw,3rem);
+  }
+  
+  /* --- badge ------------------------------------------------------- */
+  .beacon{display:flex; flex-direction:column; align-items:center; gap:1.25rem; text-align:center}
+  .badge{position:relative; width:clamp(116px,30vw,152px); aspect-ratio:1}
+  .badge img{width:100%; height:auto; max-width:100%; display:block; position:relative; z-index:2}
+  .badge span{
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    border-radius:50%; border:1px solid var(--accent); opacity:0; z-index:1;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .badge span{animation:ping 4.4s cubic-bezier(.18,.6,.3,1) infinite}
+    .badge span:nth-child(2){animation-delay:1.47s}
+    .badge span:nth-child(3){animation-delay:2.94s}
+  }
+  @keyframes ping{
+    0%{transform:scale(1); opacity:.5}
+    70%{opacity:0}
+    100%{transform:scale(2.05); opacity:0}
+  }
+  
+  .eyebrow{
+    font-family:var(--data); font-size:.72rem; font-weight:500;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--accent);
+    display:inline-flex; align-items:center; gap:.6rem;
+  }
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); flex:none}
+  @media (prefers-reduced-motion:no-preference){ .dot{animation:blink 2.6s ease-in-out infinite} }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  
+  h1{
+    font-family:var(--display); font-weight:800; margin:0;
+    font-size:clamp(3rem,13vw,4.25rem); line-height:.9;
+    letter-spacing:.05em; text-wrap:balance;
+  }
+  h1 .tld{color:var(--muted); font-weight:600}
+  .lede{margin:0; max-width:34ch; color:var(--muted); text-wrap:balance}
+  
+  h1 span.caps{color:var(--accent)}
+
+  /* --- readout ----------------------------------------------------- */
+  .panel{
+    background:var(--surface); border:1px solid var(--line); border-radius:4px;
+    padding:clamp(1.25rem,4vw,1.75rem);
+    display:flex; flex-direction:column; gap:1.5rem;
+  }
+  .panel-label{
+    margin:0; font-family:var(--data); font-size:.68rem; font-weight:500;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+  }
+  .head{display:flex; flex-direction:column; gap:.45rem; min-width:0}
+  .note{
+    margin:0; font-family:var(--data); font-size:.76rem; color:var(--muted);
+    overflow-wrap:anywhere;
+  }
+  .readout{display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem 1.5rem; min-width:0}
+  .ch{font-family:var(--display); font-weight:800; font-size:1.5rem; letter-spacing:.08em; text-transform:uppercase}
+  .freq{
+    font-family:var(--data); font-weight:600; font-variant-numeric:tabular-nums;
+    font-size:clamp(1.75rem,8vw,2.75rem); letter-spacing:-.02em; color:var(--accent);
+    min-width:0; word-break:break-word;
+  }
+  .freq small{font-size:.42em; font-weight:500; letter-spacing:.06em; color:var(--muted); margin-left:.4em}
+  
+  /* --- band scale -------------------------------------------------- */
+  .scale{display:flex; flex-direction:column; gap:.55rem; padding-top:1.15rem}
+  .track{
+    position:relative; height:46px; background:var(--sunk);
+    border-radius:3px; border:1px solid var(--line);
+  }
+  .tick{position:absolute; top:10px; width:2px; height:14px; background:var(--muted); opacity:.55; transform:translateX(-1px)}
+  .tick.on{top:6px; height:24px; width:3px; background:var(--accent); opacity:1; box-shadow:0 0 0 6px var(--halo)}
+  .tick.on::after{
+    content:attr(data-label); position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+    font-family:var(--data); font-size:.68rem; font-weight:600; letter-spacing:.08em;
+    color:var(--accent); white-space:nowrap;
+  }
+  /* occupied bandwidth, drawn behind the ticks */
+  .band{
+    position:absolute; top:5px; bottom:5px; background:var(--halo);
+    border-radius:2px; box-shadow:inset 0 0 0 1px var(--halo);
+  }
+  .ends{
+    display:flex; justify-content:space-between; gap:1rem;
+    font-family:var(--data); font-size:.72rem; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+  
+  /* --- specs ------------------------------------------------------- */
+  .specs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden}
+  .specs div{background:var(--surface); padding:.9rem 1rem; min-width:0}
+  .specs dt{font-family:var(--data); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 .25rem}
+  .specs dd{margin:0; font-family:var(--data); font-weight:600; font-size:1rem; font-variant-numeric:tabular-nums}
+  @media (max-width:460px){ .specs{grid-template-columns:minmax(0,1fr)} }
+  
+  /* --- contact ----------------------------------------------------- */
+  .contact{display:flex; flex-wrap:wrap; align-items:center; gap:.75rem}
+  .mail{
+    font-family:var(--data); font-size:.95rem; color:var(--fg);
+    background:var(--sunk); border:1px solid var(--line); border-radius:3px;
+    padding:.5rem .75rem; user-select:all; min-width:0; overflow-wrap:anywhere;
+  }
+  button{
+    font:inherit; font-family:var(--data); font-size:.8rem; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
+    background:var(--accent); color:#fff; border:1px solid var(--accent);
+    border-radius:3px; padding:.55rem .95rem; transition:opacity .15s ease;
+  }
+  button:hover{opacity:.85}
+  button:focus-visible,.mail:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  
+  footer{border-top:1px solid var(--line); padding-top:1.25rem; color:var(--muted); font-size:.82rem}
+  footer p{margin:0 0 .4rem}
+  footer p:last-child{margin:0}
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="beacon">
+    <div class="badge">
+      <span></span><span></span><span></span>
+      <img src="logo.png" width="320" height="320" decoding="async" alt="Écusson PMRS : pylône radio émettant, canal 7, 446.08125">
+    </div>
+    <p class="eyebrow"><span class="dot"></span>Site en construction</p>
+    <h1><span class="caps">P</span>rojet <span class="caps">M</span>aillage <span class="caps">R</span>adio <span class="caps">S</span>ecours</h1>
+    <p class="lede">Site en construction. En attendant, la veille se fait sur l'air ;)</p>
+  </header>
+
+  <div class="stack">
+
+  <section class="panel" aria-label="Veille phonie PMR446">
+    <p class="panel-label">Phonie — PMR446</p>
+
+    <div class="head">
+      <div class="readout">
+        <span class="ch">Canal 7</span>
+        <span class="freq">446,081&thinsp;25<small>MHz</small></span>
+      </div>
+      <p class="note">Analogique, antenne intégrée — tout poste PMR446 du commerce.</p>
+    </div>
+
+    <div class="scale">
+      <div class="track" id="track" role="img" aria-label="Bande PMR446 de 446,000 à 446,200 MHz, canal 7 en veille"></div>
+      <div class="ends"><span>446,000</span><span>446,100</span><span>446,200</span></div>
+    </div>
+
+    <dl class="specs">
+      <div><dt>Pas</dt><dd>12,5 kHz</dd></div>
+      <div><dt>Puissance</dt><dd>500 mW PAR</dd></div>
+      <div><dt>Canaux</dt><dd>16</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" aria-label="Maillage de données LoRa MeshCore">
+    <p class="panel-label">Données — LoRa MeshCore</p>
+
+    <div class="head">
+      <div class="readout">
+        <span class="ch">MeshCore</span>
+        <span class="freq">869,618<small>MHz</small></span>
+      </div>
+      <p class="note">Preset EU/UK (Narrow) — réseau français · hash de route 2 octets.</p>
+    </div>
+
+    <div class="scale">
+      <div class="track" id="track-mc" role="img" aria-label="Sous-bande 869,400 à 869,650 MHz, canal MeshCore centré sur 869,618 MHz et occupant 62,5 kHz"></div>
+      <div class="ends"><span>869,400</span><span>869,525</span><span>869,650</span></div>
+    </div>
+
+    <dl class="specs">
+      <div><dt>Bande</dt><dd>62,5 kHz</dd></div>
+      <div><dt>Étalement</dt><dd>SF8</dd></div>
+      <div><dt>Codage</dt><dd>CR8</dd></div>
+    </dl>
+  </section>
+
+  </div>
+
+  <section class="contact" aria-label="Contact">
+    <span class="mail" id="mail" tabindex="0">contact@pmrs.fr</span>
+    <button type="button" id="copy">Copier</button>
+  </section>
+
+  <footer>
+    <p>PMR446 analogique — 446,0 à 446,2 MHz, 500 mW PAR. LoRa MeshCore — sous-bande 869,400 à 869,650 MHz, 500 mW PAR, rapport cyclique 10 % ou LBT+AFA. Les deux sans licence ni redevance.</p>
+    <p>Cadre réglementaire : ERC/DEC/(98)25 et ECC Decision (15)05 pour le PMR446, ERC REC 70-03 annexe 1 pour la bande 868-870 MHz.</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  function pos(f, lo, hi) { return ((f - lo) / (hi - lo) * 100).toFixed(3) + '%'; }
+
+  function tick(parent, left, label) {
+    var el = document.createElement('i');
+    el.className = 'tick' + (label ? ' on' : '');
+    el.style.left = left;
+    if (label) { el.setAttribute('data-label', label); }
+    parent.appendChild(el);
+    return el;
+  }
+
+  // PMR446 : 16 canaux analogiques, 446,00625 MHz + n x 12,5 kHz
+  var track = document.getElementById('track');
+  if (track) {
+    for (var i = 0; i < 16; i++) {
+      var f = 446.00625 + i * 0.0125;
+      tick(track, pos(f, 446, 446.2), i === 6 ? 'CH 7' : null);
+    }
+  }
+
+  // MeshCore : canal unique dans la sous-bande 10 % / 500 mW
+  var mc = document.getElementById('track-mc');
+  if (mc) {
+    var LO = 869.4, HI = 869.65, F = 869.618, BW = 0.0625;
+    var band = document.createElement('b');
+    band.className = 'band';
+    band.style.left = pos(F - BW / 2, LO, HI);
+    band.style.width = (BW / (HI - LO) * 100).toFixed(3) + '%';
+    mc.appendChild(band);
+    for (var j = 1; j <= 4; j++) {          // graduations internes, 50 kHz
+      tick(mc, pos(LO + j * 0.05, LO, HI), null);
+    }
+    tick(mc, pos(F, LO, HI), '62,5 kHz');
+  }
+
+  var btn = document.getElementById('copy');
+  var mail = document.getElementById('mail');
+  if (btn && mail) {
+    btn.addEventListener('click', function(){
+      var done = function(){
+        btn.textContent = 'Copié';
+        setTimeout(function(){ btn.textContent = 'Copier'; }, 1800);
+      };
+      var fallback = function(){
+        try {
+          var r = document.createRange();
+          r.selectNodeContents(mail);
+          var s = window.getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+          btn.textContent = 'Sélectionné';
+          setTimeout(function(){ btn.textContent = 'Copier'; }, 1800);
+        } catch (e) {}
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(mail.textContent.trim()).then(done, fallback);
+      } else {
+        fallback();
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

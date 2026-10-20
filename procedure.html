@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Procédure de crise — PMRS</title>
+  <meta name="description" content="Procédure d'usage en crise du réseau MeshCore PMRS d'Ille-et-Vilaine : principes d'emploi, plan de canaux, parc de terminaux, préparation à froid, conduite en crise et gabarits de messages.">
+  <link rel="canonical" href="https://pmrs.fr/procedure.html">
+  <meta name="theme-color" content="#EFEBEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100F" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PMRS">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Procédure d'usage en crise — PMRS">
+  <meta property="og:description" content="Comment utiliser le réseau MeshCore PMRS quand les réseaux opérateurs sont indisponibles.">
+  <meta property="og:image" content="https://pmrs.fr/og-image.png">
+
+  <script>try{var t=localStorage.getItem('pmrs-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Saira+Condensed:wght@600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PMRS, accueil">
+      <img src="logo.png" width="30" height="30" alt="">
+      <b>PMRS</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html#pourquoi">Pourquoi</a>
+      <a href="index.html#principe">Principe</a>
+      <a href="index.html#materiel">Matériel</a>
+      <a href="index.html#avancement">Avancement</a>
+      <a href="procedure.html" aria-current="page">Procédure de crise</a>
+      <a href="index.html#ressources">Ressources</a>
+      <a class="cta" href="index.html#accueil">Accueillir un répéteur</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="theme" type="button">Auto</button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap doc">
+
+  <aside class="toc" aria-label="Sommaire">
+    <p class="panel-label">Sommaire</p>
+    <ol>
+      <li><a href="#objet">1. Objet et périmètre</a></li>
+      <li><a href="#principes">2. Principes d'emploi</a></li>
+      <li><a href="#canaux">3. Plan de canaux</a></li>
+      <li><a href="#terminaux">4. Parc de terminaux</a></li>
+      <li><a href="#preparation">5. Préparation à froid</a></li>
+      <li><a href="#conduite">6. Conduite en crise</a></li>
+      <li><a href="#gabarits">7. Gabarits de messages</a></li>
+      <li><a href="#limites">8. Limites et points à trancher</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </aside>
+
+  <main class="doc-body" id="main">
+
+    <header class="doc-head">
+      <p class="eyebrow"><span class="dot"></span>Version de travail</p>
+      <h1>Procédure d'usage en crise</h1>
+      <p class="lede">Comment utiliser le réseau MeshCore d'Ille-et-Vilaine lorsque les réseaux opérateurs sont indisponibles : plan de canaux, équipement des porteurs et discipline de trafic.</p>
+      <div class="meta">
+        <span>LoRa 869,618 MHz</span>
+        <span>Ille-et-Vilaine (35)</span>
+        <span>18 octobre 2026</span>
+        <span>Y. Ferez, responsable de déploiement 35</span>
+      </div>
+      <div class="btns">
+        <button class="btn ghost" type="button" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <!-- 1 -->
+    <section class="chap" id="objet">
+      <h2><span class="no">01</span>Objet et périmètre</h2>
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">Ce que le réseau permet</p>
+          <p class="muted">L'échange de <strong>messages texte courts</strong> entre porteurs équipés, sans opérateur, sans Internet et sans alimentation secteur, dans la limite de la couverture des répéteurs.</p>
+        </div>
+        <div class="panel">
+          <p class="panel-label">Ce qu'il ne permet pas</p>
+          <p class="muted">Ni la voix, ni l'image, ni les fichiers. Il ne joint que des porteurs <strong>déjà équipés et configurés</strong> : on ne rejoint pas le réseau pendant la crise.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <b>Il ne remplace aucun moyen officiel</b>
+        <p>Les appels d'urgence passent par le <strong>18</strong>, le <strong>15</strong> et le <strong>112</strong> tant qu'un réseau les porte. Le PMRS est un moyen de repli entre porteurs identifiés, pas un canal d'alerte du public ni un accès aux secours. Aucun message reçu sur le réseau ne vaut engagement de moyens de secours.</p>
+      </div>
+      <p><strong>Qui l'applique.</strong> Les porteurs de terminaux listés au chapitre 4, après remise de leurs clés de canaux et vérification de leur matériel.</p>
+      <div class="panel">
+        <p class="panel-label">Architecture d'emploi</p>
+        <div class="flow">
+          <div class="node t"><b>Terminaux</b><span>Smartphone + compagnon, T-Deck, ThinkNode M9</span></div>
+          <div class="node r"><b>R1</b><span>Point haut solaire</span></div>
+          <div class="node r"><b>R2</b><span>Point haut solaire</span></div>
+          <div class="node t"><b>Terminaux</b><span>Secteur voisin, département limitrophe</span></div>
+        </div>
+        <p class="small muted">Portée terminal → répéteur : de quelques centaines de mètres à quelques kilomètres selon l'antenne et le relief. <strong>Un terminal hors de portée de tout répéteur est isolé, même si le reste du réseau fonctionne.</strong></p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="chap" id="principes">
+      <h2><span class="no">02</span>Principes d'emploi</h2>
+      <p>Un message direct est acquitté, un message de canal ne l'est pas. <strong>Cette différence commande tout l'emploi du réseau.</strong></p>
+      <div class="vs">
+        <div class="panel yes">
+          <p class="panel-label">Message direct</p>
+          <h3>Acquitté, route mémorisée</h3>
+          <p class="muted small">Le premier message vers un correspondant se propage en diffusion ; à l'arrivée, son terminal renvoie un accusé qui fixe la route, et les messages suivants l'empruntent directement. En cas de rupture, MeshCore réessaie trois fois puis repart en diffusion pour reconstruire un chemin.</p>
+          <p class="rule">→ Toute demande qui engage une action passe par là.</p>
+        </div>
+        <div class="panel no">
+          <p class="panel-label">Message de canal</p>
+          <h3>Diffusé à tout le maillage, aucun accusé</h3>
+          <p class="muted small">Pas de destinataire unique, donc pas de route apprise et pas d'accusé de réception. Un message de canal part sans garantie de lecture, et l'identité de l'émetteur n'est pas garantie.</p>
+          <p class="rule">→ Situation générale seulement, jamais un ordre.</p>
+        </div>
+      </div>
+
+      <h3>Ce qui en découle</h3>
+      <ul class="list">
+        <li>Toute demande qui engage une action se fait en <strong>message direct</strong>, nommément à son destinataire, pour disposer de l'accusé.</li>
+        <li>Les canaux servent à la situation générale et aux appels non nominatifs. Un silence sur un canal ne signifie rien.</li>
+        <li>Une information engageante reçue par canal <strong>se recoupe en direct</strong> avant d'être exploitée.</li>
+      </ul>
+
+      <h3>Discipline de trafic</h3>
+      <p>La bande 869,4–869,65 MHz est limitée à <strong>10 % de rapport cyclique</strong> : un émetteur ne peut occuper la fréquence plus de 6 minutes par heure. Le débit utile est de l'ordre de la phrase, pas du paragraphe.</p>
+      <div class="grid g2">
+        <div class="panel"><h3>Court</h3><p class="muted small">Une information par message, pas de politesse ni de signature : le nom du terminal identifie déjà l'émetteur.</p></div>
+        <div class="panel"><h3>Patient</h3><p class="muted small">Pas de répétition avant 10 minutes. Un message non acquitté n'est pas perdu : il peut être en cours de reroutage.</p></div>
+        <div class="panel"><h3>Silencieux</h3><p class="muted small">Pas d'accusé de courtoisie sur les canaux : chaque message de groupe consomme du temps d'antenne pour tout le monde.</p></div>
+        <div class="panel"><h3>Discret</h3><p class="muted small">Partage de position à la demande, jamais en automatique périodique.</p></div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="chap" id="canaux">
+      <h2><span class="no">03</span>Plan de canaux préétabli</h2>
+      <p>Les canaux se créent <strong>à froid, jamais pendant la crise</strong> : un canal privé suppose la distribution préalable d'un secret de 32 octets à chaque porteur.</p>
+      <div class="grid g3">
+        <div class="panel"><p class="panel-label">Public</p><p class="muted small">Présent sur tous les terminaux.</p></div>
+        <div class="panel"><p class="panel-label">Hashtag</p><p class="muted small">Clé dérivée du nom : quiconque connaît le nom y entre. <strong>Pas confidentiel.</strong></p></div>
+        <div class="panel"><p class="panel-label">Privé</p><p class="muted small">Secret aléatoire de 32 octets partagé hors réseau, par QR code en main propre ou messagerie chiffrée.</p></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Canal</th><th>Type</th><th>Région</th><th>Usage</th><th>Porteurs</th></tr></thead>
+          <tbody>
+            <tr><th class="mono">Public</th><td>public</td><td class="mono">fr</td><td>Veille générale, prise de contact</td><td>Tous</td></tr>
+            <tr><th class="mono">#ille-et-vilaine</th><td>hashtag</td><td class="mono">fr-35</td><td>Situation départementale, information non sensible</td><td>Porteurs du 35</td></tr>
+            <tr><th class="mono">#rennes-metropole</th><td>hashtag</td><td class="mono">fr-35</td><td>Situation sur la métropole</td><td>Porteurs du secteur</td></tr>
+            <tr><th class="mono">pmrs-35-operations</th><td>privé</td><td class="mono">fr-35</td><td>Conduite opérationnelle</td><td>Porteurs engagés</td></tr>
+            <tr><th class="mono">pmrs-35-technique</th><td>privé</td><td class="mono">fr-35</td><td>État des répéteurs, pannes, interventions</td><td>Équipe technique</td></tr>
+            <tr><th class="mono">#test</th><td>hashtag</td><td class="mono">fr-35</td><td>Essais et exercices, hors activation</td><td>Tous</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <b>Rien de sensible sur Public ni sur un hashtag</b>
+        <p>Ces canaux sont lus par les répéteurs, les nœuds observateurs et les passerelles Internet de la communauté. Coordonnées de personnes, états de santé et informations nominatives ne passent que par <strong>canal privé ou message direct</strong>.</p>
+      </div>
+
+      <h3>Conventions de nommage</h3>
+      <p>La communauté française a fixé des règles qu'il faut suivre pour rester interopérable.</p>
+      <dl class="kv">
+        <div><dt>Hashtags</dt><dd>Minuscules non accentuées, chiffres et tirets uniquement. Pas d'espace, pas de caractère spécial.</dd></div>
+        <div><dt>Terminaux</dt><dd>Département, 4 à 6 lettres de commune, puis texte libre — <code class="mono">35CESS Yvan</code>. Rester sous 22 caractères : au-delà, le nom Bluetooth des compagnons pose problème.</dd></div>
+        <div><dt>Régions</dt><dd><code class="mono">eu</code>, <code class="mono">fr</code>, <code class="mono">fr-bre</code> et <code class="mono">fr-35</code> sur les répéteurs, avec <code class="mono">fr</code> par défaut. La région limite la zone de retransmission d'un canal et évite d'inonder le réseau national avec du trafic local.</dd></div>
+      </dl>
+      <div class="callout warn">
+        <b>À trancher</b>
+        <p>Les noms de canaux privés ci-dessus sont une proposition, à valider avec les partenaires — en particulier si un canal doit être partagé avec l'ADRASEC 35 ou une réserve communale, qui ont leurs propres conventions.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="chap" id="terminaux">
+      <h2><span class="no">04</span>Parc de terminaux</h2>
+      <p>Deux familles : le compagnon piloté par smartphone, et le terminal autonome à clavier. <strong>Les deux doivent coexister</strong> — le smartphone tombe en panne de batterie avant la radio.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Terminal</th><th>Saisie</th><th>Autonomie annoncée</th><th>Atouts</th><th>Limites</th></tr></thead>
+          <tbody>
+            <tr><th>Compagnon + smartphone</th><td>Clavier du téléphone, liaison BLE</td><td>Compagnon : plusieurs jours. Téléphone : le maillon faible</td><td>Saisie rapide, carte, coût faible, application officielle</td><td>Dépend d'un téléphone chargé ; deux appareils ; appairage BLE à refaire après redémarrage</td></tr>
+            <tr><th>LilyGo T-Deck Plus</th><td>Clavier physique, trackball</td><td>1 à 2 j GPS actif ; 3 à 4 j GPS coupé (2000 mAh)</td><td>Autonome ; cartes hors ligne sur microSD ; antenne externe possible</td><td>Clavier exigu ; autonomie faible écran allumé ; fonctions avancées derrière un enregistrement payant</td></tr>
+            <tr><th>Elecrow ThinkNode M9</th><td>Clavier QWERTY 37 touches, écran 2,4″</td><td>4 à 5 j en veille selon le constructeur (2300 mAh)</td><td>Autonome ; GPS multiconstellation et boussole ; messages et canaux d'emblée</td><td>Portée mesurée ~450 m en zone bâtie, ~1 km dégagé ; coque arrière collée ; fonctions derrière un déblocage payant</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Ce que cela impose à la dotation</h3>
+      <ul class="list">
+        <li><strong>Un terminal autonome par point de commandement.</strong> Le T-Deck ou le M9 fonctionne sans smartphone : c'est le matériel à placer en mairie, au PC de secours ou dans un véhicule.</li>
+        <li><strong>Un compagnon + smartphone pour les porteurs mobiles.</strong> Plus léger, plus rapide à saisir, à condition d'avoir une batterie externe.</li>
+        <li><strong>La portée du M9 est celle d'un terminal, pas d'un répéteur.</strong> Avec son antenne interne, il doit être à portée d'un répéteur : il ne couvre pas un secteur par lui-même.</li>
+        <li><strong>Un moyen de recharge autonome pour chaque terminal</strong> : batterie externe chargée ou panneau pliant, vérifié au contrôle périodique.</li>
+      </ul>
+    </section>
+
+    <!-- 5 -->
+    <section class="chap" id="preparation">
+      <h2><span class="no">05</span>Préparation à froid</h2>
+      <p>Tout se joue avant la crise : <strong>un terminal non préparé est inutilisable le jour venu</strong>, et un canal privé ne se distribue pas par radio.</p>
+
+      <div class="check-bar">
+        <h3 style="margin:0">Conditionnement d'un terminal, à la remise au porteur</h3>
+        <span class="count" id="check-count"></span>
+      </div>
+      <ul class="check" id="checklist">
+        <li><label><input type="checkbox"><span>Firmware MeshCore à jour, rôle <strong>Companion</strong> (jamais Repeater sur un terminal mobile)</span></label></li>
+        <li><label><input type="checkbox"><span>Profil radio France : 869,618 MHz, BW 62,5 kHz, SF8, CR8, région par défaut <code class="mono">fr</code></span></label></li>
+        <li><label><input type="checkbox"><span>Nom du terminal à la convention : <code class="mono">35XXXX Prénom</code>, moins de 22 caractères</span></label></li>
+        <li><label><input type="checkbox"><span>Canaux Public, #ille-et-vilaine et #test ajoutés</span></label></li>
+        <li><label><input type="checkbox"><span>Canaux privés chargés par QR code, en main propre, selon le rôle du porteur</span></label></li>
+        <li><label><input type="checkbox"><span>Contacts des correspondants habituels échangés et testés en message direct</span></label></li>
+        <li><label><input type="checkbox"><span>Partage de position automatique désactivé</span></label></li>
+        <li><label><input type="checkbox"><span>Batterie chargée à 100 %, moyen de recharge autonome fourni</span></label></li>
+        <li><label><input type="checkbox"><span>Test réel : un message direct acquitté et un message de canal, depuis le lieu d'emploi prévu</span></label></li>
+        <li><label><input type="checkbox"><span>Fiche d'une page remise au porteur : gabarits de messages et numéros utiles</span></label></li>
+      </ul>
+      <div><button class="copy" type="button" id="check-reset">Tout décocher</button> <span class="source">Les cases cochées restent mémorisées dans ce navigateur uniquement.</span></div>
+
+      <h3>Distribution des clés de canaux privés</h3>
+      <p>Le secret d'un canal privé fait 32 octets, soit 64 caractères hexadécimaux dans l'URI de partage. Il se transmet <strong>par QR code en main propre</strong>, ou à défaut par messagerie chiffrée. Jamais par SMS, jamais par courriel en clair, jamais sur le réseau lui-même.</p>
+      <p>Tenir un <strong>registre des porteurs par canal</strong>. Un canal privé ne se révoque pas individuellement : retirer un accès suppose de générer un nouveau secret et de le rediffuser à tous les autres.</p>
+
+      <h3>Contrôle périodique</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Périodicité</th><th>Action</th><th>Responsable</th></tr></thead>
+          <tbody>
+            <tr><th>Mensuelle</th><td>Appel de tous les porteurs sur #test : chacun répond, les absents sont relancés</td><td>Animateur réseau</td></tr>
+            <tr><th>Mensuelle</th><td>Relève de l'état des répéteurs : batterie, dernière annonce reçue</td><td>Équipe technique</td></tr>
+            <tr><th>Trimestrielle</th><td>Exercice : un message traverse le département de bout en bout, délai mesuré</td><td>Animateur réseau</td></tr>
+            <tr><th>Semestrielle</th><td>Vérification des terminaux dormants : charge, firmware, canaux valides</td><td>Porteur</td></tr>
+            <tr><th>Annuelle</th><td>Revue du plan de canaux et du registre des porteurs</td><td>Responsable départemental</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small"><em>Un terminal rangé dans un tiroir pendant six mois est un terminal déchargé : le contrôle semestriel n'est pas optionnel.</em></p>
+    </section>
+
+    <!-- 6 -->
+    <section class="chap" id="conduite">
+      <h2><span class="no">06</span>Conduite en crise</h2>
+      <p>Le réseau passe par cinq états. Le passage d'un état au suivant est prononcé par le responsable départemental, ou à défaut par le premier porteur qui constate la situation.</p>
+      <ol class="states">
+        <li class="s-veille"><b>Veille</b><span class="trg">Permanent</span><span class="act">Terminal chargé et joignable ; aucune obligation d'écoute</span><span class="chn">Public</span></li>
+        <li class="s-pre"><b>Pré-alerte</b><span class="trg">Vigilance orange ou rouge</span><span class="act">Charger le terminal, l'emporter, confirmer sa disponibilité en direct</span><span class="chn">#ille-et-vilaine</span></li>
+        <li class="s-act"><b>Activation</b><span class="trg">Coupure constatée ou demande partenaire</span><span class="act">Allumer, annoncer position et état en un message, puis écouter</span><span class="chn">pmrs-35-operations</span></li>
+        <li class="s-cond"><b>Conduite</b><span class="trg">Pendant l'événement</span><span class="act">Point de situation à cadence fixée ; demandes en message direct</span><span class="chn">pmrs-35-operations</span></li>
+        <li class="s-levee"><b>Levée</b><span class="trg">Réseaux opérateurs rétablis</span><span class="act">Message de fin, recharge, compte rendu sous 48 h</span><span class="chn">#ille-et-vilaine</span></li>
+      </ol>
+
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">À l'activation</p>
+          <ol class="prio plain">
+            <li><strong>Annoncer.</strong> Un message sur le canal opérations : indicatif, commune, état du porteur, moyen disponible. Un seul message.</li>
+            <li><strong>Établir le contact nominatif.</strong> Un message direct vers le responsable départemental, pour obtenir l'accusé et fixer la route.</li>
+            <li><strong>Se taire.</strong> Pas de trafic de confirmation sur les canaux. L'écoute est la posture par défaut.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <p class="panel-label">Cadence des points de situation</p>
+          <p class="muted">Un point par heure et par porteur au maximum, aux heures rondes, <strong>décalé de 5 minutes par porteur</strong> pour éviter les collisions.</p>
+          <p class="muted">Un porteur sans changement ne transmet rien : <strong>l'absence de message vaut « situation inchangée »</strong>. Hors cadence, on n'émet que pour un fait nouveau ou une demande.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="panel-label">Priorités quand le trafic sature</p>
+        <ol class="prio">
+          <li>Atteinte à des personnes : secours requis, personne isolée, bâtiment évacué</li>
+          <li>Demande de moyen émanant d'un partenaire institutionnel</li>
+          <li>État du réseau : répéteur tombé, secteur injoignable</li>
+          <li>Situation générale</li>
+          <li>Logistique interne</li>
+        </ol>
+      </div>
+
+      <div class="callout">
+        <b>À trancher avec les partenaires</b>
+        <p>Qui prononce l'activation, et selon quel seuil ? Tant que ce point n'est pas arrêté avec le SIDPC, le SDIS ou la commune concernée, <strong>le réseau reste un moyen interne au collectif</strong> et ne peut pas être annoncé comme un appui à la chaîne de secours.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="chap" id="gabarits">
+      <h2><span class="no">07</span>Gabarits de messages</h2>
+      <p>Un format fixe se lit vite sur un écran de 2,4 pouces et se saisit sans réfléchir. Champs séparés par des barres verticales, sans accent, <strong>mot-clé de tête en majuscules</strong>.</p>
+      <ul class="tpl">
+        <li><span class="t">Prise de poste</span><code><span class="kw">DISPO</span>|commune|moyen</code><code class="ex">DISPO|Cesson-Sevigne|vehicule</code><button class="copy" type="button" data-copy="DISPO|commune|moyen">Copier</button></li>
+        <li><span class="t">Point de situation</span><code><span class="kw">SITU</span>|commune|fait|evolution</code><code class="ex">SITU|Acigne|routes coupees nord|stable</code><button class="copy" type="button" data-copy="SITU|commune|fait|evolution">Copier</button></li>
+        <li><span class="t">Demande</span><code><span class="kw">DEM</span>|quoi|ou|pour quand</code><code class="ex">DEM|groupe electrogene|mairie Betton|avant 18h</code><button class="copy" type="button" data-copy="DEM|quoi|ou|pour quand">Copier</button></li>
+        <li><span class="t">Information urgente</span><code><span class="kw">URG</span>|quoi|ou</code><code class="ex">URG|personne isolee|12 rue des Ecoles Thorigne</code><button class="copy" type="button" data-copy="URG|quoi|ou">Copier</button></li>
+        <li><span class="t">Accusé avec suite</span><code><span class="kw">RECU</span>|reference|suite donnee</code><code class="ex">RECU|DEM Betton|transmis mairie</code><button class="copy" type="button" data-copy="RECU|reference|suite donnee">Copier</button></li>
+        <li><span class="t">État réseau</span><code><span class="kw">RES</span>|repeteur|etat</code><code class="ex">RES|35CESS-toit|muet depuis 14h</code><button class="copy" type="button" data-copy="RES|repeteur|etat">Copier</button></li>
+        <li><span class="t">Fin</span><code><span class="kw">FIN</span>|commune|retour normal</code><code class="ex">FIN|Acigne|reseau operateur retabli</code><button class="copy" type="button" data-copy="FIN|commune|retour normal">Copier</button></li>
+      </ul>
+
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">Règles de rédaction</p>
+          <ul>
+            <li>Pas d'accent ni de caractère spécial : certains afficheurs les rendent mal et ils coûtent des octets.</li>
+            <li>Une information par message. Deux faits distincts font deux messages.</li>
+            <li><strong>Jamais de donnée nominative ni d'état de santé sur un canal public ou hashtag.</strong> Un URG qui désigne une personne part en message direct ou sur le canal privé opérations.</li>
+            <li>Heures en format 24 h : <code class="mono">18h</code>, <code class="mono">0730</code>.</li>
+            <li>Pas de signature : le nom du terminal identifie l'émetteur.</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <b>Ce qu'on ne transmet pas</b>
+          <p>Ni coordonnées personnelles, ni état de santé nominatif, ni information susceptible de déclencher un déplacement de secours sans passer par le 18 ou le 112.</p>
+          <p>Si une situation relève des secours et qu'un moyen téléphonique existe quelque part sur le secteur, c'est ce moyen qui est utilisé ; <strong>le réseau sert à faire remonter l'information jusqu'à un point où ce moyen existe.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="chap" id="limites">
+      <h2><span class="no">08</span>Limites et points à trancher</h2>
+      <p>La procédure est utilisable en interne dès maintenant. Elle ne peut pas être présentée comme un dispositif opérationnel tant que les points suivants ne sont pas réglés.</p>
+      <div class="grid g2">
+        <div class="panel">
+          <p class="panel-label">Limites techniques assumées</p>
+          <ul>
+            <li><strong>Pas d'accusé sur les canaux.</strong> Un message de groupe part sans confirmation de lecture.</li>
+            <li><strong>Pas d'authentification de l'émetteur sur un canal.</strong> Un membre du canal peut faire apparaître un message sous une autre identité : les canaux ne portent donc pas d'ordre.</li>
+            <li><strong>Débit très faible.</strong> 10 % de rapport cyclique maximum, messages texte courts uniquement.</li>
+            <li><strong>Couverture discontinue.</strong> Un secteur desservi par un seul répéteur n'a pas de route de secours.</li>
+            <li><strong>Terminaux à portée réduite.</strong> Le M9 et le T-Deck sur antenne interne restent des terminaux de proximité, pas des relais.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <p class="panel-label">À arrêter avec les partenaires</p>
+          <ul>
+            <li>Qui prononce l'activation, et sur quel seuil.</li>
+            <li>Articulation avec l'ADRASEC 35, qui dispose d'un agrément de sécurité civile et est activée par le préfet via le SIDPC — le PMRS n'a pas ce statut.</li>
+            <li>Qui détient un terminal côté institutionnel, et qui en assure la charge.</li>
+            <li>Ce que l'institution accepte de voir transiter sur un réseau bénévole non conventionné.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <b>Rappel de statut</b>
+        <p>Le PMRS est une initiative citoyenne. Il n'est pas directement intégré à la chaîne ORSEC.</p>
+      </div>
+    </section>
+
+    <!-- sources -->
+    <section class="chap" id="sources">
+      <h2><span class="no">—</span>Sources</h2>
+      <ul class="sources">
+        <li><strong>MeshCore — Channels</strong> (wiki communautaire) — types de canaux. <a href="https://wiki.meshcore.kiwi/community/channels/" target="_blank" rel="noopener">wiki.meshcore.kiwi</a></li>
+        <li><strong>EastMesh — Channels and keys</strong> — secret de 32 octets, URI de partage, chiffrement. <a href="https://wiki.eastmesh.au/meshcore/channels-and-keys/" target="_blank" rel="noopener">wiki.eastmesh.au</a></li>
+        <li><strong>Gaulix — Règles de base MeshCore</strong> — nommage, canaux, régions. <a href="https://gaulix.fr/docs-parametrage/regles-de-nommage-regions-canaux-meshcore/" target="_blank" rel="noopener">gaulix.fr</a></li>
+        <li><strong>MeshCore France</strong> — profil radio 869,618 MHz / 62,5 kHz / SF8 / CR8. <a href="https://meshcore.fr/" target="_blank" rel="noopener">meshcore.fr</a></li>
+        <li><strong>NodakMesh — How MeshCore works</strong> — rôles, accusés, reroutage. <a href="https://nodakmesh.org/blog/meshcore-how-it-works-guide" target="_blank" rel="noopener">nodakmesh.org</a></li>
+        <li><strong>LocalMesh — MeshCore T-Deck guide</strong> — autonomie T-Deck Plus. <a href="https://localmesh.nl/en/meshcore-t-deck-guide/" target="_blank" rel="noopener">localmesh.nl</a></li>
+        <li><strong>CNX Software — ThinkNode M9 review</strong> — caractéristiques, portée mesurée, limites. <a href="https://www.cnx-software.com/2026/09/18/elecrow-thinknode-m9-review-qwerty-terminal-meshcore-firmware/" target="_blank" rel="noopener">cnx-software.com</a></li>
+        <li><strong>Décision Arcep n° 2014-1263 modifiée</strong> — 869,4–869,65 MHz, 500 mW PAR, 10 %. <a href="https://www.arcep.fr/" target="_blank" rel="noopener">arcep.fr</a></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="row">
+      <a class="mono" href="index.html">← PMRS · accueil</a>
+      <a href="index.html#ressources">Ressources</a>
+      <a href="mailto:contact@pmrs.fr">contact@pmrs.fr</a>
+    </div>
+    <p>Version de travail du 18 octobre 2026. Initiative citoyenne sans but lucratif, non intégrée à la chaîne ORSEC.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
