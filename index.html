@@ -284,12 +284,12 @@
             <line data-edge="r3-b"  x1="570" y1="120" x2="740" y2="200"/>
             <line data-edge="r1-r4" x1="230" y1="120" x2="400" y2="205"/>
             <line data-edge="r4-r3" x1="400" y1="205" x2="570" y2="120"/>
-            <g><circle class="dg-term" cx="60" cy="200" r="24"/><text class="dg-term-t" x="60" y="205" text-anchor="middle">A</text></g>
-            <g><circle class="dg-term" cx="740" cy="200" r="24"/><text class="dg-term-t" x="740" y="205" text-anchor="middle">B</text></g>
-            <g><circle class="dg-rep" cx="230" cy="120" r="26"/><text class="dg-rep-t" x="230" y="125" text-anchor="middle">R1</text></g>
-            <g data-node="r2"><circle cx="400" cy="70" r="26"/><text x="400" y="75" text-anchor="middle">R2</text></g>
-            <g><circle class="dg-rep" cx="570" cy="120" r="26"/><text class="dg-rep-t" x="570" y="125" text-anchor="middle">R3</text></g>
-            <g data-node="r4"><circle cx="400" cy="205" r="26"/><text x="400" y="210" text-anchor="middle">R4</text></g>
+            <g data-pos="a"><circle class="dg-term" cx="60" cy="200" r="24"/><text class="dg-term-t" x="60" y="205" text-anchor="middle">A</text></g>
+            <g data-pos="b"><circle class="dg-term" cx="740" cy="200" r="24"/><text class="dg-term-t" x="740" y="205" text-anchor="middle">B</text></g>
+            <g data-pos="r1"><circle class="dg-rep" cx="230" cy="120" r="26"/><text class="dg-rep-t" x="230" y="125" text-anchor="middle">R1</text></g>
+            <g data-node="r2" data-pos="r2"><circle cx="400" cy="70" r="26"/><text x="400" y="75" text-anchor="middle">R2</text></g>
+            <g data-pos="r3"><circle class="dg-rep" cx="570" cy="120" r="26"/><text class="dg-rep-t" x="570" y="125" text-anchor="middle">R3</text></g>
+            <g data-node="r4" data-pos="r4"><circle cx="400" cy="205" r="26"/><text x="400" y="210" text-anchor="middle">R4</text></g>
           </svg>
         </div>
         <div class="legend">
@@ -315,33 +315,32 @@
     </div>
 
     <div class="stack-lg">
+      <div class="grid g3">
+        <div class="panel stat"><span class="v">19–35<small>mA</small></span><p>consommation moyenne du répéteur</p></div>
+        <div class="panel stat"><span class="v">3–5<small>jours</small></span><p>d'autonomie sans aucun soleil, batterie pleine</p></div>
+        <div class="panel stat"><span class="v">15<small>min</small></span><p>de soleil par jour suffisent en décembre, en Bretagne</p></div>
+      </div>
+
       <div class="grid g2">
         <div class="panel">
           <p class="panel-label">Le module répéteur</p>
           <dl class="kv">
             <div><dt>Boîtier</dt><dd>IP67, fixable sur barrière, mur ou mât type TV</dd></div>
             <div><dt>Radio</dt><dd>LoRa <strong>869,618 MHz</strong>, 100 à 500 mW max</dd></div>
-            <div><dt>Antenne</dt><dd>Verticale 4,4 ou 9 dBi selon la topographie</dd></div>
+            <div><dt>Antenne</dt><dd>Verticale de 3 à 9 dBi selon la topographie</dd></div>
             <div><dt>Énergie</dt><dd>Panneau solaire de 5 à 10 W</dd></div>
             <div><dt>Batterie</dt><dd>18650 3,7 V, −20 à +60 °C (migration LiFePO4 à l'étude)</dd></div>
-            <div><dt>Poids</dt><dd>730 g maximum</dd></div>
+            <div><dt>Poids</dt><dd>2kg maximum</dd></div>
           </dl>
         </div>
-        <div class="stack">
-          <div class="grid g3" style="grid-template-columns:repeat(auto-fit,minmax(9rem,1fr))">
-            <div class="panel stat"><span class="v">19–35<small>mA</small></span><p>consommation moyenne</p></div>
-            <div class="panel stat"><span class="v">3–5<small>jours</small></span><p>sans aucun soleil, batterie pleine</p></div>
-            <div class="panel stat"><span class="v">15<small>min</small></span><p>de soleil par jour suffisent en décembre</p></div>
-          </div>
-          <div class="panel">
-            <p class="panel-label">Retour d'expérience</p>
-            <ul>
-              <li><strong>9 répéteurs</strong> de ce type en service depuis 3 ans en Ille-et-Vilaine.</li>
-              <li>Aucune coupure liée à l'énergie constatée.</li>
-              <li>Batterie jamais descendue sous <strong>70 %</strong>.</li>
-              <li>Panneau dimensionné sur le mois le plus défavorable ; durée de vie visée 10 ans.</li>
-            </ul>
-          </div>
+        <div class="panel">
+          <p class="panel-label">Retour d'expérience</p>
+          <ul>
+            <li><strong>9 répéteurs</strong> de ce type en service depuis 3 ans en Ille-et-Vilaine.</li>
+            <li>Aucune coupure liée à l'énergie constatée.</li>
+            <li>Batterie jamais descendue sous <strong>70 %</strong>.</li>
+            <li>Panneau dimensionné sur le mois le plus défavorable ; durée de vie visée 10 ans.</li>
+          </ul>
         </div>
       </div>
 

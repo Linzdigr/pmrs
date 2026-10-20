@@ -198,6 +198,35 @@
     };
     buttons.forEach(function(b, i){ b.addEventListener('click', function(){ show(i); }); });
     show(0);
+
+    // Sur petit écran, disposition resserrée pour garder des nœuds lisibles
+    var LAYOUTS = {
+      wide:   { box: '0 0 800 260', p: { a: [60, 200], r1: [230, 120], r2: [400, 70], r3: [570, 120], b: [740, 200], r4: [400, 205] } },
+      narrow: { box: '0 0 400 290', p: { a: [36, 248], r1: [112, 145], r2: [200, 46], r3: [288, 145], b: [364, 248], r4: [200, 244] } }
+    };
+    var svg = res.querySelector('svg');
+    var layout = function(){
+      var narrow = svg.clientWidth < 560;
+      var L = LAYOUTS[narrow ? 'narrow' : 'wide'];
+      svg.setAttribute('viewBox', L.box);
+      svg.classList.toggle('narrow', narrow);
+      res.querySelectorAll('[data-pos]').forEach(function(g){
+        var c = L.p[g.getAttribute('data-pos')];
+        g.querySelector('circle').setAttribute('cx', c[0]);
+        g.querySelector('circle').setAttribute('cy', c[1]);
+        g.querySelector('circle').setAttribute('r', (narrow ? 6 : 0) + (/^[ab]$/.test(g.getAttribute('data-pos')) ? 24 : 26));
+        g.querySelector('text').setAttribute('x', c[0]);
+        g.querySelector('text').setAttribute('y', c[1] + (narrow ? 6 : 5));
+      });
+      res.querySelectorAll('[data-edge]').forEach(function(l){
+        var ends = l.getAttribute('data-edge').split('-');
+        l.setAttribute('x1', L.p[ends[0]][0]); l.setAttribute('y1', L.p[ends[0]][1]);
+        l.setAttribute('x2', L.p[ends[1]][0]); l.setAttribute('y2', L.p[ends[1]][1]);
+      });
+    };
+    layout();
+    var rl;
+    window.addEventListener('resize', function(){ clearTimeout(rl); rl = setTimeout(layout, 120); });
   }
 
   // --- check-list de conditionnement (mémorisée dans ce navigateur) ---
