@@ -24,12 +24,13 @@ og-pmr446.png           PMR446,
 og-cb.png               CB,
 og-maillage.png         maillage LoRa,
 og-procedure.png        procédure
+fonts/                Polices woff2 (latin et latin étendu) et leurs licences
 favicon*, icon-*      Icônes
 site.webmanifest      Manifeste web
 _archive/             Ancienne page « site en construction »
 ```
 
-Site **statique** : pas de build, pas de dépendance, pas de framework. Seules les polices viennent de Google Fonts.
+Site **statique** : pas de build, pas de dépendance, pas de framework, aucune ressource externe. Les polices (IBM Plex Sans, IBM Plex Mono, Saira Condensed, licence SIL OFL) sont hébergées dans `fonts/` et déclarées en tête de `style.css`.
 
 ## Voir le site en local
 
